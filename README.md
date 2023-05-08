@@ -7,4 +7,5 @@ In progress...
   <li>TypeScript</li>
   <li>React</li>
   <li>Sass</li>
+  <li>CSS modules</li>
 </ol>
