@@ -2,11 +2,11 @@ In progress...
 
 # Blog App
 
-<ol>
-  <ui>FSD</ui>
-  <ui>Webpack</ui>
-  <ui>TypeScript</ui>
-  <ui>React</ui>
-  <ui>Sass</ui>
-  <ui>CSS modules</ui>
-</ol>
+<ul>
+  <li>FSD</li>
+  <li>Webpack</li>
+  <li>TypeScript</li>
+  <li>React</li>
+  <li>Sass</li>
+  <li>CSS modules</li>
+</ul>
