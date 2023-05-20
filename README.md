@@ -9,5 +9,5 @@ In progress...
   <li>React</li>
   <li>Sass</li>
   <li>CSS modules</li>
-  <li>i18n</li>
+  <li>i18next</li>
 </ul>
