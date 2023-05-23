@@ -10,4 +10,6 @@ In progress...
   <li>Sass</li>
   <li>CSS modules</li>
   <li>i18next</li>
+  <li>Eslint</li>
+  <li>Stylelint</li>
 </ul>
