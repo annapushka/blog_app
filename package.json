@@ -9,8 +9,8 @@
     "build:dev": "webpack --env mode=development",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
-    "lint:scss": "stylelint \"'**/*.scss\"",
-    "lint:scss:fix": "stylelint \"'**/*.scss\" --fix"
+    "lint:scss": "stylelint \"**/*.scss\"",
+    "lint:scss:fix": "stylelint \"**/*.scss\" --fix"
   },
   "keywords": [],
   "author": "",
