@@ -12,4 +12,5 @@ In progress...
   <li>i18next</li>
   <li>Eslint</li>
   <li>Stylelint</li>
+  <li>Jest</li>
 </ul>
