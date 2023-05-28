@@ -13,4 +13,5 @@ In progress...
   <li>Eslint</li>
   <li>Stylelint</li>
   <li>Jest</li>
+  <li>React Testing Library</li>
 </ul>
