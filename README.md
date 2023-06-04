@@ -16,4 +16,5 @@ In progress...
   <li>React Testing Library</li>
   <li>Storybook</li>
   <li>Loki</li>
+  <li>CI pipeline</li>
 </ul>
