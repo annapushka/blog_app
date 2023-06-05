@@ -6,6 +6,10 @@ import Button, { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import ArrowLeft from 'shared/assets/icons/angel-left.svg';
 import ArrowRight from 'shared/assets/icons/angel-right.svg';
+import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import HomeIcon from 'shared/assets/icons/home.svg';
+import AboutIcon from 'shared/assets/icons/info.svg';
 import cls from './SideBar.module.scss';
 
 interface SideBarProps {
@@ -35,6 +39,28 @@ export const SideBar = ({ className }: SideBarProps) => {
             >
                 {collapsed ? <ArrowRight /> : <ArrowLeft />}
             </Button>
+            <div className={cls.items}>
+                <div className={cls.item}>
+                    <HomeIcon className={cls.icon} />
+                    <AppLink
+                        theme={AppLinkTheme.SECONDARY}
+                        to={RoutePath.main}
+                        className={cls.link}
+                    >
+                        {t('Главная')}
+                    </AppLink>
+                </div>
+                <div className={cls.item}>
+                    <AboutIcon className={cls.icon} />
+                    <AppLink
+                        theme={AppLinkTheme.SECONDARY}
+                        to={RoutePath.about}
+                        className={cls.link}
+                    >
+                        {t('О сайте')}
+                    </AppLink>
+                </div>
+            </div>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} short={collapsed} />
