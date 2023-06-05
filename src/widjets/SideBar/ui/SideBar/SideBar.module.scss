@@ -17,15 +17,6 @@
     }
 }
 
-.collapsed {
-    width: var(--sidebar-width-collapsed);
-
-    .switchers {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 .collapseBtn {
     position: absolute;
     right: -32px;
@@ -55,9 +46,26 @@
 
 .link {
     margin-left: 10px;
-    color: var(--inverted-primary-color)
+    color: var(--inverted-primary-color);
+    opacity: 1;
 }
 
 .icon {
-    fill: var(--inverted-primary-color)
+    fill: var(--inverted-primary-color);
 }
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
+
+    .switchers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link {
+        opacity: 0;
+        transition: 0.2s opacity;
+        width: 0;
+    }
+}
+
