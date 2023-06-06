@@ -21,14 +21,13 @@
 .collapseBtn {
     position: absolute;
     right: -32px;
-    bottom: 0;
+    bottom: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     svg {
         transform: scale(0.8);
-        fill: white;
     }
 }
 
