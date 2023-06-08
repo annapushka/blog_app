@@ -9,14 +9,10 @@ import { AppRouter } from './providers/router';
 const App = () => {
     const { theme } = useTheme();
 
-    const [isOpend, setIsOpend] = useState(false);
-
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
                 <Navbar />
-                <button onClick={() => setIsOpend(true)}>Open modal</button>
-                <Modal isOpen={isOpend} onClose={() => setIsOpend(false)} />
                 <div className="content-page">
                     <SideBar />
                     <AppRouter />
