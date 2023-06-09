@@ -17,4 +17,5 @@ In progress...
   <li>Storybook</li>
   <li>Loki</li>
   <li>CI pipeline</li>
+  <li>Redux Toolkit</li>
 </ul>

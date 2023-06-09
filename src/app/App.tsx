@@ -1,6 +1,5 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense } from 'react';
 import { Navbar } from 'widjets/Navbar';
-import Modal from 'shared/ui/Modal/Modal';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { SideBar } from 'widjets/SideBar';
 import { useTheme } from './providers/ThemeProvider';
