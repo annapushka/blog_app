@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
-    ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState,
+    ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef,
 } from 'react';
 import cls from './Input.module.scss';
 
@@ -26,17 +26,19 @@ export const Input = memo((props: InputProps) => {
         autofocus,
         ...otherProps
     } = props;
+
     const ref = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         if (autofocus) {
-            ref.current?.focus();
+            ref.current.focus();
         }
     }, [autofocus]);
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
     };
+
     return (
         <div className={classNames(cls.Input, {}, [className])}>
             <input
