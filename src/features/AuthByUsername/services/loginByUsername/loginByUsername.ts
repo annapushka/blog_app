@@ -7,7 +7,7 @@ interface LoginByUsernamePros {
     password: string;
 }
 
-export const lodinByUsername = createAsyncThunk<User, LoginByUsernamePros, {rejectValue: string}>(
+export const loginByUsername = createAsyncThunk<User, LoginByUsernamePros, {rejectValue: string}>(
     'users/fetchByIdStatus',
     async (authData, thunkAPI) => {
         try {

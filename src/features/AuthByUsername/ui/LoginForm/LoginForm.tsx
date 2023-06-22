@@ -4,6 +4,7 @@ import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import Input from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
+import { loginByUsername } from 'features/AuthByUsername/services/loginByUsername/loginByUsername';
 import { loginActions } from '../../model/slice/loginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import cls from './LoginForm.module.scss';
@@ -15,7 +16,9 @@ interface LoginFormProps {
 export const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
-    const { username, password } = useSelector(getLoginState);
+    const {
+        username, password, error, isLoading,
+    } = useSelector(getLoginState);
 
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
@@ -26,8 +29,8 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     }, [dispatch]);
 
     const onLoginClick = useCallback(() => {
-        //
-    }, []);
+        dispatch(loginByUsername({ username, password }));
+    }, [dispatch, password, username]);
 
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
