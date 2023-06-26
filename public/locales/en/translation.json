@@ -12,5 +12,6 @@
     "toggle": "Toggle",
     "Войти": "Log In",
     "Введите имя пользователя": "Enter username",
-    "Введите пароль": "Enter password"
+    "Введите пароль": "Enter password",
+    "Форма авторизации": "Authorization Form"
 }
