@@ -3,7 +3,7 @@ In progress...
 # Blog App
 
 <ul>
-  <li>FSD</li>
+  <li>Feature-Sliced Design</li>
   <li>Webpack</li>
   <li>TypeScript</li>
   <li>React</li>
