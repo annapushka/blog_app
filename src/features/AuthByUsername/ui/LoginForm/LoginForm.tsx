@@ -36,7 +36,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
             <Text text={t('Форма авторизации')} />
-            {error && <Text text={error} theme={TextTheme.ERROR} />}
+            {error && <Text text={t('Вы ввели неверный пароль или имя пользователя')} theme={TextTheme.ERROR} />}
             <Input
                 type="text"
                 className={cls.input}
