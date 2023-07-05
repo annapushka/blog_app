@@ -40,7 +40,7 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
 
     const onLoginClick = useCallback(() => {
         dispatch(loginByUsername({ username, password }));
-    }, [dispatch, password, username]);
+    }, [dispatch, username, password]);
 
     return (
         // eslint-disable-next-line i18next/no-literal-string
