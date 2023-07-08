@@ -10,7 +10,14 @@
         "postId": "1"
     }],
     "profile": {
-        "name": "typicode"
+        "first": "Masha",
+        "lastname": "Yagoda",
+        "age": "27",
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Saint Petersburg",
+        "username": "admin",
+        "avatar": "https://thispersondoesnotexist.com/"
     },
     "users": [
         {
