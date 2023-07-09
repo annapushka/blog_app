@@ -1,6 +1,8 @@
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { SideBarItemType } from 'widjets/SideBar/model/items';
 import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './SideBarItem.module.scss';
 
 interface SideBarItemProps {
@@ -8,13 +10,13 @@ interface SideBarItemProps {
     collapsed: boolean;
 }
 
-export const SideBarItem = ({ item, collapsed }: SideBarItemProps) => {
+export const SideBarItem = memo(({ item, collapsed }: SideBarItemProps) => {
     const { t } = useTranslation();
     return (
         <AppLink
             theme={AppLinkTheme.SECONDARY}
             to={item.path}
-            className={cls.item}
+            className={classNames(cls.item, { [cls.collapsed]: collapsed })}
         >
             <item.Icon className={cls.icon} />
             <span className={cls.link}>
@@ -22,6 +24,6 @@ export const SideBarItem = ({ item, collapsed }: SideBarItemProps) => {
             </span>
         </AppLink>
     );
-};
+});
 
 export default SideBarItem;
