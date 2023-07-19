@@ -1,6 +1,9 @@
 {
     "Профиль": "Profile",
     "Редактировать": "Edit",
+    "Отменить": "Cancel",
     "Ваше имя": "Your first name",
-    "Ваша фамилия": "Your last name"
+    "Ваша фамилия": "Your last name",
+    "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
+    "Попробуйте обновить странницу": "Try refreshing your page"
 }
