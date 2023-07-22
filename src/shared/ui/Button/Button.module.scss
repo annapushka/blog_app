@@ -24,6 +24,13 @@
     border-radius: 8px;
 }
 
+.outlineRed {
+    border: 1px solid var(--red-light);
+    color: var(--red-light);
+    background: none;
+    border-radius: 8px;
+}
+
 .background {
     background: var(--bg-color);
     color: var(--primary-color);

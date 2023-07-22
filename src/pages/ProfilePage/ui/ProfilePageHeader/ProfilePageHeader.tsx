@@ -31,6 +31,10 @@ export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
         dispatch(profileActions.cancelEdit());
     }, [dispatch]);
 
+    const onSave = useCallback(() => {
+        dispatch(profileActions.cancelEdit());
+    }, [dispatch]);
+
     return (
         <div
             className={classNames(cls.ProfilePageHeader, {}, [className])}
@@ -46,13 +50,23 @@ export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
                     {t('Редактировать')}
                 </Button>
             ) : (
-                <Button
-                    className={cls.editBtn}
-                    theme={ButtonTheme.OUTLINE}
-                    onClick={onCancelEdit}
-                >
-                    {t('Отменить')}
-                </Button>
+                <>
+                    <Button
+                        className={cls.editBtn}
+                        theme={ButtonTheme.OUTLINE_RED}
+                        onClick={onCancelEdit}
+                    >
+                        {t('Отменить')}
+                    </Button>
+                    <Button
+                        className={cls.saveBtn}
+                        theme={ButtonTheme.OUTLINE}
+                        onClick={onSave}
+                    >
+                        {t('Сохранить')}
+                    </Button>
+
+                </>
             )}
         </div>
     );

@@ -15,6 +15,8 @@ interface ProfileCardProps {
     readonly?: boolean;
     onChangeFirstname?: (value: string) => void;
     onChangeLastname?: (value: string) => void;
+    onChangeAge?: (value: string) => void;
+    onChangeCity?: (value: string) => void;
 }
 
 export const ProfileCard = memo((props: ProfileCardProps) => {
@@ -26,6 +28,8 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         readonly,
         onChangeFirstname,
         onChangeLastname,
+        onChangeAge,
+        onChangeCity,
         ...otherProps
     } = props;
 
@@ -70,6 +74,21 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                     placeholder={t('Ваша фамилия')}
                     className={cls.input}
                     onChange={onChangeLastname}
+                    readonly={readonly}
+                />
+                <Input
+                    value={data?.age}
+                    placeholder={t('Ваш возраст')}
+                    className={cls.input}
+                    onChange={onChangeAge}
+                    readonly={readonly}
+                    type="number"
+                />
+                <Input
+                    value={data?.city}
+                    placeholder={t('Город')}
+                    className={cls.input}
+                    onChange={onChangeCity}
                     readonly={readonly}
                 />
             </div>
