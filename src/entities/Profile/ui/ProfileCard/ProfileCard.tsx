@@ -1,10 +1,11 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import Text, { TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import Input from 'shared/ui/Input/Input';
 import { Profile } from 'entities/Profile/model/types/profile';
 import Loader from 'shared/ui/Loader/Loader';
+import Avatar from 'shared/ui/Avatar/Avatar';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
@@ -60,13 +61,21 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         );
     }
 
+    const mods: Mods = {
+        [cls.editing]: !readonly,
+    };
+
     return (
         <div
-            className={classNames(cls.ProfileCard, {}, [className])}
+            className={classNames(cls.ProfileCard, mods, [className])}
             {...otherProps}
         >
             <div className={cls.data}>
-                {data?.avatar && <img src={data?.avatar} alt="" />}
+                {data?.avatar && (
+                    <div className={cls.avatarWrapper}>
+                        <Avatar src={data?.avatar} />
+                    </div>
+                )}
                 <Input
                     value={data?.first}
                     placeholder={t('Ваше имя')}
