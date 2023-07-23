@@ -1,29 +1,33 @@
 {
-    "posts": [{
-        "id": "1",
-        "title": "json-server",
-        "author": "typicode"
-    }],
-    "comments": [{
-        "id": "1",
-        "body": "some comment",
-        "postId": "1"
-    }],
-    "profile": {
-        "first": "Masha",
-        "lastname": "Yagoda",
-        "age": "27",
-        "currency": "RUB",
-        "country": "Russia",
-        "city": "Saint Petersburg",
-        "username": "admin",
-        "avatar": "https://thispersondoesnotexist.com/"
-    },
-    "users": [
-        {
-            "id": "1",
-            "username": "test",
-            "password": "test"
-        }
-    ]
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "first": "Masha",
+    "lastname": "Yagoda",
+    "age": 37,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Saint Petersburg",
+    "username": "admin",
+    "avatar": "https://thispersondoesnotexist.com/"
+  },
+  "users": [
+    {
+      "id": "1",
+      "username": "test",
+      "password": "test"
+    }
+  ]
 }
