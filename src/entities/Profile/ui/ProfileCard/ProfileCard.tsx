@@ -17,6 +17,8 @@ interface ProfileCardProps {
     onChangeLastname?: (value: string) => void;
     onChangeAge?: (value: string) => void;
     onChangeCity?: (value: string) => void;
+    onChangeUsername?: (value: string) => void;
+    onChangeAvatar?: (value: string) => void;
 }
 
 export const ProfileCard = memo((props: ProfileCardProps) => {
@@ -30,6 +32,8 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         onChangeLastname,
         onChangeAge,
         onChangeCity,
+        onChangeUsername,
+        onChangeAvatar,
         ...otherProps
     } = props;
 
@@ -62,6 +66,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
             {...otherProps}
         >
             <div className={cls.data}>
+                {data?.avatar && <img src={data?.avatar} alt="" />}
                 <Input
                     value={data?.first}
                     placeholder={t('Ваше имя')}
@@ -89,6 +94,20 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                     placeholder={t('Город')}
                     className={cls.input}
                     onChange={onChangeCity}
+                    readonly={readonly}
+                />
+                <Input
+                    value={data?.username}
+                    placeholder={t('Ваше имя пользователя')}
+                    className={cls.input}
+                    onChange={onChangeUsername}
+                    readonly={readonly}
+                />
+                <Input
+                    value={data?.avatar}
+                    placeholder={t('Фото профиля')}
+                    className={cls.input}
+                    onChange={onChangeAvatar}
                     readonly={readonly}
                 />
             </div>
