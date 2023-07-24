@@ -5,3 +5,17 @@
 .label {
     margin-right: 5px;
 }
+
+.select {
+    background: none;
+    outline: none;
+    color: var(--primary-color);
+    padding: 2px 10px 2px 2px;
+    border: solid 0.3px var(--primary-color);
+    border-radius: 4px;
+}
+
+.option {
+    color: var(--inverted-primary-color);
+    background: var(--inverted-bg-color);
+}
