@@ -6,8 +6,8 @@ import Input from 'shared/ui/Input/Input';
 import { Profile } from 'entities/Profile/model/types/profile';
 import Loader from 'shared/ui/Loader/Loader';
 import Avatar from 'shared/ui/Avatar/Avatar';
-import Select from 'shared/ui/Select/Select';
-import { Currency } from 'shared/const/common';
+import { Currency, CurrencySelect } from 'entities/Currency';
+import { Country } from 'shared/const/common';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
@@ -22,6 +22,8 @@ interface ProfileCardProps {
     onChangeCity?: (value: string) => void;
     onChangeUsername?: (value: string) => void;
     onChangeAvatar?: (value: string) => void;
+    onChangeCurrency?: (currency: Currency) => void;
+    onChangeCountry?: (country: Country) => void;
 }
 
 export const ProfileCard = memo((props: ProfileCardProps) => {
@@ -37,6 +39,8 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         onChangeCity,
         onChangeUsername,
         onChangeAvatar,
+        onChangeCurrency,
+        onChangeCountry,
         ...otherProps
     } = props;
 
@@ -121,13 +125,11 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                     onChange={onChangeAvatar}
                     readonly={readonly}
                 />
-                <Select
-                    options={[
-                        { value: Currency.EUR, content: Currency.EUR },
-                        { value: Currency.USD, content: Currency.USD },
-                        { value: Currency.RUB, content: Currency.RUB },
-                        { value: Currency.GBP, content: Currency.GBP },
-                    ]}
+                <CurrencySelect
+                    className={cls.input}
+                    value={data?.currency}
+                    onChange={onChangeCurrency}
+                    readonly={readonly}
                 />
             </div>
         </div>
