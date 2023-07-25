@@ -7,7 +7,7 @@ import { Profile } from 'entities/Profile/model/types/profile';
 import Loader from 'shared/ui/Loader/Loader';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
-import { Country } from 'shared/const/common';
+import { Country, CountrySelect } from 'entities/Country';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
@@ -129,6 +129,12 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                     className={cls.input}
                     value={data?.currency}
                     onChange={onChangeCurrency}
+                    readonly={readonly}
+                />
+                <CountrySelect
+                    className={cls.input}
+                    value={data?.country}
+                    onChange={onChangeCountry}
                     readonly={readonly}
                 />
             </div>

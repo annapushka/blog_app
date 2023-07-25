@@ -2,16 +2,16 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback, useMemo } from 'react';
 
 import Select from 'shared/ui/Select/Select';
-import { Currency } from 'entities/Currency/model/types/currency';
+import { Country } from 'entities/Country/model/types/country';
 
-interface CurrencySelectProps {
+interface CountrySelectProps {
     className?: string;
-    value?: Currency;
-    onChange?: (value: Currency) => void;
+    value?: Country;
+    onChange?: (value: Country) => void;
     readonly?: boolean;
 }
 
-export const CurrencySelect = memo((props: CurrencySelectProps) => {
+export const CountrySelect = memo((props: CountrySelectProps) => {
     const {
         className,
         value,
@@ -19,18 +19,18 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
         readonly,
     } = props;
 
-    const currencyOptions = useMemo(() => Object.entries(Currency).map((val) => (
+    const countryOptions = useMemo(() => Object.entries(Country).map((val) => (
         { value: val[0], content: val[1] }
     )), []);
 
     const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Currency);
+        onChange?.(value as Country);
     }, [onChange]);
 
     return (
         <Select
             className={classNames('', {}, [className])}
-            options={currencyOptions}
+            options={countryOptions}
             value={value}
             onChange={onChangeHandler}
             readonly={readonly}
@@ -38,4 +38,4 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
     );
 });
 
-export default CurrencySelect;
+export default CountrySelect;
