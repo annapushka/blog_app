@@ -1,6 +1,5 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/config/tests/TestAsyncThunk/TestAsyncThunk';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
@@ -37,7 +36,7 @@ describe('fetchProfileData.test', () => {
 
     test('unsuccess', async () => {
         const thunk = new TestAsyncThunk(fetchProfileData);
-        thunk.api.post.mockReturnValue(Promise.resolve({
+        thunk.api.get.mockReturnValue(Promise.resolve({
             status: 403,
         }));
         const result = await thunk.callThunk();
