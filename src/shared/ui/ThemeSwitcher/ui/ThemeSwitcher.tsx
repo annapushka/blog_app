@@ -17,7 +17,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
             onClick={toggleTheme}
             className={className}
         >
-            {theme === Theme.DARK ? <LightIcon /> : <DarkIcon />}
+            {theme === Theme.LIGHT ? <DarkIcon /> : <LightIcon />}
         </Button>
     );
 });
