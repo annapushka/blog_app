@@ -6,11 +6,55 @@
       "author": "typicode"
     }
   ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "Мастер-класс",
+      "subtitle": "Мастер-класс по архитектуре и паттернам",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm_qrhKKJHv36QGgTrV4VILgRZZ7ta8s8n2Q&usqp=CAU",
+      "views": 1022,
+      "createdAt": "09.08.2023",
+      "type": ["IT"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Цели интенсива",
+          "paragraphs": "Разобрать приёмы проектирования, их применение в реальных приложениях. Ответить на вопросы \"зачем\" и \"когда\" какие приёмы стоит применять и какие проблемы они помогают решить на практике. Разобрать дизайн принципы SOLID, посмотрим как их соблюдение может улучшить качество приложений. Научиться \"видеть\" паттерны в существующем коде и эффективно с ними взаимодействовать. Научиться применять паттерны проектирования для решения повседневных задач."
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://i.pinimg.com/originals/c4/c1/81/c4c181834e3e02265e61ee8a450d3817.png",
+          "title": "Рисунок 1"
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "alert( 'Привет, мир!' );"
+        }
+      ]
+    }
+
+  ],
   "comments": [
     {
       "id": "1",
-      "body": "some comment",
-      "postId": "1"
+      "test": "some comment 1",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "test": "some comment 2",
+      "articleId": "1",
+      "userId": "2"
+    },
+    {
+      "id": "3",
+      "test": "some comment 3",
+      "articleId": "1",
+      "userId": "1"
     }
   ],
   "profile": {
@@ -27,7 +71,14 @@
     {
       "id": "1",
       "username": "test",
-      "password": "test"
+      "password": "test",
+      "role": "ADMIN"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "banana",
+      "role": "USER"
     }
   ]
 }
