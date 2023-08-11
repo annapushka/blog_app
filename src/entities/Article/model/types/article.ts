@@ -1,3 +1,5 @@
+import { type } from 'os';
+
 export enum ArticleBlockType {
     CODE = 'CODE',
     IMAGE = 'IMAGE',
@@ -15,16 +17,18 @@ export interface ArticleCodeBlock extends ArticleBlockBase {
 }
 
 export interface ArticleImageBlock extends ArticleBlockBase {
-    type: ArticleBlockType.IMAGE
+    type: ArticleBlockType.IMAGE;
+    src: string;
+    title: string;
 }
 
 export interface ArticleTextBlock extends ArticleBlockBase {
-    type: ArticleBlockType.TEXT
+    type: ArticleBlockType.TEXT;
+    title?: string;
+    paragraphs: string[];
 }
 
-export interface ArticleBlock {
-
-}
+export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
 
 export enum ArticleType {
     IT = 'IT',
