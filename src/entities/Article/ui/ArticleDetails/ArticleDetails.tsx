@@ -14,6 +14,9 @@ import {
 } from 'entities/Article/model/selectors/articleDetails';
 import Text, { TextAlign } from 'shared/ui/Text/Text';
 import Skeleton from 'shared/ui/Skeleton/Skeleton';
+import Avatar from 'shared/ui/Avatar/Avatar';
+import EyeIcon from 'shared/assets/icons/eye.svg';
+import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
@@ -30,8 +33,7 @@ export const ArticleDetails = memo(
         const { className, id } = props;
         const { t } = useTranslation('article');
         const dispatch = useAppDispatch();
-        // const isLoading = useSelector(getArticleDetailsIsLoading);
-        const isLoading = true;
+        const isLoading = useSelector(getArticleDetailsIsLoading);
         const error = useSelector(getArticleDetailsError);
         const article = useSelector(getArticleDetailsData);
 
@@ -43,13 +45,13 @@ export const ArticleDetails = memo(
 
         if (isLoading) {
             content = (
-                <div className={cls.loading}>
+                <>
                     <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
                     <Skeleton className={cls.title} width={300} height={32} />
                     <Skeleton className={cls.skeleton} width="100%" height={24} />
                     <Skeleton className={cls.skeleton} width="100%" height={300} />
                     <Skeleton className={cls.skeleton} width="100%" height={300} />
-                </div>
+                </>
             );
         } else if (error) {
             content = (
@@ -60,7 +62,18 @@ export const ArticleDetails = memo(
             );
         } else {
             content = (
-                <div />
+                <>
+                    <Avatar size={200} src={article?.img} className={cls.avatar} />
+                    <Text title={article?.title} text={article?.subtitle} className={cls.title} />
+                    <div>
+                        <EyeIcon />
+                        <Text text={String(article?.views)} />
+                    </div>
+                    <div>
+                        <CalendarIcon />
+                        <Text text={article?.createdAt} />
+                    </div>
+                </>
             );
         }
 
