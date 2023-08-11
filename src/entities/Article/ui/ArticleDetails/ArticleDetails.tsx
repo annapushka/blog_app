@@ -1,25 +1,39 @@
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
-import { memo } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { memo, useEffect } from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { DynamicModulLoader, ReducersList } from 'shared/lib/components/DynamicModulLoader/DynamicModulLoader';
+import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
   className?: string;
+  id: string;
 }
+
+const reducers: ReducersList = {
+    articleDetails: articleDetailsReducer,
+};
 
 export const ArticleDetails = memo(
     (props: ArticleDetailsProps) => {
-        const { className } = props;
-
+        const { className, id } = props;
         const { t } = useTranslation('article');
+        const dispatch = useAppDispatch();
 
-        const mods: Mods = {};
+        useEffect(() => {
+            dispatch(fetchArticleById(id));
+        }, [dispatch, id]);
 
         return (
-            <div className={classNames(cls.ProfileCard, mods, [className])}>
-                111
-            </div>
+            <DynamicModulLoader reducers={reducers} removeAfterUnmount>
+                <div className={classNames(cls.ProfileCard, {}, [className])}>
+                    111
+                </div>
+            </DynamicModulLoader>
+
         );
     },
 );
