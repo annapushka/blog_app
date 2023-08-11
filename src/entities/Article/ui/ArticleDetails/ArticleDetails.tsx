@@ -12,7 +12,7 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from 'entities/Article/model/selectors/articleDetails';
-import Text, { TextAlign } from 'shared/ui/Text/Text';
+import Text, { TextAlign, TextSize } from 'shared/ui/Text/Text';
 import Skeleton from 'shared/ui/Skeleton/Skeleton';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye.svg';
@@ -63,13 +63,20 @@ export const ArticleDetails = memo(
         } else {
             content = (
                 <>
-                    <Avatar size={200} src={article?.img} className={cls.avatar} />
-                    <Text title={article?.title} text={article?.subtitle} className={cls.title} />
-                    <div>
+                    <div className={cls.avatarWrapper}>
+                        <Avatar size={200} src={article?.img} className={cls.avatar} />
+                    </div>
+                    <Text
+                        title={article?.title}
+                        text={article?.subtitle}
+                        className={cls.title}
+                        size={TextSize.L}
+                    />
+                    <div className={cls.articleInfo}>
                         <EyeIcon />
                         <Text text={String(article?.views)} />
                     </div>
-                    <div>
+                    <div className={cls.articleInfo}>
                         <CalendarIcon />
                         <Text text={article?.createdAt} />
                     </div>
