@@ -17,11 +17,12 @@ import Skeleton from 'shared/ui/Skeleton/Skeleton';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
+import Icon from 'shared/ui/Icon/Icon';
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
-  className?: string;
-  id: string;
+    className?: string;
+    id: string;
 }
 
 const reducers: ReducersList = {
@@ -73,11 +74,11 @@ export const ArticleDetails = memo(
                         size={TextSize.L}
                     />
                     <div className={cls.articleInfo}>
-                        <EyeIcon />
+                        <Icon Svg={EyeIcon} />
                         <Text text={String(article?.views)} />
                     </div>
                     <div className={cls.articleInfo}>
-                        <CalendarIcon />
+                        <Icon Svg={CalendarIcon} />
                         <Text text={article?.createdAt} />
                     </div>
                 </>
