@@ -35,7 +35,7 @@
         {
           "id": "4",
           "type": "CODE",
-          "code": "alert( 'Привет, мир!' );"
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
         }
       ]
     }

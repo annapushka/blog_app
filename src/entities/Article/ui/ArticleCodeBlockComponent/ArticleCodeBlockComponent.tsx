@@ -2,15 +2,18 @@ import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { ArticleCodeBlock } from 'entities/Article/model/types/article';
+import Code from 'shared/ui/Code/Code';
 import cls from './ArticleCodeBlockComponent.module.scss';
 
 interface ArticleCodeBlockComponentProps {
-  className?: string;
+    className?: string;
+    block: ArticleCodeBlock;
 }
 
 export const ArticleCodeBlockComponent = memo(
     (props: ArticleCodeBlockComponentProps) => {
-        const { className } = props;
+        const { className, block } = props;
 
         const { t } = useTranslation('article');
 
@@ -18,7 +21,7 @@ export const ArticleCodeBlockComponent = memo(
 
         return (
             <div className={classNames(cls.ProfileCard, mods, [className])}>
-                111
+                <Code>{block.code}</Code>
             </div>
         );
     },
