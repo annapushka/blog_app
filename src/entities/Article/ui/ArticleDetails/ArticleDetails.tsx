@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { DynamicModulLoader, ReducersList } from 'shared/lib/components/DynamicModulLoader/DynamicModulLoader';
@@ -18,7 +18,11 @@ import Avatar from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import Icon from 'shared/ui/Icon/Icon';
+import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article';
 import cls from './ArticleDetails.module.scss';
+import ArticleCodeBlockComponent from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -37,6 +41,19 @@ export const ArticleDetails = memo(
         const isLoading = useSelector(getArticleDetailsIsLoading);
         const error = useSelector(getArticleDetailsError);
         const article = useSelector(getArticleDetailsData);
+
+        const renderBlock = useCallback((block: ArticleBlock) => {
+            switch (block.type) {
+                case ArticleBlockType.CODE:
+                    return <ArticleCodeBlockComponent className={cls.block} />;
+                case ArticleBlockType.IMAGE:
+                    return <ArticleImageBlockComponent className={cls.block} />;
+                case ArticleBlockType.TEXT:
+                    return <ArticleTextBlockComponent className={cls.block} block={block} />;
+                default:
+                    return null;
+            }
+        }, []);
 
         useEffect(() => {
             dispatch(fetchArticleById(id));
@@ -81,6 +98,7 @@ export const ArticleDetails = memo(
                         <Icon Svg={CalendarIcon} />
                         <Text text={article?.createdAt} />
                     </div>
+                    {article?.blocks.map(renderBlock)}
                 </>
             );
         }
