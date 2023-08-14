@@ -20,7 +20,7 @@ export const ArticleCodeBlockComponent = memo(
         const mods: Mods = {};
 
         return (
-            <div className={classNames(cls.ProfileCard, mods, [className])}>
+            <div className={classNames(cls.ArticleCodeBlockComponent, mods, [className])}>
                 <Code>{block.code}</Code>
             </div>
         );

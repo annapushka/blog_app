@@ -3,6 +3,7 @@ import { memo } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { ArticleImageBlock } from 'entities/Article/model/types/article';
+import Text, { TextAlign } from 'shared/ui/Text/Text';
 import cls from './ArticleImageBlockComponent.module.scss';
 
 interface ArticleImageBlockComponentProps {
@@ -19,8 +20,11 @@ export const ArticleImageBlockComponent = memo(
         const mods: Mods = {};
 
         return (
-            <div className={classNames(cls.ProfileCard, mods, [className])}>
-                111
+            <div className={classNames(cls.ArticleImageBlockComponent, mods, [className])}>
+                <img src={block.src} className={cls.img} alt={block.title} />
+                {block.title && (
+                    <Text text={block.title} align={TextAlign.CENTER} />
+                )}
             </div>
         );
     },
