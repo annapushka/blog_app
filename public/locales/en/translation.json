@@ -15,5 +15,6 @@
     "Введите пароль": "Enter password",
     "Форма авторизации": "Authorization Form",
     "Выйти": "Log Out",
-    "Вы ввели неверный логин или пароль": "You entered an invalid login or password"
+    "Вы ввели неверный логин или пароль": "You entered an invalid login or password",
+    "Комментарии отстутствуют": "No comments"
 }
