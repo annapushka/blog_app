@@ -77,13 +77,15 @@
       "id": "1",
       "username": "test",
       "password": "test",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://thispersondoesnotexist.com/"
     },
     {
       "id": "2",
       "username": "user",
       "password": "banana",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://thispersondoesnotexist.com/"
     }
   ]
 }
