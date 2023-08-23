@@ -5,15 +5,39 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useParams } from 'react-router-dom';
 import Text from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comment';
+import { DynamicModulLoader, ReducersList } from 'shared/lib/components/DynamicModulLoader/DynamicModulLoader';
+import {
+    articleDetailsCommentReducer,
+    getArticleComments,
+} from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentSlice';
+import { useSelector } from 'react-redux';
+import { getArticleCommentsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comments';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {
+    fetchCommentsByArticleById,
+} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleById/fetchCommentsByArticleById';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
     className?: string;
 }
 
+const reducers: ReducersList = {
+    articleDetailsComments: articleDetailsCommentReducer,
+};
+
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{ id: string }>();
+    const comments = useSelector(getArticleComments.selectAll);
+    const isLoading = useSelector(getArticleCommentsIsLoading);
+
+    const dispatch = useAppDispatch();
+
+    useInitialEffect(() => {
+        dispatch(fetchCommentsByArticleById(id));
+    });
 
     if (!id) {
         return (
@@ -24,26 +48,16 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-            <ArticleDetails id={id} />
-            <Text className={cls.commentTitle} title={t('Комментарии')} />
-            <CommentList
-                isLoading
-                comments={[
-                    {
-                        id: '1',
-                        text: 'comment 1',
-                        user: { id: '1', username: 'user1', avatar: 'https://thispersondoesnotexist.com/' },
-                    },
-                    {
-                        id: '2',
-                        text: 'comment 2',
-                        user: { id: '1', username: 'user1', avatar: 'https://thispersondoesnotexist.com/' },
-                    },
-
-                ]}
-            />
-        </div>
+        <DynamicModulLoader reducers={reducers} removeAfterUnmount>
+            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                <ArticleDetails id={id} />
+                <Text className={cls.commentTitle} title={t('Комментарии')} />
+                <CommentList
+                    isLoading={isLoading}
+                    comments={comments}
+                />
+            </div>
+        </DynamicModulLoader>
     );
 };
 
