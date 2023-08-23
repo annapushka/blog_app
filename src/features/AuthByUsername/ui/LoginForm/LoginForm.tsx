@@ -4,7 +4,7 @@ import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import Input from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import { loginByUsername } from 'features/AuthByUsername/services/loginByUsername/loginByUsername';
+import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword';
@@ -49,10 +49,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
     return (
         // eslint-disable-next-line i18next/no-literal-string
-        <DynamicModulLoader
-            removeAfterUnmount
-            reducers={initialReducers}
-        >
+        <DynamicModulLoader reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text text={t('Форма авторизации')} />
                 {error && <Text text={t('Вы ввели неверный пароль или имя пользователя')} theme={TextTheme.ERROR} />}

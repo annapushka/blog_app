@@ -1,7 +1,7 @@
 .CommentCard {
     padding: 10px;
     border: 1px solid var(--primary-color);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
 }
 
 .header {

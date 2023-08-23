@@ -17,6 +17,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     fetchCommentsByArticleById,
 } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleById/fetchCommentsByArticleById';
+import AddComentForm from 'features/AddCommentForm/ui/AddComentForm/AddComentForm';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -48,10 +49,11 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     }
 
     return (
-        <DynamicModulLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModulLoader reducers={reducers}>
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={t('Комментарии')} />
+                <AddComentForm />
                 <CommentList
                     isLoading={isLoading}
                     comments={comments}

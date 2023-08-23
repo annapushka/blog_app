@@ -1,13 +1,10 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "articles": [
-    {
+  "posts": [{
+    "id": "1",
+    "title": "json-server",
+    "author": "typicode"
+  }],
+  "articles": [{
       "id": "1",
       "title": "Мастер-класс",
       "subtitle": "Мастер-класс по архитектуре и паттернам",
@@ -15,8 +12,7 @@
       "views": 1022,
       "createdAt": "09.08.2023",
       "type": ["IT"],
-      "blocks": [
-        {
+      "blocks": [{
           "id": "1",
           "type": "TEXT",
           "title": "Цели интенсива",
@@ -42,8 +38,7 @@
     }
 
   ],
-  "comments": [
-    {
+  "comments": [{
       "id": "1",
       "text": "some comment 1",
       "articleId": "1",
@@ -62,18 +57,28 @@
       "userId": "1"
     }
   ],
-  "profile": {
+  "profile": [{
+    "id": "1",
     "first": "Masha",
     "lastname": "Yagoda",
-    "age": 372,
+    "age": 32,
     "currency": "RUB",
     "country": "Armenia",
     "city": "Saint P",
     "username": "admin",
     "avatar": "https://thispersondoesnotexist.com/"
-  },
-  "users": [
-    {
+  }, {
+    "id": "2",
+    "first": "Sasha",
+    "lastname": "Agoda",
+    "age": 37,
+    "currency": "RUB",
+    "country": "Armenia",
+    "city": "Saint P",
+    "username": "sashaIT",
+    "avatar": "https://thispersondoesnotexist.com/"
+  }],
+  "users": [{
       "id": "1",
       "username": "test",
       "password": "test",

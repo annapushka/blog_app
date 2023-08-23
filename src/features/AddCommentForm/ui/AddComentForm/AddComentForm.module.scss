@@ -1,0 +1,16 @@
+.AddComentForm {
+    border: 1px solid var(--primary-color);
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--border-radius);
+    gap: 16px;
+}
+
+.input {
+    flex-grow: 1;
+    input {
+        border: none;
+    }
+}
