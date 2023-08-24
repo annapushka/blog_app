@@ -11,6 +11,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { addCommentFormActions, addCommentFormReducer } from 'features/AddCommentForm/model/slices/addCommentFormSlice';
 import { DynamicModulLoader, ReducersList } from 'shared/lib/components/DynamicModulLoader/DynamicModulLoader';
+import { sendComment } from 'features/AddCommentForm/model/services/sendComment/sendComment';
 import cls from './AddComentForm.module.scss';
 
 export interface AddComentFormProps {
@@ -34,7 +35,7 @@ const AddComentForm = memo((props: AddComentFormProps) => {
     }, [disptach]);
 
     const onSendComment = useCallback(() => {
-        disptach();
+        disptach(sendComment());
     }, [disptach]);
 
     return (

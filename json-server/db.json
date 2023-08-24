@@ -1,27 +1,37 @@
 {
-  "posts": [{
-    "id": "1",
-    "title": "json-server",
-    "author": "typicode"
-  }],
-  "articles": [{
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "articles": [
+    {
       "id": "1",
       "title": "Мастер-класс",
       "subtitle": "Мастер-класс по архитектуре и паттернам",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm_qrhKKJHv36QGgTrV4VILgRZZ7ta8s8n2Q&usqp=CAU",
       "views": 1022,
       "createdAt": "09.08.2023",
-      "type": ["IT"],
-      "blocks": [{
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
           "id": "1",
           "type": "TEXT",
           "title": "Цели интенсива",
-          "paragraphs": ["Разобрать приёмы проектирования, их применение в реальных приложениях. Ответить на вопросы \"зачем\" и \"когда\" какие приёмы стоит применять и какие проблемы они помогают решить на практике. Разобрать дизайн принципы SOLID, посмотрим как их соблюдение может улучшить качество приложений. Научиться \"видеть\" паттерны в существующем коде и эффективно с ними взаимодействовать. Научиться применять паттерны проектирования для решения повседневных задач."]
+          "paragraphs": [
+            "Разобрать приёмы проектирования, их применение в реальных приложениях. Ответить на вопросы \"зачем\" и \"когда\" какие приёмы стоит применять и какие проблемы они помогают решить на практике. Разобрать дизайн принципы SOLID, посмотрим как их соблюдение может улучшить качество приложений. Научиться \"видеть\" паттерны в существующем коде и эффективно с ними взаимодействовать. Научиться применять паттерны проектирования для решения повседневных задач."
+          ]
         },
         {
           "id": "2",
           "type": "TEXT",
-          "paragraphs": ["По окончанию курсов вы получаете сертификат в электронном виде на русском и английском языках. Хотя сертификатам в нашей профессии обычно не придают значения. Главное - знания и умения, которые вы получите, если будете полноценно участвовать в интенсиве."]
+          "paragraphs": [
+            "По окончанию курсов вы получаете сертификат в электронном виде на русском и английском языках. Хотя сертификатам в нашей профессии обычно не придают значения. Главное - знания и умения, которые вы получите, если будете полноценно участвовать в интенсиве."
+          ]
         },
         {
           "id": "3",
@@ -36,9 +46,9 @@
         }
       ]
     }
-
   ],
-  "comments": [{
+  "comments": [
+    {
       "id": "1",
       "text": "some comment 1",
       "articleId": "1",
@@ -55,30 +65,40 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test comment",
+      "id": "qQ7oKLG"
     }
   ],
-  "profile": [{
-    "id": "1",
-    "first": "Masha",
-    "lastname": "Yagoda",
-    "age": 32,
-    "currency": "RUB",
-    "country": "Armenia",
-    "city": "Saint P",
-    "username": "admin",
-    "avatar": "https://thispersondoesnotexist.com/"
-  }, {
-    "id": "2",
-    "first": "Sasha",
-    "lastname": "Agoda",
-    "age": 37,
-    "currency": "RUB",
-    "country": "Armenia",
-    "city": "Saint P",
-    "username": "sashaIT",
-    "avatar": "https://thispersondoesnotexist.com/"
-  }],
-  "users": [{
+  "profile": [
+    {
+      "id": "1",
+      "first": "Masha",
+      "lastname": "Yagoda",
+      "age": 32,
+      "currency": "RUB",
+      "country": "Armenia",
+      "city": "Saint P",
+      "username": "admin",
+      "avatar": "https://thispersondoesnotexist.com/"
+    },
+    {
+      "id": "2",
+      "first": "Sasha",
+      "lastname": "Agoda",
+      "age": 37,
+      "currency": "RUB",
+      "country": "Armenia",
+      "city": "Saint P",
+      "username": "sashaIT",
+      "avatar": "https://thispersondoesnotexist.com/"
+    }
+  ],
+  "users": [
+    {
       "id": "1",
       "username": "test",
       "password": "test",
