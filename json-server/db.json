@@ -71,6 +71,12 @@
       "userId": "1",
       "text": "test comment",
       "id": "qQ7oKLG"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Hi",
+      "id": "UYAt3qr"
     }
   ],
   "profile": [
@@ -78,7 +84,7 @@
       "id": "1",
       "first": "Masha",
       "lastname": "Yagoda",
-      "age": 32,
+      "age": 35,
       "currency": "RUB",
       "country": "Armenia",
       "city": "Saint P",

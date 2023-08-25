@@ -11,12 +11,11 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { addCommentFormActions, addCommentFormReducer } from 'features/AddCommentForm/model/slices/addCommentFormSlice';
 import { DynamicModulLoader, ReducersList } from 'shared/lib/components/DynamicModulLoader/DynamicModulLoader';
-import { sendComment } from 'features/AddCommentForm/model/services/sendComment/sendComment';
 import cls from './AddComentForm.module.scss';
 
 export interface AddComentFormProps {
     className?: string;
-
+    onSendComment: (text: string) => void;
 }
 
 const reducers: ReducersList = {
@@ -24,7 +23,7 @@ const reducers: ReducersList = {
 };
 
 const AddComentForm = memo((props: AddComentFormProps) => {
-    const { className } = props;
+    const { className, onSendComment } = props;
     const { t } = useTranslation('article');
     const disptach = useAppDispatch();
     const text = useSelector(getAddCommentFormText);
@@ -34,9 +33,10 @@ const AddComentForm = memo((props: AddComentFormProps) => {
         disptach(addCommentFormActions.setText(value));
     }, [disptach]);
 
-    const onSendComment = useCallback(() => {
-        disptach(sendComment());
-    }, [disptach]);
+    const onSendHandler = useCallback(() => {
+        onSendComment(text || '');
+        onCommentTextChange('');
+    }, [onCommentTextChange, onSendComment, text]);
 
     return (
         <DynamicModulLoader reducers={reducers}>
@@ -49,7 +49,7 @@ const AddComentForm = memo((props: AddComentFormProps) => {
                 />
                 <Button
                     theme={ButtonTheme.OUTLINE}
-                    onClick={onSendComment}
+                    onClick={onSendHandler}
                 >
                     {t('Отправить')}
                 </Button>

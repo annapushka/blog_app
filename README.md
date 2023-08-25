@@ -7,6 +7,7 @@ In progress...
   <li>Webpack</li>
   <li>TypeScript</li>
   <li>React</li>
+  <li>Redux Toolkit</li>
   <li>Sass</li>
   <li>CSS modules</li>
   <li>i18next</li>
@@ -17,5 +18,5 @@ In progress...
   <li>Storybook</li>
   <li>Loki</li>
   <li>CI pipeline</li>
-  <li>Redux Toolkit</li>
-</ul>
+  <li>Husky</li>
+  </ul>
