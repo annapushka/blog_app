@@ -5,7 +5,8 @@ import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import Button, { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import ArrowLeft from 'shared/assets/icons/angel-left.svg';
 import ArrowRight from 'shared/assets/icons/angel-right.svg';
-import { SideBarItemList } from 'widgets/SideBar/model/items';
+import { useSelector } from 'react-redux';
+import { getSidebarItems } from 'widgets/SideBar/model/selectors/getSidebarItems';
 import cls from './SideBar.module.scss';
 import SideBarItem from '../SideBarItem/SideBarItem';
 
@@ -15,6 +16,7 @@ interface SideBarProps {
 
 export const SideBar = memo(({ className }: SideBarProps) => {
     const [collapsed, setCollapsed] = useState(false);
+    const sidebarItemsList = useSelector(getSidebarItems);
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
@@ -36,7 +38,7 @@ export const SideBar = memo(({ className }: SideBarProps) => {
                 {collapsed ? <ArrowRight className={cls.icon} /> : <ArrowLeft className={cls.icon} />}
             </Button>
             <div className={cls.items}>
-                {SideBarItemList.map((item) => (
+                {sidebarItemsList.map((item) => (
                     <SideBarItem
                         item={item}
                         collapsed={collapsed}
