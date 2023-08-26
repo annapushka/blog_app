@@ -6,6 +6,11 @@ export enum ArticleBlockType {
     TEXT = 'TEXT',
 }
 
+export enum ArticleView {
+    LIST = 'LIST',
+    GRID = 'GRID',
+}
+
 export interface ArticleBlockBase {
     id: string;
     type: ArticleBlockType;
