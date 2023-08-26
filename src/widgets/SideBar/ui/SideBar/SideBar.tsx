@@ -5,7 +5,7 @@ import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import Button, { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import ArrowLeft from 'shared/assets/icons/angel-left.svg';
 import ArrowRight from 'shared/assets/icons/angel-right.svg';
-import { SideBarItemList } from 'widjets/SideBar/model/items';
+import { SideBarItemList } from 'widgets/SideBar/model/items';
 import cls from './SideBar.module.scss';
 import SideBarItem from '../SideBarItem/SideBarItem';
 
