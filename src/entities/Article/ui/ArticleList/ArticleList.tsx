@@ -8,7 +8,7 @@ interface ArticleListProps {
     className?: string;
     articles: Article[];
     isLoading?: boolean;
-    view: ArticleView;
+    view?: ArticleView;
 }
 
 export const ArticleList = memo((props: ArticleListProps) => {
@@ -20,7 +20,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     } = props;
 
     const renderArticle = (article: Article) => (
-        <ArticleListItem />
+        <ArticleListItem article={article} view={view} />
     );
     return (
         <div className={classNames(cls.ArticleList, {}, [className])}>
