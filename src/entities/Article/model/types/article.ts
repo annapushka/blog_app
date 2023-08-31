@@ -1,4 +1,4 @@
-import { type } from 'os';
+import { User } from 'entities/User';
 
 export enum ArticleBlockType {
     CODE = 'CODE',
@@ -46,6 +46,7 @@ export enum ArticleType {
 export interface Article {
     id: string;
     title: string;
+    user: User;
     subtitle: string;
     img: string;
     views: number;

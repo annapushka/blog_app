@@ -1,9 +1,16 @@
-.ArticleList {
+.GRID {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+
+    .card {
+        flex-grow: 1;
+    }
+
 }
 
-.card {
-    flex-grow: 1;
+.LIST {
+    .card {
+        margin-bottom: 16px;
+    }
 }

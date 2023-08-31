@@ -1,4 +1,4 @@
-import { Article, ArticleList } from 'entities/Article';
+import { Article, ArticleList, ArticleView } from 'entities/Article';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -9,6 +9,11 @@ const article = {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm_qrhKKJHv36QGgTrV4VILgRZZ7ta8s8n2Q&usqp=CAU',
     views: 1022,
     createdAt: '09.08.2023',
+    user: {
+        id: '1',
+        username: 'XXXXX',
+        avatar: 'https://thispersondoesnotexist.com/',
+    },
     type: [
         'IT',
     ],
@@ -46,10 +51,12 @@ const ArticlesPage = () => {
 
     return (
         <div>
-            <ArticleList articles={
-                new Array(16).fill(0)
-                    .map((item, index) => ({ ...article, id: index.toString() })) as Article[]
-            }
+            <ArticleList
+                view={ArticleView.LIST}
+                articles={
+                    new Array(16).fill(0)
+                        .map((item, index) => ({ ...article, id: index.toString() })) as Article[]
+                }
             />
         </div>
     );

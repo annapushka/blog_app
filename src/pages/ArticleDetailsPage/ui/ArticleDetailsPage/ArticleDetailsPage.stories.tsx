@@ -24,6 +24,10 @@ const article: Article = {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm_qrhKKJHv36QGgTrV4VILgRZZ7ta8s8n2Q&usqp=CAU',
     views: 1022,
     createdAt: '09.08.2023',
+    user: {
+        id: '1',
+        username: 'XXXXX',
+    },
     type: [ArticleType.IT],
     blocks: [
         {
