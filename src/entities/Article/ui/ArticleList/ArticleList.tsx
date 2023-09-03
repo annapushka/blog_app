@@ -20,7 +20,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     } = props;
 
     const renderArticle = (article: Article) => (
-        <ArticleListItem article={article} view={view} className={cls.card} />
+        <ArticleListItem article={article} view={view} className={cls.card} key={article.id} />
     );
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
