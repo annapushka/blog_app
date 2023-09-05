@@ -1,18 +1,21 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Article, ArticleView } from 'entities/Article/model/types/article';
+import ArticleImg from 'shared/assets/tests/article.jpeg';
+import CertificateImg from 'shared/assets/tests/certificate.png';
+import Avatar from 'shared/assets/tests/storybook.jpg';
 import ArticleListItem from './ArticleListItem';
 
 const article = {
     id: '1',
     title: 'Мастер-класс',
     subtitle: 'Мастер-класс по архитектуре и паттернам',
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm_qrhKKJHv36QGgTrV4VILgRZZ7ta8s8n2Q&usqp=CAU',
+    img: ArticleImg,
     views: 1022,
     createdAt: '09.08.2023',
     user: {
         id: '1',
         username: 'XXXXX',
-        avatar: 'https://thispersondoesnotexist.com/',
+        avatar: Avatar,
     },
     type: [
         'IT',
@@ -36,7 +39,7 @@ const article = {
         {
             id: '3',
             type: 'IMAGE',
-            src: 'https://i.pinimg.com/originals/c4/c1/81/c4c181834e3e02265e61ee8a450d3817.png',
+            src: CertificateImg,
             title: 'Рисунок 1',
         },
         {

@@ -1,6 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import ArticleImg from 'shared/assets/tests/article.jpeg';
+import CertificateImg from 'shared/assets/tests/certificate.png';
 import ArticleDetails from './ArticleDetails';
 
 export default {
@@ -17,7 +19,7 @@ const article: Article = {
     id: '1',
     title: 'Мастер-класс',
     subtitle: 'Мастер-класс по архитектуре и паттернам',
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm_qrhKKJHv36QGgTrV4VILgRZZ7ta8s8n2Q&usqp=CAU',
+    img: ArticleImg,
     views: 1022,
     createdAt: '09.08.2023',
     type: [ArticleType.IT],
@@ -40,7 +42,7 @@ const article: Article = {
         {
             id: '3',
             type: ArticleBlockType.IMAGE,
-            src: 'https://i.pinimg.com/originals/c4/c1/81/c4c181834e3e02265e61ee8a450d3817.png',
+            src: CertificateImg,
             title: 'Рисунок 1',
         },
         {
