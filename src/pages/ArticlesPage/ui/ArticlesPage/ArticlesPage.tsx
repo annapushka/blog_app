@@ -1,12 +1,12 @@
-import { ArticleList } from 'entities/Article';
+import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Article';
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
-import { articlePageReducer, getArticles } from 'pages/ArticlesPage/model/slices/articlePageSlice';
-import React, { memo } from 'react';
+import { articlePageActions, articlePageReducer, getArticles } from 'pages/ArticlesPage/model/slices/articlePageSlice';
+import React, { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { DynamicModulLoader, ReducersList } from 'shared/lib/components/DynamicModulLoader/DynamicModulLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -23,13 +23,19 @@ const ArticlesPage = () => {
     const view = useSelector(getArticlesPageView);
     const error = useSelector(getArticlesPageError);
 
+    const onChangeView = useCallback((view: ArticleView) => {
+        dispatch(articlePageActions.setView(view));
+    }, [dispatch]);
+
     useInitialEffect(() => {
         dispatch(fetchArticlesList());
+        dispatch(articlePageActions.initialState());
     });
 
     return (
         <DynamicModulLoader reducers={reducers}>
             <div>
+                <ArticleViewSelector view={view} onViewClick={onChangeView} />
                 <ArticleList
                     isLoading={isLoading}
                     view={view}

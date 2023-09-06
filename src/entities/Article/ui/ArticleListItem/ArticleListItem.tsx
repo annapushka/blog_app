@@ -51,7 +51,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     </div>
                     <Text text={article.title} className={cls.title} />
                     {types}
-                    <img src={article.img} alt={article.title} className={cls.img} />
+                    <div className={cls.imageWrapper}>
+                        <img src={article.img} alt={article.title} className={cls.img} />
+                    </div>
                     {textBlock && (
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
                     )}
