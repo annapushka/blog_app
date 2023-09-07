@@ -50,7 +50,8 @@
 }
 
 .GRID {
-    max-width: 232px;
+    width: 220px;
+    max-width: 240px;
     transition: all 0.2s ease-in-out 0.05s;
     cursor: pointer;
 
@@ -75,6 +76,8 @@
         height: 200px;
         overflow: hidden;
         position: relative;
+        display: flex;
+        justify-content: center;
 
         img {
             height: 200px;

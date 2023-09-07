@@ -40,6 +40,7 @@ export enum ArticleType {
     ART = 'ART',
     MUSIC = 'MUSIC',
     GAME = 'GAME',
+    DESIGN= 'DESIGN',
     OTHER = 'OTHER',
 }
 

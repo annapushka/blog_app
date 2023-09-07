@@ -28,8 +28,10 @@ const ArticlesPage = () => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(fetchArticlesList());
         dispatch(articlePageActions.initialState());
+        dispatch(fetchArticlesList({
+            page: 1,
+        }));
     });
 
     return (
