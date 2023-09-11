@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useMemo } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -27,7 +27,7 @@ export const ArticleSortSelector = memo(
         } = props;
         const { t } = useTranslation('article');
 
-        const orderOptions = useMemo<SelectOption[]>(() => [
+        const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
             {
                 value: 'asc',
                 content: t('возрастанию'),
@@ -38,7 +38,7 @@ export const ArticleSortSelector = memo(
             },
         ], [t]);
 
-        const sortFieldOptions = useMemo<SelectOption[]>(() => [
+        const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
             {
                 value: ArticleSortField.CREATED,
                 content: t('дате создания'),
@@ -59,10 +59,14 @@ export const ArticleSortSelector = memo(
                 <Select
                     options={sortFieldOptions}
                     label={t('Сортировать ПО')}
+                    value={sort}
+                    onChange={onChangeSort}
                 />
                 <Select
                     options={orderOptions}
                     label={t('по')}
+                    value={order}
+                    onChange={onChangeOrder}
                 />
             </div>
 
