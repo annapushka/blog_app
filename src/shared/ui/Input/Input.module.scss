@@ -10,6 +10,12 @@
     &:focus {
         outline: none;
     }
+
+    &::placeholder {
+        opacity: 0.3;
+        color: var(--primary-color);
+    }
+
 }
 
 .readonly {

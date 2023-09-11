@@ -10,13 +10,8 @@
 
 .input {
     flex-grow: 1;
-
+    
     input {
         border: none;
-
-        &::placeholder {
-            opacity: 0.3;
-            color: var(--primary-color);
-        }
     }
 }
