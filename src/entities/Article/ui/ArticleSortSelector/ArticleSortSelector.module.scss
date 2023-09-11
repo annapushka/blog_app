@@ -1,4 +1,14 @@
 .ArticleSortSelector {
     display: flex;
     align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 500px;
+}
+
+.select {
+    display: flex;
+    flex-wrap: wrap;
 }
