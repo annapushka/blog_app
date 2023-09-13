@@ -69,8 +69,12 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     {t('Назад к списку')}
                 </Button>
                 <ArticleDetails id={id} />
-                <Text className={cls.commentTitle} title={t('Комментарии')} />
-                <AddComentForm onSendComment={onSendComment} />
+                {!isLoading && (
+                    <>
+                        <Text className={cls.commentTitle} title={t('Комментарии')} />
+                        <AddComentForm onSendComment={onSendComment} />
+                    </>
+                ) }
                 <CommentList
                     isLoading={isLoading}
                     comments={comments}

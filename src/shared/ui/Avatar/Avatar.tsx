@@ -15,15 +15,22 @@ export const Avatar = ({
     const style = useMemo<CSSProperties>(() => ({
         width: size || 100,
         height: size || 100,
+        overflow: 'hidden',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: '50%',
     }), [size]);
 
     return (
-        <img
-            src={src}
-            className={classNames(cls.Avatar, {}, [className])}
-            style={style}
-            alt={alt}
-        />
+        <div className={classNames(cls.Avatar, {}, [className])} style={style}>
+            <img
+                src={src}
+                alt={alt}
+                className={cls.img}
+            />
+        </div>
+
     );
 };
 

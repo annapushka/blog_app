@@ -1,5 +1,5 @@
 .ArticleDetails {
-    min-height: 100%;
+    margin-bottom: 52px;
 }
 
 .avatar {
@@ -8,6 +8,7 @@
 
 .title {
     margin-top: 32px;
+    margin-bottom: 16px;
 }
 
 .skeleton {
@@ -19,6 +20,10 @@
     align-items: center;
     justify-content: flex-start;
     gap: 8px;
+}
+
+.articleBody {
+    margin: 32px 0;
 }
 
 .avatarWrapper {

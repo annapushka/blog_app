@@ -4,6 +4,7 @@ In progress...
 
 <ul>
   <li>Feature-Sliced Design</li>
+
   <li>Webpack</li>
   <li>TypeScript</li>
   <li>React</li>
@@ -17,6 +18,12 @@ In progress...
   <li>React Testing Library</li>
   <li>Storybook</li>
   <li>Loki</li>
-  <li>CI pipeline</li>
   <li>Husky</li>
-  </ul>
+
+  <li>CI pipeline</li>
+
+  <li>Async Redussers</li>
+  <li>Infinite scroll</li>
+  <li>Trottling</li>
+  <li>Debounce</li>
+</ul>
