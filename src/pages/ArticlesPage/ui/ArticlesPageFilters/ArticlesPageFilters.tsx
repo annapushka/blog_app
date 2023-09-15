@@ -1,10 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
 import {
-    ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector,
+    ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs, ArticleView, ArticleViewSelector,
 } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { articlePageActions } from 'pages/ArticlesPage/model/slices/articlePageSlice';
@@ -13,12 +13,14 @@ import {
     getArticlesPageOrder,
     getArticlesPageSearch,
     getArticlesPageSort,
+    getArticlesPageType,
     getArticlesPageView,
 } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
 import Input from 'shared/ui/Input/Input';
 import { SortOrder } from 'shared/types';
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
+import Tabs, { TabItem } from 'shared/ui/Tabs/Tabs';
 import cls from './ArticlesPageFilters.module.scss';
 
 interface ArticlesPageFiltersProps {
@@ -35,6 +37,7 @@ export const ArticlesPageFilters = memo(
         const sort = useSelector(getArticlesPageSort);
         const order = useSelector(getArticlesPageOrder);
         const search = useSelector(getArticlesPageSearch);
+        const type = useSelector(getArticlesPageType);
 
         const fetchData = useCallback(() => {
             dispatch(fetchArticlesList({ replace: true }));
@@ -64,6 +67,12 @@ export const ArticlesPageFilters = memo(
             debouncedFetchData();
         }, [dispatch, debouncedFetchData]);
 
+        const onChangeType = useCallback((value: ArticleType) => {
+            dispatch(articlePageActions.setType(value));
+            dispatch(articlePageActions.setPage(1));
+            debouncedFetchData();
+        }, [dispatch, debouncedFetchData]);
+
         return (
 
             <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
@@ -82,6 +91,11 @@ export const ArticlesPageFilters = memo(
                         className={cls.input}
                         value={search}
                         onChange={onChangeSearch}
+                    />
+                    <ArticleTypeTabs
+                        value={type}
+                        onChangeType={onChangeType}
+                        className={cls.tabs}
                     />
                 </div>
             </div>

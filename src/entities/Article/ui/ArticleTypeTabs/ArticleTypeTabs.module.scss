@@ -1,0 +1,13 @@
+.ArticleTypeTabs {
+    display: flex;
+    max-width: 500px;
+    flex-wrap: wrap;
+
+    div {
+        height: fit-content;
+        padding: 4px 16px;
+        flex-grow: 1;
+        max-width: 100px;
+        text-align: center;
+    }
+}
