@@ -31,11 +31,15 @@
 
 .collapseBtn {
     position: absolute;
-    right: -32px;
+    right: -26px;
     bottom: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+        opacity: 1;
+    }
 
     svg {
         transform: scale(0.8);
