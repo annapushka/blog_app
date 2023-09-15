@@ -28,7 +28,6 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--inverted-secondary-color);
+    background-color: var(--secondary-color);
     border-radius: 20px;
-    border: 1px solid var(--primary-color);
 }
