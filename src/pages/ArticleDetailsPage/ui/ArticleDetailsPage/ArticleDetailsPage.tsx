@@ -1,4 +1,4 @@
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList } from 'entities/Article';
 import React, { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -24,6 +24,13 @@ import {
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
+import {
+    articleDetailsPageRecommendationsReducer, getArticleRecomendations,
+} from 'pages/ArticleDetailsPage/model/slices/articleDetailsPageRecommendationsSlice';
+import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recommendations';
+import {
+    fetchArticleRecommendations,
+} from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -32,6 +39,7 @@ interface ArticleDetailsPageProps {
 
 const reducers: ReducersList = {
     articleDetailsComments: articleDetailsCommentReducer,
+    articleDetailsRecommendations: articleDetailsPageRecommendationsReducer,
 };
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
@@ -39,7 +47,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const dispatch = useAppDispatch();
     const { id } = useParams<{ id: string }>();
     const comments = useSelector(getArticleComments.selectAll);
+    const recommendations = useSelector(getArticleRecomendations.selectAll);
     const isLoading = useSelector(getArticleCommentsIsLoading);
+    const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
     const navigate = useNavigate();
 
     const onBackToList = useCallback(() => {
@@ -52,6 +62,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleById(id));
+        dispatch(fetchArticleRecommendations());
     });
 
     if (!id) {
@@ -69,6 +80,20 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     {t('Назад к списку')}
                 </Button>
                 <ArticleDetails id={id} />
+                {!recommendationsIsLoading && (
+                    <>
+                        <Text
+                            className={cls.recommendationsTitle}
+                            title={t('Рекомендуем')}
+                        />
+                        <ArticleList
+                            articles={recommendations}
+                            isLoading={recommendationsIsLoading}
+                            className={cls.recommendations}
+                        />
+
+                    </>
+                )}
                 {!isLoading && (
                     <>
                         <Text className={cls.commentTitle} title={t('Комментарии')} />
