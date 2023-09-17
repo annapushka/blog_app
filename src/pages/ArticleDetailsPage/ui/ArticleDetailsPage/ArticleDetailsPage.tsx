@@ -24,13 +24,12 @@ import {
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
-import {
-    articleDetailsPageRecommendationsReducer, getArticleRecomendations,
-} from 'pages/ArticleDetailsPage/model/slices/articleDetailsPageRecommendationsSlice';
+import { getArticleRecomendations } from 'pages/ArticleDetailsPage/model/slices/articleDetailsPageRecommendationsSlice';
 import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recommendations';
 import {
     fetchArticleRecommendations,
 } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -38,8 +37,7 @@ interface ArticleDetailsPageProps {
 }
 
 const reducers: ReducersList = {
-    articleDetailsComments: articleDetailsCommentReducer,
-    articleDetailsRecommendations: articleDetailsPageRecommendationsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
@@ -99,7 +97,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                         <Text className={cls.commentTitle} title={t('Комментарии')} />
                         <AddComentForm onSendComment={onSendComment} />
                     </>
-                ) }
+                )}
                 <CommentList
                     isLoading={isLoading}
                     comments={comments}
