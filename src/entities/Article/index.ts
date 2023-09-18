@@ -8,3 +8,4 @@ export {
 export { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
+export { getArticleDetailsData } from './model/selectors/articleDetails';
