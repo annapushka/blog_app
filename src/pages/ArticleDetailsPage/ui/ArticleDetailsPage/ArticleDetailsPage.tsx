@@ -7,7 +7,6 @@ import Text from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comment';
 import { DynamicModulLoader, ReducersList } from 'shared/lib/components/DynamicModulLoader/DynamicModulLoader';
 import {
-    articleDetailsCommentReducer,
     getArticleComments,
 } from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentSlice';
 import { useSelector } from 'react-redux';
@@ -88,6 +87,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                             articles={recommendations}
                             isLoading={recommendationsIsLoading}
                             className={cls.recommendations}
+                            target="_blank"
                         />
 
                     </>
