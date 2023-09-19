@@ -4,7 +4,6 @@ In progress...
 
 <ul>
   <li>Feature-Sliced Design</li>
-
   <li>Webpack</li>
   <li>TypeScript</li>
   <li>React</li>
@@ -19,11 +18,11 @@ In progress...
   <li>Storybook</li>
   <li>Loki</li>
   <li>Husky</li>
-
   <li>CI pipeline</li>
-
   <li>Async Redussers</li>
   <li>Infinite scroll</li>
   <li>Trottling</li>
   <li>Debounce</li>
 </ul>
+
+[Сlick me](https://main--brilliant-malabi-9a3ca0.netlify.app/)
