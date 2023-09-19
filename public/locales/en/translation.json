@@ -18,5 +18,7 @@
     "Форма авторизации": "Authorization Form",
     "Выйти": "Log Out",
     "Вы ввели неверный логин или пароль": "You entered an invalid login or password",
-    "Комментарии отстутствуют": "No comments"
+    "Комментарии отстутствуют": "No comments",
+    "BugoBlog": "BugoBlog",
+    "Создать статью": "Create article"
 }

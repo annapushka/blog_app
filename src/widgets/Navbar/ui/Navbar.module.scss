@@ -14,3 +14,15 @@
 .mainLink {
     margin-right: 15px;
 }
+
+.appName {
+    width: var(--sidebar-width);
+    margin-left: 10px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.appNameIcon {
+    fill: var(--inverted-primary-color);
+}
