@@ -14,7 +14,6 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from 'widgets/Page/Page';
 import { useSearchParams } from 'react-router-dom';
-import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters';
 import cls from './ArticlesPage.module.scss';
 
 const reducers: ReducersList = {
@@ -47,15 +46,13 @@ const ArticlesPage = () => {
 
     return (
         <DynamicModulLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page onScrollEnd={onLoadNextPart}>
-                <ArticlesPageFilters />
-                <ArticleList
-                    isLoading={isLoading}
-                    view={view}
-                    articles={articles}
-                    className={cls.list}
-                />
-            </Page>
+            <ArticleList
+                isLoading={isLoading}
+                view={view}
+                articles={articles}
+                className={cls.list}
+                onLoadNextPart={onLoadNextPart}
+            />
         </DynamicModulLoader>
 
     );
