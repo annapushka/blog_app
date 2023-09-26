@@ -20,12 +20,11 @@ interface ArticleListItemProps {
     article: Article;
     view?: ArticleView;
     target?: HTMLAttributeAnchorTarget;
-    index?: number;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const {
-        className, article, view = ArticleView.GRID, target, index,
+        className, article, view = ArticleView.GRID, target,
     } = props;
     const { t } = useTranslation('article');
 
