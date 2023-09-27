@@ -3,6 +3,10 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { Article, ArticleView } from 'entities/Article/model/types/article';
 import Text from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import {
+    List, ListRowProps, WindowScroller,
+} from 'react-virtualized';
+
 import cls from './ArticleList.module.scss';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
@@ -35,6 +39,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     const { t } = useTranslation('article');
 
+    const isList = view === ArticleView.LIST;
+
     if (!isLoading && !articles.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
@@ -43,16 +49,59 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     }
 
-    const renderArticle = (article: Article) => (
-        <ArticleListItem target={target} article={article} view={view} className={cls.card} key={article.id} />
-    );
     return (
-        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {articles.length > 0
-                ? articles.map(renderArticle)
-                : null}
-            {isLoading && getSkeletons(view)}
-        </div>
+        <WindowScroller>
+            {({
+                height, width, registerChild, onChildScroll, isScrolling, scrollTop,
+            }) => {
+                const perentWidth = width;
+
+                const itemsPerRow = isList ? 1 : Math.floor(perentWidth / 330);
+                const rowCount = isList ? articles.length : Math.ceil(articles.length / itemsPerRow);
+
+                const rowRender = ({ index, key }: ListRowProps) => {
+                    const items = [];
+                    const fromIndex = index * itemsPerRow;
+                    const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
+
+                    for (let i = fromIndex; i < toIndex; i += 1) {
+                        items.push(
+                            <ArticleListItem
+                                target={target}
+                                article={articles[i]}
+                                view={view}
+                                className={cls.card}
+                                key={`str${i}`}
+                            />,
+                        );
+                    }
+
+                    return (
+                        <div key={key} className={cls.rowWrapper}>
+                            {items}
+                        </div>
+                    );
+                };
+
+                return (
+                    <div ref={registerChild} className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                        <List
+                            height={height}
+                            rowCount={rowCount}
+                            rowHeight={isList ? 500 : 330}
+                            rowRenderer={rowRender}
+                            width={width}
+                            onScroll={onChildScroll}
+                            isScrolling={isScrolling}
+                            scrollTop={scrollTop}
+                            autoHeight
+                            autoWidth
+                        />
+                        {isLoading && getSkeletons(view)}
+                    </div>
+                );
+            }}
+        </WindowScroller>
     );
 });
 
