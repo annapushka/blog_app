@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { ArticleView } from 'entities/Article/model/types/article';
 import Card from 'shared/ui/Card/Card';
 import Skeleton from 'shared/ui/Skeleton/Skeleton';
+import { ArticleView } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 
 export const ArticleListItemSkeleton = memo(({ className, view }: { className?: string, view: ArticleView }) => {

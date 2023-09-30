@@ -1,11 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
-import { Article, ArticleView } from 'entities/Article/model/types/article';
 import Text from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import {
     List, ListRowProps, WindowScroller,
 } from 'react-virtualized';
+import { Article, ArticleView } from '../../model/types/article';
 
 import cls from './ArticleList.module.scss';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';

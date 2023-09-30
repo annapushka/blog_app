@@ -6,27 +6,27 @@ import { useParams } from 'react-router-dom';
 import Text from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comment';
 import { DynamicModulLoader, ReducersList } from 'shared/lib/components/DynamicModulLoader/DynamicModulLoader';
-import {
-    getArticleComments,
-} from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentSlice';
 import { useSelector } from 'react-redux';
-import { getArticleCommentsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import AddComentForm from 'features/AddCommentForm/ui/AddComentForm/AddComentForm';
+import { Page } from 'widgets/Page/Page';
 import {
     fetchCommentsByArticleById,
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleById/fetchCommentsByArticleById';
-import AddComentForm from 'features/AddCommentForm/ui/AddComentForm/AddComentForm';
+} from '../../model/services/fetchCommentsByArticleById/fetchCommentsByArticleById';
 import {
     addCommentForArticle,
-} from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
-import { Page } from 'widgets/Page/Page';
-import { getArticleRecomendations } from 'pages/ArticleDetailsPage/model/slices/articleDetailsPageRecommendationsSlice';
-import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recommendations';
+} from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
+import {
+    getArticleComments,
+} from '../../model/slices/articleDetailsCommentSlice';
+import { getArticleRecomendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
+import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import {
     fetchArticleRecommendations,
-} from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
-import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
+} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { articleDetailsPageReducer } from '../../model/slices';
 import cls from './ArticleDetailsPage.module.scss';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 

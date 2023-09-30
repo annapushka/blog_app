@@ -2,13 +2,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback, useMemo } from 'react';
 
 import Tabs, { TabItem } from 'shared/ui/Tabs/Tabs';
-import { ArticleType } from 'entities/Article/model/types/article';
+import { ArticleType } from '../../model/types/article';
 import cls from './ArticleTypeTabs.module.scss';
 
 interface ArticleTypeTabsProps {
-  className?: string;
-  value: ArticleType;
-  onChangeType: (type: ArticleType) => void;
+    className?: string;
+    value: ArticleType;
+    onChangeType: (type: ArticleType) => void;
 }
 
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
