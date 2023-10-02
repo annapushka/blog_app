@@ -19,15 +19,15 @@
 }
 
 .alignStart {
-   align-content: flex-start;
+    align-items: flex-start;
 }
 
 .alignCenter {
-    align-content: center;
+    align-items: center;
 }
 
 .alignEnd {
-    align-content: flex-end;
+    align-items: flex-end;
 }
 
 .directionRow {
@@ -36,4 +36,20 @@
 
 .directionColumn {
     flex-direction: column;
+}
+
+.gap4 {
+    gap: 4px;
+}
+
+.gap8 {
+    gap: 8px;
+}
+
+.gap16 {
+    gap: 16px;
+}
+
+.gap32 {
+    gap: 32px;
 }
