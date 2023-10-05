@@ -11,6 +11,8 @@ import Avatar from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import Icon from 'shared/ui/Icon/Icon';
+import HStack from 'shared/ui/Stack/HStack/HStack';
+import VStack from 'shared/ui/Stack/VStack/VStack';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
@@ -83,26 +85,29 @@ export const ArticleDetails = memo(
         } else {
             content = (
                 <>
-                    <div className={cls.avatarWrapper}>
+                    <HStack justify="center" max>
                         <Avatar size={200} src={article?.img} className={cls.avatar} />
-                    </div>
-                    <Text
-                        title={article?.title}
-                        text={article?.subtitle}
-                        className={cls.title}
-                        size={TextSize.L}
-                    />
-                    <div className={cls.articleInfo}>
-                        <Icon Svg={EyeIcon} />
-                        <Text text={String(article?.views)} />
-                    </div>
-                    <div className={cls.articleInfo}>
-                        <Icon Svg={CalendarIcon} />
-                        <Text text={article?.createdAt} />
-                    </div>
-                    <div className={cls.articleBody}>
-                        {article?.blocks.map(renderBlock)}
-                    </div>
+                    </HStack>
+                    <VStack gap="4" max>
+                        <Text
+                            title={article?.title}
+                            text={article?.subtitle}
+                            className={cls.title}
+                            size={TextSize.L}
+                        />
+                        <HStack gap="8">
+                            <Icon Svg={EyeIcon} />
+                            <Text text={String(article?.views)} />
+                        </HStack>
+                        <HStack gap="8">
+                            <Icon Svg={CalendarIcon} />
+                            <Text text={article?.createdAt} />
+                        </HStack>
+                        <VStack>
+                            {article?.blocks.map(renderBlock)}
+                        </VStack>
+
+                    </VStack>
 
                 </>
             );
@@ -110,9 +115,9 @@ export const ArticleDetails = memo(
 
         return (
             <DynamicModulLoader reducers={reducers}>
-                <div className={classNames(cls.ArticleDetails, {}, [className])}>
+                <VStack gap="32" className={classNames(cls.ArticleDetails, {}, [className])}>
                     {content}
-                </div>
+                </VStack>
 
             </DynamicModulLoader>
         );

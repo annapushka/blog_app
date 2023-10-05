@@ -6,6 +6,7 @@ import ArrowRight from 'shared/assets/icons/angel-right.svg';
 import { useSelector } from 'react-redux';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
+import VStack from 'shared/ui/Stack/VStack/VStack';
 import cls from './SideBar.module.scss';
 import SideBarItem from '../SideBarItem/SideBarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
@@ -37,7 +38,7 @@ export const SideBar = memo(({ className }: SideBarProps) => {
             >
                 {collapsed ? <ArrowRight className={cls.icon} /> : <ArrowLeft className={cls.icon} />}
             </Button>
-            <div className={cls.items}>
+            <VStack gap="8" className={cls.items}>
                 {sidebarItemsList.map((item) => (
                     <SideBarItem
                         item={item}
@@ -45,7 +46,7 @@ export const SideBar = memo(({ className }: SideBarProps) => {
                         key={item.path}
                     />
                 ))}
-            </div>
+            </VStack>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} short={collapsed} />

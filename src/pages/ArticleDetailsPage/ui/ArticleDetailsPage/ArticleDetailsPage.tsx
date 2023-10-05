@@ -11,6 +11,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import AddComentForm from 'features/AddCommentForm/ui/AddComentForm/AddComentForm';
 import { Page } from 'widgets/Page/Page';
+import VStack from 'shared/ui/Stack/VStack/VStack';
 import {
     fetchCommentsByArticleById,
 } from '../../model/services/fetchCommentsByArticleById/fetchCommentsByArticleById';
@@ -84,16 +85,19 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
                     </>
                 )}
-                {!isLoading && (
-                    <>
-                        <Text className={cls.commentTitle} title={t('Комментарии')} />
-                        <AddComentForm onSendComment={onSendComment} />
-                    </>
-                )}
-                <CommentList
-                    isLoading={isLoading}
-                    comments={comments}
-                />
+                <VStack gap="16" max>
+                    {!isLoading && (
+                        <>
+                            <Text className={cls.commentTitle} title={t('Комментарии')} />
+                            <AddComentForm onSendComment={onSendComment} />
+                        </>
+                    )}
+                    <CommentList
+                        isLoading={isLoading}
+                        comments={comments}
+                    />
+                </VStack>
+
             </Page>
         </DynamicModulLoader>
     );

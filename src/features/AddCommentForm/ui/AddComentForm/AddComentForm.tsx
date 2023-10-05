@@ -6,6 +6,7 @@ import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModulLoader, ReducersList } from 'shared/lib/components/DynamicModulLoader/DynamicModulLoader';
+import HStack from 'shared/ui/Stack/HStack/HStack';
 import {
     getAddCommentFormError,
     getAddCommentFormText,
@@ -40,7 +41,7 @@ const AddComentForm = memo((props: AddComentFormProps) => {
 
     return (
         <DynamicModulLoader reducers={reducers}>
-            <div className={classNames(cls.AddComentForm, {}, [className])}>
+            <HStack max className={classNames(cls.AddComentForm, {}, [className])}>
                 <Input
                     placeholder={t('Введите текст комментария')}
                     value={text}
@@ -53,7 +54,7 @@ const AddComentForm = memo((props: AddComentFormProps) => {
                 >
                     {t('Отправить')}
                 </Button>
-            </div>
+            </HStack>
         </DynamicModulLoader>
 
     );
