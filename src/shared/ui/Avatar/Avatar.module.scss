@@ -1,4 +1,6 @@
 .img {
     height: 100%;
     width: auto;
+    background: var(--card-bg);
+    min-width: -webkit-fill-available;
 }

@@ -1,0 +1,35 @@
+.Dropdown {
+    position: relative;
+}
+
+.btn {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.menu {
+    background: var(--card-bg);
+    position: absolute;
+    z-index: 10000;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.item {
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.active {
+    background: var(--inverted-primary-color);
+}

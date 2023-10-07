@@ -24,11 +24,13 @@ export const Avatar = ({
 
     return (
         <div className={classNames(cls.Avatar, {}, [className])} style={style}>
-            <img
-                src={src}
-                alt={alt}
-                className={cls.img}
-            />
+            {src ? (
+                <img
+                    src={src}
+                    alt={alt}
+                    className={cls.img}
+                />
+            ) : (<div className={cls.img} />)}
         </div>
 
     );
