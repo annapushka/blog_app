@@ -23,6 +23,7 @@
     padding: 10px 20px;
     border-radius: var(--border-radius);
     width: 100%;
+    min-width: max-content;
     border: none;
     background: none;
     outline: none;
@@ -30,6 +31,30 @@
     cursor: pointer;
 }
 
+.link {
+    width: 100%;
+}
+
 .active {
     background: var(--inverted-primary-color);
+}
+
+.optionsBottomLeft {
+    top: 100%;
+    left: 0;
+}
+
+.optionsBottomRight {
+    top: 100%;
+    right: 0;
+}
+
+.optionsTopLeft {
+    bottom: 100%;
+    left: 0;
+}
+
+.optionsTopRight {
+    bottom: 100%;
+    right: 0;
 }
