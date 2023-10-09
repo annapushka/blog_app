@@ -41,7 +41,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     const isList = view === ArticleView.LIST;
 
-    if (!isLoading && !articles.length) {
+    if (!isLoading && !articles?.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
                 <Text title={t('Статьи не найдены')} />
@@ -57,7 +57,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 const perentWidth = width;
 
                 const itemsPerRow = isList ? 1 : Math.floor(perentWidth / 330);
-                const rowCount = isList ? articles.length : Math.ceil(articles.length / itemsPerRow);
+                const rowCount = isList ? articles?.length : Math.ceil(articles.length / itemsPerRow);
 
                 const rowRender = ({ index, key }: ListRowProps) => {
                     const items = [];

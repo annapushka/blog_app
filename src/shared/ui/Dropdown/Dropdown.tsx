@@ -36,7 +36,7 @@ export function Dropdown({
             <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 <VStack>
-                    {items.map((item) => {
+                    {items.map((item, index) => {
                         const content = ({ active }: { active: boolean }) => (
                             <button
                                 disabled={item.disabled}
@@ -53,14 +53,22 @@ export function Dropdown({
 
                         if (item.href) {
                             return (
-                                <Menu.Item as={AppLink} to={item.href} disabled={item.disabled} className={cls.link}>
+                                <Menu.Item
+                                    // eslint-disable-next-line react/no-array-index-key
+                                    key={index}
+                                    as={AppLink}
+                                    to={item.href}
+                                    disabled={item.disabled}
+                                    className={cls.link}
+                                >
                                     {content}
                                 </Menu.Item>
                             );
                         }
 
                         return (
-                            <Menu.Item as={Fragment} disabled={item.disabled}>
+                            // eslint-disable-next-line react/no-array-index-key
+                            <Menu.Item key={index} as={Fragment} disabled={item.disabled}>
                                 {content}
                             </Menu.Item>
                         );
