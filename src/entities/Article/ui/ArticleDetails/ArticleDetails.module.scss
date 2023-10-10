@@ -1,6 +1,9 @@
 .avatar {
     margin: 0 auto;
-    min-width: none;
+
+    img {
+        min-width: auto;
+    }
 }
 
 .title {

@@ -5,6 +5,7 @@ import Text from 'shared/ui/Text/Text';
 import { ArticleList } from 'entities/Article';
 import VStack from 'shared/ui/Stack/VStack/VStack';
 import { useGetArticleRecommendationsList } from '../../api/articleRecommendationsApi';
+import cls from './ArticleRecommendationsList.module.scss';
 
 interface ArticleRecommendationsListProps {
     className?: string;
@@ -14,18 +15,20 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     const { className } = props;
     const { t } = useTranslation();
     const { isLoading, error, data: articles } = useGetArticleRecommendationsList(4);
-    if (isLoading || error) {
+    if (isLoading || error || !articles) {
         return null;
     }
 
     return (
-        <VStack gap="16" className={classNames('', {}, [className])}>
+        <VStack gap="16" className={classNames(cls.ArticleRecommendationsList, {}, [className])}>
             <Text
                 title={t('Рекомендуем')}
             />
             <ArticleList
                 articles={articles}
                 target="_blank"
+                virtualized={false}
+                className={cls.list}
             />
         </VStack>
     );
