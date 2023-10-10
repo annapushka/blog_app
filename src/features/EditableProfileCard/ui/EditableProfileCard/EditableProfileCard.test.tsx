@@ -55,7 +55,9 @@ describe('EditableProfileCard', () => {
         await userEvent.type(screen.getByTestId('ProfileCard.lastname'), 'user');
 
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.CancelButton'));
+
         expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue('Alex');
+        expect(screen.getByTestId('ProfileCard.lastname')).toHaveValue('Last');
     });
 
     test('Validation errors should be displayed', async () => {
