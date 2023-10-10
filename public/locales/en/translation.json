@@ -8,6 +8,7 @@
     "Обновить страницу": "Refresh Page",
     "Выдать ошибку": "Throw Error",
     "Главная": "Main",
+    "Админка": "Admin",
     "О сайте": "About",
     "Профиль": "Profile",
     "Статьи": "Articles",
@@ -20,5 +21,6 @@
     "Вы ввели неверный логин или пароль": "You entered an invalid login or password",
     "Комментарии отстутствуют": "No comments",
     "BugoBlog": "BugoBlog",
-    "Создать статью": "Create article"
+    "Создать статью": "Create article",
+    "Отказано в доступе": "Access Denied"
 }

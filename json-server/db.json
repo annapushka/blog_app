@@ -747,14 +747,21 @@
       "id": "1",
       "username": "Sasha",
       "password": "test",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://thispersondoesnotexist.com/"
     },
     {
       "id": "2",
-      "username": "Yagoda",
-      "password": "banana",
-      "role": "USER",
+      "username": "user",
+      "password": "user",
+      "roles": ["USER"],
+      "avatar": "https://thispersondoesnotexist.com/"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "manager",
+      "roles": ["MANAGER"],
       "avatar": "https://thispersondoesnotexist.com/"
     }
   ]
