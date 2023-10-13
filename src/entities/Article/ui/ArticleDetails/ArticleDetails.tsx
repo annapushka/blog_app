@@ -28,7 +28,7 @@ import ArticleCodeBlockComponent from '../ArticleCodeBlockComponent/ArticleCodeB
 
 interface ArticleDetailsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {
@@ -59,7 +59,9 @@ export const ArticleDetails = memo(
 
         useEffect(() => {
             if (__PROJECT__ !== 'storybook') {
-                dispatch(fetchArticleById(id));
+                if (id) {
+                    dispatch(fetchArticleById(id));
+                }
             }
         }, [dispatch, id]);
 

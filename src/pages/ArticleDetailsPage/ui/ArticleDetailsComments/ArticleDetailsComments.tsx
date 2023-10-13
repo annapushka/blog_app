@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useCallback } from 'react';
+import { Suspense, memo, useCallback } from 'react';
 import VStack from 'shared/ui/Stack/VStack/VStack';
 import Text from 'shared/ui/Text/Text';
 import { AddComentForm } from 'features/AddCommentForm';
@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import Loader from 'shared/ui/Loader/Loader';
 import { fetchCommentsByArticleById } from '../../model/services/fetchCommentsByArticleById/fetchCommentsByArticleById';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentSlice';
@@ -36,12 +37,10 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     }, [dispatch]);
     return (
         <VStack gap="16" max className={classNames('', {}, [className])}>
-            {!isLoading && (
-                <>
-                    <Text title={t('Комментарии')} />
-                    <AddComentForm onSendComment={onSendComment} />
-                </>
-            )}
+            <Text title={t('Комментарии')} />
+            <Suspense fallback={<Loader />}>
+                <AddComentForm onSendComment={onSendComment} />
+            </Suspense>
             <CommentList
                 isLoading={isLoading}
                 comments={comments}
