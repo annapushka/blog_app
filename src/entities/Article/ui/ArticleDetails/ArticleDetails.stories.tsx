@@ -2,7 +2,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleImg from 'shared/assets/tests/article.jpeg';
 import CertificateImg from 'shared/assets/tests/certificate.png';
-import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
+import { ArticleBlockType, ArticleType } from 'entities/Article/model/consts/consts';
+import { Article } from '../../model/types/article';
 import ArticleDetails from './ArticleDetails';
 
 export default {

@@ -1,1 +1,1 @@
-// add form
+export type { ArticleEditFormSchema } from './model/types/articleEditForm';

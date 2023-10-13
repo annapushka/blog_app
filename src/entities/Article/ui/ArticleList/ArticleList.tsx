@@ -5,7 +5,8 @@ import { useTranslation } from 'react-i18next';
 import {
     List, ListRowProps, WindowScroller,
 } from 'react-virtualized';
-import { Article, ArticleView } from '../../model/types/article';
+import { ArticleView } from 'entities/Article/model/consts/consts';
+import { Article } from '../../model/types/article';
 
 import cls from './ArticleList.module.scss';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';

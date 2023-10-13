@@ -1,4 +1,3 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback, useMemo } from 'react';
 
 import { ListBox } from 'shared/ui/ListBox/ListBox';

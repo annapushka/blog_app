@@ -9,7 +9,7 @@ import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { ProfileCard } from 'entities/Profile';
 import { DynamicModulLoader, ReducersList } from 'shared/lib/components/DynamicModulLoader/DynamicModulLoader';
-import { ValidateProfileError } from '../../model/types/EditableProfileCardSchema';
+import { ValidateProfileError } from 'features/EditableProfileCard/model/consts/consts';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
