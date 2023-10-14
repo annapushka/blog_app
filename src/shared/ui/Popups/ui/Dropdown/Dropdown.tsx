@@ -3,8 +3,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Fragment } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
 import cls from './Dropdown.module.scss';
-import VStack from '../Stack/VStack/VStack';
-import AppLink from '../AppLink/AppLink';
+import VStack from '../../../Stack/VStack/VStack';
+import AppLink from '../../../AppLink/AppLink';
 
 export interface DropdownItem {
     content: React.ReactNode;

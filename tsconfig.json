@@ -27,7 +27,7 @@
     "./config/jest/setupTests.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
-    "src/shared/ui/ListBox/.stories.tsx",
-    "src/shared/ui/Dropdown/.stories.tsx",
+    "src/shared/ui/Popups/ui/ListBox/.stories.tsx",
+    "src/shared/ui/Popups/ui/Dropdown/.stories.tsx",
   ]
 }
