@@ -4,9 +4,7 @@ import React, { memo, useCallback, useState } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from 'entities/User';
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -50,10 +48,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             <header className={classNames(cls.Navbar, {}, [className])}>
                 <div className={cls.appName}>
                     <Icon Svg={BugIcon} className={cls.appNameIcon} />
-                    <Text
-                        title={t('BugoBlog')}
-                        theme={TextTheme.INVERTED}
-                    />
+                    <Text title={t('BugoBlog')} theme={TextTheme.INVERTED} />
                 </div>
 
                 <AppLink
@@ -64,23 +59,28 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     {t('Создать статью')}
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>
-                    <Popover trigger={(
-                        <Button theme={ButtonTheme.CLEAR}>
-                            <Icon Svg={BellIcon} inverted />
-                        </Button>
-                    )}
+                    <Popover
+                        trigger={
+                            <Button theme={ButtonTheme.CLEAR}>
+                                <Icon Svg={BellIcon} inverted />
+                            </Button>
+                        }
                     >
-                        <NotificationList />
+                        <NotificationList className={cls.notifications} />
                     </Popover>
 
                     <Dropdown
                         direction="bottom right"
                         className={cls.dropdown}
                         items={[
-                            ...(isAdminPanelAvailable ? [{
-                                content: t('Админка'),
-                                href: RoutePath.admin_panel,
-                            }] : []),
+                            ...(isAdminPanelAvailable
+                                ? [
+                                      {
+                                          content: t('Админка'),
+                                          href: RoutePath.admin_panel,
+                                      },
+                                  ]
+                                : []),
                             {
                                 content: t('Профиль'),
                                 href: `${RoutePath.profile}/${authData.id}`,
@@ -99,19 +99,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
-            <Button
-                theme={ButtonTheme.CLEAR_INVERTED}
-                className={cls.links}
-                onClick={onShowModal}
-            >
+            <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onShowModal}>
                 {t('Войти')}
             </Button>
-            {isAuthModal && (
-                <LoginModal
-                    isOpen={isAuthModal}
-                    onClose={onCloseModal}
-                />
-            )}
+            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
         </header>
     );
 });

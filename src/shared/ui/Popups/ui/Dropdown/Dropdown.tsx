@@ -9,25 +9,20 @@ import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 
 export interface DropdownItem {
-  content: React.ReactNode;
-  disabled?: boolean;
-  onClick?: () => void;
-  href?: string;
+    content: React.ReactNode;
+    disabled?: boolean;
+    onClick?: () => void;
+    href?: string;
 }
 
 interface DropdownProps {
-  className?: string;
-  items: DropdownItem[];
-  trigger: React.ReactNode;
-  direction?: DropdownDirection;
+    className?: string;
+    items: DropdownItem[];
+    trigger: React.ReactNode;
+    direction?: DropdownDirection;
 }
 
-export function Dropdown({
-    className,
-    items,
-    trigger,
-    direction = 'bottom right',
-}: DropdownProps) {
+export function Dropdown({ className, items, trigger, direction = 'bottom right' }: DropdownProps) {
     const menuClasses = [mapDirectionClass[direction]];
     return (
         <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
@@ -62,7 +57,7 @@ export function Dropdown({
                         }
 
                         return (
-                        // eslint-disable-next-line react/no-array-index-key
+                            // eslint-disable-next-line react/no-array-index-key
                             <Menu.Item key={index} as={Fragment} disabled={item.disabled}>
                                 {content}
                             </Menu.Item>

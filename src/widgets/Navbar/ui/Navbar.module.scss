@@ -27,3 +27,10 @@
 .appNameIcon {
     fill: var(--inverted-primary-color);
 }
+
+.notifications {
+    min-height: 150px;
+    max-width: 300px;
+    width: 500px;
+    overflow-y: auto;
+}
