@@ -88,34 +88,40 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
                 return (
                     // @ts-ignore
-                    <div ref={registerChild} className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                        {virtualized
-                            ? (
-                                <List
-                                    height={height}
-                                    rowCount={rowCount}
-                                    rowHeight={isList ? 500 : 330}
-                                    rowRenderer={rowRender}
-                                    width={width}
-                                    onScroll={onChildScroll}
-                                    isScrolling={isScrolling}
-                                    scrollTop={scrollTop}
-                                    autoHeight
-                                    autoWidth
-                                />
-                            )
-                            : (
-                                articles.map((article) => (
-                                    <ArticleListItem
-                                        target={target}
-                                        article={article}
-                                        view={view}
-                                        className={cls.card}
-                                        key={article.id}
+                    <div ref={registerChild}>
+                        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                            {virtualized
+                                ? (
+                                    <List
+                                        height={height}
+                                        rowCount={rowCount}
+                                        rowHeight={isList ? 500 : 330}
+                                        rowRenderer={rowRender}
+                                        width={width}
+                                        onScroll={onChildScroll}
+                                        isScrolling={isScrolling}
+                                        scrollTop={scrollTop}
+                                        autoHeight
+                                        autoWidth
                                     />
-                                )))}
-                        {isLoading && getSkeletons(view)}
+                                )
+                                : (
+                                    articles.map((article) => (
+                                        <ArticleListItem
+                                            target={target}
+                                            article={article}
+                                            view={view}
+                                            className={cls.card}
+                                            key={article.id}
+                                        />
+                                    )))}
+
+                        </div>
+                        <div className={classNames(cls.skeletonsWrapper, {}, [className, cls[view]])}>
+                            {isLoading && getSkeletons(view)}
+                        </div>
                     </div>
+
                 );
             }}
         </WindowScroller>
