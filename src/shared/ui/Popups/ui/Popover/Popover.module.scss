@@ -1,13 +1,8 @@
-.options {
+.panel {
   background: var(--card-bg);
   position: absolute;
   z-index: 10000;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  min-width: 100%;
-}
-
-.item {
-  padding: 10px 20px;
-  border-radius: var(--border-radius);
+  padding: 8px 16px;
 }

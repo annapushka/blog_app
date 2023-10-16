@@ -14,9 +14,10 @@ import Icon from 'shared/ui/Icon/Icon';
 import BugIcon from 'shared/assets/icons/bug.svg';
 import BellIcon from 'shared/assets/icons/bell.svg';
 import Avatar from 'shared/ui/Avatar/Avatar';
-import cls from './Navbar.module.scss';
 import HStack from 'shared/ui/Stack/HStack/HStack';
-import { Dropdown } from 'shared/ui/Popups';
+import { Dropdown, Popover } from 'shared/ui/Popups';
+import { NotificationList } from 'entities/Notification';
+import cls from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;
@@ -62,10 +63,16 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 >
                     {t('Создать статью')}
                 </AppLink>
-                <HStack gap='16' className={cls.actions}>
-                    <Button theme={ButtonTheme.CLEAR} onClick={onLogout}>
-                        <Icon Svg={BellIcon} inverted />
-                    </Button>
+                <HStack gap="16" className={cls.actions}>
+                    <Popover trigger={(
+                        <Button theme={ButtonTheme.CLEAR}>
+                            <Icon Svg={BellIcon} inverted />
+                        </Button>
+                    )}
+                    >
+                        <NotificationList />
+                    </Popover>
+
                     <Dropdown
                         direction="bottom right"
                         className={cls.dropdown}
