@@ -5,9 +5,9 @@ import { componentRender } from 'shared/config/tests/componentRender/componentRe
 import { Profile } from 'entities/Profile';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { profileReducer } from 'features/EditableProfileCard/model/slice/profileSlice';
 import userEvent from '@testing-library/user-event';
 import { $api } from 'shared/api/api';
+import { profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCard } from './EditableProfileCard';
 
 const profile: Profile = {

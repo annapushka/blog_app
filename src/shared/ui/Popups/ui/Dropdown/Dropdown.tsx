@@ -22,7 +22,9 @@ interface DropdownProps {
     direction?: DropdownDirection;
 }
 
-export function Dropdown({ className, items, trigger, direction = 'bottom right' }: DropdownProps) {
+export function Dropdown({
+    className, items, trigger, direction = 'bottom right',
+}: DropdownProps) {
     const menuClasses = [mapDirectionClass[direction]];
     return (
         <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>

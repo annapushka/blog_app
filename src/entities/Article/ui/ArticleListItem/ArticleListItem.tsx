@@ -9,7 +9,7 @@ import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import AppLink from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { ArticleBlockType, ArticleView } from 'entities/Article/model/consts/consts';
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
@@ -36,7 +36,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     );
 
     if (view === ArticleView.LIST) {
-        const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
+        const textBlock = article.blocks.find(
+            (block) => block.type === ArticleBlockType.TEXT,
+        ) as ArticleTextBlock;
 
         return (
             <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
@@ -55,13 +57,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
                     )}
                     <div className={cls.footer}>
-                        <AppLink
-                            target={target}
-                            to={`${RoutePath.article_details}/${article.id}`}
-                        >
-                            <Button theme={ButtonTheme.OUTLINE}>
-                                {t('Читать далее')}
-                            </Button>
+                        <AppLink target={target} to={`${RoutePath.article_details}/${article.id}`}>
+                            <Button theme={ButtonTheme.OUTLINE}>{t('Читать далее')}</Button>
                         </AppLink>
                         {views}
                     </div>

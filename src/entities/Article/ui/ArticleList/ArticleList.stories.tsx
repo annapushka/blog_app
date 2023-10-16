@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArticleImg from 'shared/assets/tests/article.jpeg';
 import CertificateImg from 'shared/assets/tests/certificate.png';
 import Avatar from 'shared/assets/tests/storybook.jpg';
-import { ArticleView } from 'entities/Article/model/consts/consts';
+import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 import ArticleList from './ArticleList';
 
@@ -18,9 +18,7 @@ const article = {
         username: 'XXXXX',
         avatar: Avatar,
     },
-    type: [
-        'IT',
-    ],
+    type: ['IT'],
     blocks: [
         {
             id: '1',
@@ -70,7 +68,8 @@ LoadingList.args = {
 
 export const List = Template.bind({});
 List.args = {
-    articles: new Array(16).fill(0)
+    articles: new Array(16)
+        .fill(0)
         .map((item, index) => ({ ...article, id: index.toString() })) as Article[],
     view: ArticleView.LIST,
 };
@@ -84,7 +83,8 @@ LoadingGrid.args = {
 
 export const Grid = Template.bind({});
 Grid.args = {
-    articles: new Array(16).fill(0)
+    articles: new Array(16)
+        .fill(0)
         .map((item, index) => ({ ...article, id: index.toString() })) as Article[],
     view: ArticleView.GRID,
 };

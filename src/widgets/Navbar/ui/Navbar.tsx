@@ -4,7 +4,9 @@ import React, { memo, useCallback, useState } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -60,11 +62,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>
                     <Popover
-                        trigger={
+                        trigger={(
                             <Button theme={ButtonTheme.CLEAR}>
                                 <Icon Svg={BellIcon} inverted />
                             </Button>
-                        }
+                        )}
                     >
                         <NotificationList className={cls.notifications} />
                     </Popover>
@@ -75,11 +77,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                         items={[
                             ...(isAdminPanelAvailable
                                 ? [
-                                      {
-                                          content: t('Админка'),
-                                          href: RoutePath.admin_panel,
-                                      },
-                                  ]
+                                    {
+                                        content: t('Админка'),
+                                        href: RoutePath.admin_panel,
+                                    },
+                                ]
                                 : []),
                             {
                                 content: t('Профиль'),
