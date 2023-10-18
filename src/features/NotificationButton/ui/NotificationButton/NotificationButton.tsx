@@ -7,7 +7,6 @@ import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
 import Icon from '@/shared/ui/Icon/Icon';
 import BellIcon from '@/shared/assets/icons/bell.svg';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {
@@ -37,11 +36,9 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
             </BrowserView>
             <MobileView>
                 {trigger}
-                <AnimationProvider>
-                    <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)}>
-                        <NotificationList />
-                    </Drawer>
-                </AnimationProvider>
+                <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)}>
+                    <NotificationList />
+                </Drawer>
             </MobileView>
 
         </div>
