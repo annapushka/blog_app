@@ -1,7 +1,7 @@
 import { Dispatch } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { validateProfileData } from './validateProfileData';
 import { ValidateProfileError } from '../../consts/consts';
 

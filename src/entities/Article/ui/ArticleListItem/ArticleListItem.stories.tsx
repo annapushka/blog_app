@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ArticleImg from 'shared/assets/tests/article.jpeg';
-import CertificateImg from 'shared/assets/tests/certificate.png';
-import Avatar from 'shared/assets/tests/storybook.jpg';
+import ArticleImg from '@/shared/assets/tests/article.jpeg';
+import CertificateImg from '@/shared/assets/tests/certificate.png';
+import Avatar from '@/shared/assets/tests/storybook.jpg';
 import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 import ArticleListItem from './ArticleListItem';

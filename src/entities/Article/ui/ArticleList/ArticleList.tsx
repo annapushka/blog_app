@@ -1,8 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
-import Text from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { List, ListRowProps, WindowScroller } from 'react-virtualized';
+import Text from '@/shared/ui/Text/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 

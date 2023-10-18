@@ -1,18 +1,18 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import React, { memo, useCallback, useState } from 'react';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { LoginModal } from 'features/AuthByUsername';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
-import Text, { TextTheme } from 'shared/ui/Text/Text';
-import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import Icon from 'shared/ui/Icon/Icon';
-import BugIcon from 'shared/assets/icons/bug.svg';
-import HStack from 'shared/ui/Stack/HStack/HStack';
-import { NotificationButton } from 'features/NotificationButton';
-import { AvatarDropdown } from 'features/AvatarDropdown';
+import { LoginModal } from '@/features/AuthByUsername';
+import { NotificationButton } from '@/features/NotificationButton';
+import { AvatarDropdown } from '@/features/AvatarDropdown';
+import { getUserAuthData } from '@/entities/User';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import Text, { TextTheme } from '@/shared/ui/Text/Text';
+import AppLink, { AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import Icon from '@/shared/ui/Icon/Icon';
+import BugIcon from '@/shared/assets/icons/bug.svg';
+import HStack from '@/shared/ui/Stack/HStack/HStack';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {

@@ -1,8 +1,8 @@
-import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import { memo } from 'react';
-import LightIcon from 'shared/assets/icons/day-and-night-light.svg';
-import DarkIcon from 'shared/assets/icons/day-and-night.svg';
-import Button, { ButtonTheme } from 'shared/ui/Button/Button';
+import { Theme, useTheme } from '@/app/providers/ThemeProvider';
+import LightIcon from '@/shared/assets/icons/day-and-night-light.svg';
+import DarkIcon from '@/shared/assets/icons/day-and-night.svg';
+import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
 
 interface ThemeSwitcherProps {
     className?: string;

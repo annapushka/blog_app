@@ -1,10 +1,10 @@
-import { ArticleDetails } from 'entities/Article';
 import React, { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useParams } from 'react-router-dom';
-import { DynamicModulLoader, ReducersList } from 'shared/lib/components/DynamicModulLoader/DynamicModulLoader';
-import { Page } from 'widgets/Page/Page';
-import { ArticleRecommendationsList } from 'features/ArticleRecommendationsList';
+import { Page } from '@/widgets/Page/Page';
+import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
+import { ArticleDetails } from '@/entities/Article';
+import { DynamicModulLoader, ReducersList } from '@/shared/lib/components/DynamicModulLoader/DynamicModulLoader';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { articleDetailsPageReducer } from '../../model/slices';
 import cls from './ArticleDetailsPage.module.scss';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';

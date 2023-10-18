@@ -1,8 +1,8 @@
 import React, { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { DynamicModulLoader, ReducersList } from 'shared/lib/components/DynamicModulLoader/DynamicModulLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Page } from 'widgets/Page/Page';
+import { Page } from '@/widgets/Page/Page';
+import { DynamicModulLoader, ReducersList } from '@/shared/lib/components/DynamicModulLoader/DynamicModulLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getArticlesPageError } from '../../model/selectors/articlesPageSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { articlePageReducer } from '../../model/slices/articlePageSlice';
