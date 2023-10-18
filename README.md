@@ -5,6 +5,7 @@ In progress...
 <ul>
   <li>Feature-Sliced Design</li>
   <li>Webpack</li>
+  <li>Vite</li>
   <li>TypeScript</li>
   <li>React</li>
   <li>Redux Toolkit</li>
