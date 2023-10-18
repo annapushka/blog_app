@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { NotificationItem } from './NotificationItem';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
     title: 'entities/NotificationItem',
@@ -14,4 +15,11 @@ export default {
 const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+    notification: {
+        id: '1',
+        title: 'Уведомление 1',
+        description: 'Произошло какое-то событие',
+    },
+};
+Normal.decorators = [StoreDecorator({})];
