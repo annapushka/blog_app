@@ -1,5 +1,5 @@
 import {
-    ReactNode, createContext, useEffect, useMemo, useRef, useState,
+    ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState,
 } from 'react';
 
 type SpringType = typeof import('@react-spring/web');
@@ -18,6 +18,10 @@ const detAsyncAnimationModules = () => {
         import('@react-spring/web'),
         import('@use-gesture/react'),
     ]);
+};
+
+export const useAnimationLibs = () => {
+    return useContext(AnimationContext) as Required<AnimationContextPayload>;
 };
 
 export const AnimationProvider = ({ children }: {children: ReactNode}) => {
