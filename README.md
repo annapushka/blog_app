@@ -20,6 +20,7 @@ In progress...
   <li>Husky</li>
   <li>CI pipeline</li>
   <li>Async Redussers</li>
+  <li>Asynchronous library loading</li>
   <li>Infinite scroll</li>
   <li>Trottling</li>
   <li>Debounce</li>
