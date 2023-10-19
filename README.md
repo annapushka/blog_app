@@ -25,7 +25,6 @@ In progress...
   <li>Infinite scroll</li>
   <li>Trottling</li>
   <li>Debounce</li>
-  <li>Virtual list</li>
 </ul>
 
 [Сlick me](https://main--brilliant-malabi-9a3ca0.netlify.app/)
