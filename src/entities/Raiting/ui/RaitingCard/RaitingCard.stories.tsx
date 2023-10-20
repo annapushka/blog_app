@@ -15,5 +15,5 @@ const Template: ComponentStory<typeof RaitingCard> = (args) => <RaitingCard {...
 
 export const Normal = Template.bind({});
 Normal.args = {
-   
+
 };
