@@ -8,6 +8,7 @@
     "allowJs": true,
     "strict": true,
     "moduleResolution": "node",
+    "types": ["vite-plugin-svgr/client"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
