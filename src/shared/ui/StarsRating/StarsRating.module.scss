@@ -1,0 +1,15 @@
+.starIcon {
+  cursor: pointer;
+}
+
+.normal {
+  fill: var(--star-unchecked-bg);
+}
+
+.hovered {
+  fill: var(--star-checked-bg);
+}
+
+.selected {
+  cursor: auto;
+}

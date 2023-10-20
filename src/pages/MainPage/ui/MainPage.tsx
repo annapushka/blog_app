@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Page } from '@/widgets/Page/Page';
-import { Counter } from '@/entities/Counter';
 import { BugButton } from '@/app/providers/ErrorBoundary';
+import { StarsRating } from '@/shared/ui/StarsRating/StarsRating';
 
 const MainPage = () => {
     const { t } = useTranslation('main');
@@ -10,7 +10,7 @@ const MainPage = () => {
         <Page>
             <BugButton />
             {t('Главная')}
-            <Counter />
+            <StarsRating size={50} />
         </Page>
     );
 };
