@@ -17,20 +17,14 @@ interface ArticleListProps {
     target?: HTMLAttributeAnchorTarget;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID ? 12 : 3).fill(0).map((item, index) => (
-    // eslint-disable-next-line react/no-array-index-key
-    <ArticleListItemSkeleton view={view} key={index} className={cls.card} />
-));
+const getSkeletons = (view: ArticleView) =>
+    new Array(view === ArticleView.GRID ? 12 : 3).fill(0).map((item, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <ArticleListItemSkeleton view={view} key={index} className={cls.card} />
+    ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
-    const {
-        className,
-        articles,
-        isLoading,
-        view = ArticleView.GRID,
-        target,
-
-    } = props;
+    const { className, articles, isLoading, view = ArticleView.GRID, target } = props;
 
     const { t } = useTranslation('article');
 
@@ -45,17 +39,15 @@ export const ArticleList = memo((props: ArticleListProps) => {
     return (
         <div>
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {
-                    articles.map((article) => (
-                        <ArticleListItem
-                            target={target}
-                            article={article}
-                            view={view}
-                            className={cls.card}
-                            key={article.id}
-                        />
-                    ))
-                }
+                {articles.map((article) => (
+                    <ArticleListItem
+                        target={target}
+                        article={article}
+                        view={view}
+                        className={cls.card}
+                        key={article.id}
+                    />
+                ))}
             </div>
             <div className={classNames(cls.skeletonsWrapper, {}, [className, cls[view]])}>
                 {isLoading && getSkeletons(view)}
