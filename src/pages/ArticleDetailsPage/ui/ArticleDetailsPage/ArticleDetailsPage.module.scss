@@ -1,14 +1,18 @@
 .ArticleDetailsPage {
-    min-height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.articleWrapper {
+  max-width: 1200px;
 }
 
 .commentTitle {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .recommendations {
-    padding: 8px 0;
-    flex-wrap: nowrap;
-    overflow-y: hidden;
-    overflow-x: auto;
+  padding: 8px 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }

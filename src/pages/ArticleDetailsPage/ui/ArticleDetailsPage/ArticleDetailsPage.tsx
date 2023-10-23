@@ -9,6 +9,7 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import cls from './ArticleDetailsPage.module.scss';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleRating } from '@/features/ArticleRating';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -21,13 +22,20 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { id } = useParams<{ id: string }>();
 
+    if (!id) {
+        return null;
+    }
+
     return (
         <DynamicModulLoader reducers={reducers}>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <ArticleDetailsPageHeader />
-                <ArticleDetails id={id} />
-                <ArticleRecommendationsList />
-                <ArticleDetailsComments id={id} />
+                <div className={cls.articleWrapper}>
+                    <ArticleDetailsPageHeader />
+                    <ArticleDetails id={id} />
+                    <ArticleRating articleId={id} />
+                    <ArticleRecommendationsList />
+                    <ArticleDetailsComments id={id} />
+                </div>
             </Page>
         </DynamicModulLoader>
     );
