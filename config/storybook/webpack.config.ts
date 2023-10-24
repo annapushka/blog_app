@@ -1,7 +1,7 @@
 import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import path from 'path';
-import { buildCssLoader } from '../build/loaders/builCssLoader';
 import { BuildPaths } from '../build/types/config';
+import { buildCssLoader } from '../build/loaders/builCssLoader';
 
 export default ({ config }: {config: webpack.Configuration}) => {
     const paths: BuildPaths = {
@@ -12,10 +12,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
         locales: '',
         buildLocales: '',
     };
-    config!.resolve!.modules!.push(
-        path.relative(__dirname, paths.src),
-        'node_modules',
-    );
+    config!.resolve!.modules!.push(paths.src);
     config!.resolve!.extensions!.push('.ts', '.tsx');
 
     // eslint-disable-next-line no-param-reassign
@@ -28,11 +25,11 @@ export default ({ config }: {config: webpack.Configuration}) => {
         return rule;
     });
 
-    config!.module!.rules!.push({
+    config!.module!.rules.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     });
-    config!.module!.rules!.push(buildCssLoader(true));
+    config!.module!.rules.push(buildCssLoader(true));
 
     config!.plugins!.push(new DefinePlugin({
         __IS_DEV__: JSON.stringify(true),
