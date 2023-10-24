@@ -60,7 +60,7 @@ module.exports = {
         'no-undef': 'off',
         'react/jsx-props-no-spreading': 'off',
         'arrow-body-style': 'off',
-        'fsd-01/path-checker': 'error',
+        'fsd-01/path-checker': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,
