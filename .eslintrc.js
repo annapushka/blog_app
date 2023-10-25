@@ -61,6 +61,7 @@ module.exports = {
         'react/jsx-props-no-spreading': 'off',
         'arrow-body-style': 'off',
         'fsd-01/path-checker': ['error', { alias: '@' }],
+        'fsd-01/public-api-imports': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,

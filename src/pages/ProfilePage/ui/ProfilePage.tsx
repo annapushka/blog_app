@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { EditableProfileCard } from '@/features/EditableProfileCard';
 import VStack from '@/shared/ui/Stack/VStack/VStack';
 import { classNames } from '@/shared/lib/classNames/classNames';

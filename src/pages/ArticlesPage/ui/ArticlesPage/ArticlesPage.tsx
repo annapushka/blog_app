@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { DynamicModulLoader, ReducersList } from '@/shared/lib/components/DynamicModulLoader/DynamicModulLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getArticlesPageError } from '../../model/selectors/articlesPageSelectors';

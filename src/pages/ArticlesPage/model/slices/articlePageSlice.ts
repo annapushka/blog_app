@@ -3,8 +3,9 @@ import {
     createEntityAdapter,
     createSlice,
 } from '@reduxjs/toolkit';
-import { Article, ArticleView } from '@/entities/Article';
-import { ArticleSortField, ArticleType } from '@/entities/Article/model/consts/consts';
+import {
+    Article, ArticleView, ArticleSortField, ArticleType,
+} from '@/entities/Article';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { SortOrder } from '@/shared/types';

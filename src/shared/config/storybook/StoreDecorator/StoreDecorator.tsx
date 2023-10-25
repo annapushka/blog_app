@@ -1,3 +1,5 @@
+/* eslint-disable fsd-01/public-api-imports */
+// TODO
 import { Story } from '@storybook/react';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slices';
 import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
