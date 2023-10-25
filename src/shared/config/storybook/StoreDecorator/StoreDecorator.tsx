@@ -1,11 +1,9 @@
-/* eslint-disable fsd-01/public-api-imports */
-// TODO
 import { Story } from '@storybook/react';
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slices';
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
-import { addCommentFormReducer } from '@/features/AddCommentForm/model/slices/addCommentFormSlice';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
+import { loginReducer } from '@/features/AuthByUsername/testing';
+import { addCommentFormReducer } from '@/features/AddCommentForm/testing';
 import { profileReducer } from '@/features/EditableProfileCard';
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
+import { articleDetailsReducer } from '@/entities/Article/testing';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { ReducersList } from '@/shared/lib/components/DynamicModulLoader/DynamicModulLoader';
 
