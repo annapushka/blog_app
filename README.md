@@ -27,4 +27,4 @@ In progress...
   <li>Debounce</li>
 </ul>
 
-[Сlick me](https://main--brilliant-malabi-9a3ca0.netlify.app/)
+<!-- [Сlick me](https://main--brilliant-malabi-9a3ca0.netlify.app/) -->

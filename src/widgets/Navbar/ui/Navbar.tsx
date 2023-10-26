@@ -8,12 +8,12 @@ import { getUserAuthData } from '@/entities/User';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import Text, { TextTheme } from '@/shared/ui/Text/Text';
 import AppLink, { AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import Icon from '@/shared/ui/Icon/Icon';
 import BugIcon from '@/shared/assets/icons/bug.svg';
 import HStack from '@/shared/ui/Stack/HStack/HStack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
+import { RoutePath } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;
