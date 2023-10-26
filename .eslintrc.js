@@ -61,6 +61,12 @@ module.exports = {
         'react/jsx-props-no-spreading': 'off',
         'arrow-body-style': 'off',
         'fsd-01/path-checker': ['error', { alias: '@' }],
+        'fsd-01/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            }],
         'fsd-01/public-api-imports': [
             'error',
             {

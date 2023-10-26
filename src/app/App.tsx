@@ -4,8 +4,8 @@ import { Navbar } from '@/widgets/Navbar';
 import { SideBar } from '@/widgets/SideBar';
 import { getUserInited, userActions } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 const App = () => {
     const { theme } = useTheme();

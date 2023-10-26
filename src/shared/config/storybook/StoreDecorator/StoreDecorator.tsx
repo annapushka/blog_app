@@ -2,6 +2,7 @@ import { Story } from '@storybook/react';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';
 import { addCommentFormReducer } from '@/features/AddCommentForm/testing';
+// eslint-disable-next-line fsd-01/layer-imports
 import { profileReducer } from '@/features/EditableProfileCard';
 import { articleDetailsReducer } from '@/entities/Article/testing';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
