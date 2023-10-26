@@ -1,5 +1,10 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { Project } from 'ts-morph';
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 
 const project = new Project();
 
@@ -8,10 +13,12 @@ project.addSourceFilesAtPaths('src/**/*.tsx');
 
 const files = project.getSourceFiles();
 const uiPath = path.resolve(__dirname, '..', '..', 'src', 'shared', 'ui');
-const sharedUiDirectory = project.getDirectory(path.resolve(uiPath));
+const sharedUiDirectory = project.getDirectory(uiPath);
 const componentsDirs = sharedUiDirectory?.getDirectories();
 
-function isAbsolute(value: string) {
+console.log(sharedUiDirectory);
+
+function isAbsolute(value) {
     const layers = ['app', 'shared', 'entities', 'features', 'widgets', 'pages'];
     return layers.some((layer) => value.startsWith(layer));
 }
