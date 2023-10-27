@@ -13,7 +13,7 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'fsd-01'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'fsd-01', 'unused-imports'],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
@@ -31,6 +31,7 @@ module.exports = {
         'no-shadow': 'off',
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
+        'unused-imports/no-unused-imports': 'error',
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': [
             'error',
