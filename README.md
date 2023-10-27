@@ -27,6 +27,6 @@ In progress...
   <li>Debounce</li>
 </ul>
 
-<img src="/public/result.png" alt="result" width="250px"/>
+<img src="/public/result.png" alt="result"/>
 
 <!-- [Сlick me](https://main--brilliant-malabi-9a3ca0.netlify.app/) -->
