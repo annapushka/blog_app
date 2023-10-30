@@ -14,6 +14,14 @@ export const parameters = {
         },
     },
     layout: 'fullscreen',
+    themes: {
+        default: 'dark',
+        list: [
+            { name: 'light', class: Theme.LIGHT, color: '#e2f8ff' },
+            { name: 'dark', class: Theme.DARK, color: '#2b2828' },
+            { name: 'blue', class: Theme.BLUE, color: '#5e69ee' },
+        ],
+    },
 };
 
 /*  @ts-ignore */
