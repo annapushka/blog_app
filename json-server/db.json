@@ -790,7 +790,7 @@
       "roles": [
         "MANAGER"
       ],
-      "avatar": "https://thispersondoesnotexist.com/"
+      "avatar": "https://thispersondoesnotexist.com/2"
     }
   ],
   "article-ratings": [
@@ -821,6 +821,13 @@
       "rate": 2,
       "feedback": "",
       "id": "YYZqadG"
+    },
+    {
+      "userId": "3",
+      "articleId": "20",
+      "rate": 2,
+      "feedback": "",
+      "id": "ec0P5A8"
     }
   ],
   "profile-ratings": [

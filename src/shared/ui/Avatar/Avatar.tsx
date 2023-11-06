@@ -1,20 +1,25 @@
 import { CSSProperties, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
+import AppImage from '../AppImage/AppImage';
+import Icon from '../Icon/Icon';
+import UseIcon from '@/shared/assets/icons/user.svg';
+import Skeleton from '../Skeleton/Skeleton';
 
 interface AvatarProps {
     className?: string;
     src?: string;
     size?: number;
     alt?: string;
+    fallbackInverted?: boolean;
 }
 
 export const Avatar = ({
-    className, src, size, alt,
+    className, src, size = 100, alt, fallbackInverted,
 }: AvatarProps) => {
     const style = useMemo<CSSProperties>(() => ({
-        width: size || 100,
-        height: size || 100,
+        width: size,
+        height: size,
         overflow: 'hidden',
         display: 'flex',
         justifyContent: 'center',
@@ -22,15 +27,18 @@ export const Avatar = ({
         borderRadius: '50%',
     }), [size]);
 
+    const errorFallback = <Icon inverted={fallbackInverted} width={size} height={size} Svg={UseIcon} className={cls.img} />;
+    const fallback = <Skeleton width={size} height={size} border="50%" />;
+
     return (
         <div className={classNames(cls.Avatar, {}, [className])} style={style}>
-            {src ? (
-                <img
-                    src={src}
-                    alt={alt}
-                    className={cls.img}
-                />
-            ) : (<div className={cls.img} />)}
+            <AppImage
+                fallback={fallback}
+                errorFallback={errorFallback}
+                src={src}
+                alt={alt}
+                className={cls.img}
+            />
         </div>
 
     );
