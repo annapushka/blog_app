@@ -51,6 +51,7 @@ export default {
     setupFilesAfterEnv: [
         '<rootDir>config/jest/setupTests.ts',
     ],
+    modulePathIgnorePatterns: ['<rootDir>/src/shared/types/'],
     reporters: [
         'default',
         ['jest-html-reporters', {

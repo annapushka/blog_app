@@ -11,21 +11,21 @@ describe('Counter', () => {
         expect(screen.getByTestId('value-title')).toHaveTextContent('10');
     });
 
-    test('increment Counter', () => {
+    test('increment Counter', async () => {
         componentRender(<Counter />, {
             initialState: { counter: { value: 10 } },
         });
         expect(screen.getByTestId('increment-btn')).toBeInTheDocument();
-        userEvent.click(screen.getByTestId('increment-btn'));
-        expect(screen.getByTestId('value-title')).toHaveTextContent('11');
+        await userEvent.click(screen.getByTestId('increment-btn'));
+        await expect(screen.getByTestId('value-title')).toHaveTextContent('11');
     });
 
-    test('decrement Counter', () => {
+    test('decrement Counter', async () => {
         componentRender(<Counter />, {
             initialState: { counter: { value: 10 } },
         });
         expect(screen.getByTestId('decrement-btn')).toBeInTheDocument();
-        userEvent.click(screen.getByTestId('decrement-btn'));
-        expect(screen.getByTestId('value-title')).toHaveTextContent('9');
+        await userEvent.click(screen.getByTestId('decrement-btn'));
+        await expect(screen.getByTestId('value-title')).toHaveTextContent('9');
     });
 });
