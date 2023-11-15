@@ -1,4 +1,4 @@
-import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
+import webpack, { DefinePlugin } from 'webpack';
 import path from 'path';
 import { BuildPaths } from '../build/types/config';
 import { buildCssLoader } from '../build/loaders/builCssLoader';
@@ -17,15 +17,29 @@ export default ({ config }: {config: webpack.Configuration}) => {
 
     // eslint-disable-next-line no-param-reassign
     // @ts-ignore
-    config!.module!.rules = config.module!.rules!.map((rule: RuleSetRule) => {
-        if (/svg/.test(rule.test as string)) {
-            return { ...rule, exclude: /\.svg$/i };
+    config!.module!.rules = config.module!.rules!.map((rule: webpack.RuleSetRule | '...') => {
+        if (rule !== '...'
+        && /svg/.test(rule.test as string)
+        && /png/.test(rule.test as string)
+        && /jpg/.test(rule.test as string)) {
+            return { ...rule, exclude: /\.(png|jpe?g|svg)$/i };
         }
 
         return rule;
     });
 
     config!.module!.rules.push({
+        test: /\.(png|jpe?g)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'shared/assets/tests/',
+                },
+            },
+        ],
+    }, {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     });
