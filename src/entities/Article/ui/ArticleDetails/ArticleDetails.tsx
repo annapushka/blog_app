@@ -26,8 +26,8 @@ import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArt
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { ArticleBlock } from '../../model/types/article';
 import cls from './ArticleDetails.module.scss';
-import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import ArticleCodeBlockComponent from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 
 interface ArticleDetailsProps {
