@@ -4,8 +4,6 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 import { Theme } from '../../src/shared/const/theme';
 
-const decorators = [StyleDecorator, ThemeDecorator(Theme.LIGHT), RouterDecorator, SuspenseDecorator];
-
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -15,7 +13,7 @@ export const parameters = {
         },
     },
     layout: 'fullscreen',
-    decorators,
+    decorators: [StyleDecorator, ThemeDecorator, RouterDecorator, SuspenseDecorator],
     themes: {
         default: 'dark',
         list: [
