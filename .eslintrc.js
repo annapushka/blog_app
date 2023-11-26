@@ -76,6 +76,7 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
             },
         ],
+        'linebreak-style': 0,
     },
     globals: {
         __IS_DEV__: true,
