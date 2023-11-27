@@ -37,9 +37,7 @@
       "views": 1022,
       "createdAt": "19.05.2023",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -77,9 +75,7 @@
       "views": 3258,
       "createdAt": "09.05.2013",
       "userId": "2",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -105,9 +101,7 @@
       "views": 8,
       "createdAt": "16.09.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -133,10 +127,7 @@
       "views": 2058,
       "createdAt": "11.08.2023",
       "userId": "2",
-      "type": [
-        "IT",
-        "OTHER"
-      ],
+      "type": ["IT", "OTHER"],
       "blocks": [
         {
           "id": "1",
@@ -162,11 +153,7 @@
       "views": 1057,
       "createdAt": "11.08.2020",
       "userId": "1",
-      "type": [
-        "IT",
-        "DESIGN",
-        "OTHER"
-      ],
+      "type": ["IT", "DESIGN", "OTHER"],
       "blocks": [
         {
           "id": "1",
@@ -192,9 +179,7 @@
       "views": 57,
       "createdAt": "21.08.2023",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -226,9 +211,7 @@
       "views": 325,
       "createdAt": "19.09.2020",
       "userId": "2",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -254,9 +237,7 @@
       "views": 897,
       "createdAt": "12.09.2016",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -282,10 +263,7 @@
       "views": 2008,
       "createdAt": "01.08.2018",
       "userId": "1",
-      "type": [
-        "IT",
-        "OTHER"
-      ],
+      "type": ["IT", "OTHER"],
       "blocks": [
         {
           "id": "1",
@@ -311,11 +289,7 @@
       "views": 1057,
       "createdAt": "11.08.2018",
       "userId": "2",
-      "type": [
-        "IT",
-        "DESIGN",
-        "OTHER"
-      ],
+      "type": ["IT", "DESIGN", "OTHER"],
       "blocks": [
         {
           "id": "1",
@@ -341,9 +315,7 @@
       "views": 5700,
       "createdAt": "21.08.2018",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -375,9 +347,7 @@
       "views": 358,
       "createdAt": "19.09.2021",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -403,9 +373,7 @@
       "views": 9858,
       "createdAt": "12.11.2022",
       "userId": "2",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -431,10 +399,7 @@
       "views": 1258,
       "createdAt": "01.08.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "OTHER"
-      ],
+      "type": ["IT", "OTHER"],
       "blocks": [
         {
           "id": "1",
@@ -460,11 +425,7 @@
       "views": 1057,
       "createdAt": "22.08.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "DESIGN",
-        "OTHER"
-      ],
+      "type": ["IT", "DESIGN", "OTHER"],
       "blocks": [
         {
           "id": "1",
@@ -490,9 +451,7 @@
       "views": 507,
       "createdAt": "22.10.2023",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -524,9 +483,7 @@
       "views": 58,
       "createdAt": "13.09.2023",
       "userId": "1",
-      "type": [
-        "OTHER"
-      ],
+      "type": ["OTHER"],
       "blocks": [
         {
           "id": "1",
@@ -552,9 +509,7 @@
       "views": 888,
       "createdAt": "12.11.2023",
       "userId": "2",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -580,10 +535,7 @@
       "views": 567,
       "createdAt": "01.04.2023",
       "userId": "1",
-      "type": [
-        "IT",
-        "OTHER"
-      ],
+      "type": ["IT", "OTHER"],
       "blocks": [
         {
           "id": "1",
@@ -609,11 +561,7 @@
       "views": 1057,
       "createdAt": "01.08.2023",
       "userId": "1",
-      "type": [
-        "IT",
-        "DESIGN",
-        "OTHER"
-      ],
+      "type": ["IT", "DESIGN", "OTHER"],
       "blocks": [
         {
           "id": "1",
@@ -639,9 +587,7 @@
       "views": 97,
       "createdAt": "21.07.2021",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -762,6 +708,17 @@
       "city": "Saint P",
       "username": "sashaIT",
       "avatar": "https://thispersondoesnotexist.com/"
+    },
+    {
+      "id": "3",
+      "first": "manager",
+      "lastname": "manager",
+      "age": 38,
+      "currency": "RUB",
+      "country": "Armenia",
+      "city": "Saint P",
+      "username": "sashaIT",
+      "avatar": "https://thispersondoesnotexist.com/"
     }
   ],
   "users": [
@@ -769,28 +726,22 @@
       "id": "1",
       "username": "Sasha",
       "password": "test",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "avatar": "https://thispersondoesnotexist.com/"
     },
     {
       "id": "2",
       "username": "user",
       "password": "user",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://thispersondoesnotexist.com/"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "manager",
-      "roles": [
-        "MANAGER"
-      ],
-      "avatar": "https://thispersondoesnotexist.com/2"
+      "roles": ["MANAGER"],
+      "avatar": "https://thispersondoesnotexist.com/"
     }
   ],
   "article-ratings": [
