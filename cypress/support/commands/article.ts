@@ -39,17 +39,24 @@ export const createArticle = (article?: Article) => {
             Authorization: 'test',
         },
         body: article ?? defaultArticle,
-    });
+    }).then((resp) => resp.body);
 };
 
 export const removeArticle = (articleId: string) => {
+    return cy.request({
+        method: 'DELETE',
+        url: `http://localhost:8000/articles/${articleId}`,
+        headers: {
+            Authorization: 'test',
+        },
+    });
 };
 
 declare global {
     namespace Cypress {
       interface Chainable {
-        updateProfile(): Chainable<void>;
-        resetProfile(profileId: string): Chainable<void>;
+        createArticle(article?: Article): Chainable<Article>;
+        removeArticle(articleId: string): Chainable<void>;
       }
     }
   }
