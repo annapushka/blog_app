@@ -2,10 +2,10 @@ describe('template spec', () => {
     beforeEach(() => {
         cy.visit('');
         cy.login();
-        cy.createArticle();
+        // cy.createArticle();
     });
     afterEach(() => {
-        cy.removeArticle();
+        // cy.removeArticle();
     });
     it('passes', () => {
         cy.visit('https://example.cypress.io');

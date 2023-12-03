@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
-import { Article } from '../../../entities/Article';
 
-const defaultArticle: Article = {
+import { Article } from '../../../src/entities/Article';
+
+const defaultArticle = {
     title: 'Основы 1С-разработки',
     subtitle: 'Создаём базу данных для торгового предприятия',
     img: 'https://курс1с.рф/wp-content/uploads/2022/12/g3_%D0%9C%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BD%D0%B0%D1%8F-%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C-1-1.png',
