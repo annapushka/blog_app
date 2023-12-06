@@ -18,4 +18,10 @@ describe('User goes to Article page', () => {
     it('and sees the recommendation list', () => {
         cy.getByTestId('ArticleRecommendationsList').should('exist');
     });
+    it('and leaves a comment', () => {
+        cy.getByTestId('ArticleDetails.Info');
+        cy.getByTestId('AddCommentFrom').scrollIntoView();
+        cy.addComment('test comment');
+        cy.getByTestId('CommentCard.Content').should('have.length', 1);
+    });
 });
