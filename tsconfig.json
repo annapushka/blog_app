@@ -8,10 +8,15 @@
     "allowJs": true,
     "strict": true,
     "moduleResolution": "node",
-    "types": ["vite-plugin-svgr/client", "node"],
+    "types": [
+      "vite-plugin-svgr/client",
+      "node"
+    ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
