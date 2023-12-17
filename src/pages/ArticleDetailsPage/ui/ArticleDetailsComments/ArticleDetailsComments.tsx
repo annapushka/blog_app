@@ -19,7 +19,8 @@ interface ArticleDetailsCommentsProps {
     id?: string;
 }
 
-export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
+export const ArticleDetailsComments = memo(
+  (props: ArticleDetailsCommentsProps) => {
     const { className, id } = props;
     const { t } = useTranslation('article');
 
@@ -29,24 +30,25 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     const isLoading = useSelector(getArticleCommentsIsLoading);
 
     useInitialEffect(() => {
-        dispatch(fetchCommentsByArticleById(id));
+      dispatch(fetchCommentsByArticleById(id));
     });
 
-    const onSendComment = useCallback((text: string) => {
+    const onSendComment = useCallback(
+      (text: string) => {
         dispatch(addCommentForArticle(text));
-    }, [dispatch]);
-    return (
-        <VStack gap="16" max className={classNames('', {}, [className])}>
-            <Text title={t('Комментарии')} />
-            <Suspense fallback={<Loader />}>
-                <AddComentForm onSendComment={onSendComment} />
-            </Suspense>
-            <CommentList
-                isLoading={isLoading}
-                comments={comments}
-            />
-        </VStack>
+      },
+      [dispatch],
     );
-});
+    return (
+      <VStack gap="16" max className={classNames('', {}, [className])}>
+        <Text title={t('Комментарии')} />
+        <Suspense fallback={<Loader />}>
+          <AddComentForm onSendComment={onSendComment} />
+        </Suspense>
+        <CommentList isLoading={isLoading} comments={comments} />
+      </VStack>
+    );
+  },
+);
 
 export default ArticleDetailsComments;

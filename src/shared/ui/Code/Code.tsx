@@ -11,24 +11,22 @@ interface CodeProps {
 }
 
 export const Code = memo(({ className, text }: CodeProps) => {
-    const onCopy = useCallback(() => {
-        navigator.clipboard.writeText(text);
-    }, [text]);
+  const onCopy = useCallback(() => {
+    navigator.clipboard.writeText(text);
+  }, [text]);
 
-    return (
-        <pre className={classNames(cls.Code, {}, [className])}>
-            <Button
-                className={cls.copyBtn}
-                theme={ButtonTheme.CLEAR}
-                onClick={onCopy}
-            >
-                <Icon Svg={CopyIcon} className={cls.copyIcon} />
-            </Button>
-            <code>
-                {text}
-            </code>
-        </pre>
-    );
+  return (
+    <pre className={classNames(cls.Code, {}, [className])}>
+      <Button
+        className={cls.copyBtn}
+        theme={ButtonTheme.CLEAR}
+        onClick={onCopy}
+      >
+        <Icon Svg={CopyIcon} className={cls.copyIcon} />
+      </Button>
+      <code>{text}</code>
+    </pre>
+  );
 });
 
 export default Code;

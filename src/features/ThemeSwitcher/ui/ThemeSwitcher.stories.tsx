@@ -5,15 +5,17 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 export default {
-    title: 'features/ThemeSwitcher',
-    component: ThemeSwitcher,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'features/ThemeSwitcher',
+  component: ThemeSwitcher,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof ThemeSwitcher>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />;
+const Template: ComponentStory<typeof ThemeSwitcher> = (args) => (
+  <ThemeSwitcher {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

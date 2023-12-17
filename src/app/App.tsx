@@ -8,25 +8,25 @@ import { AppRouter } from './providers/router';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 const App = () => {
-    const { theme } = useTheme();
-    const dispatch = useDispatch();
-    const inited = useSelector(getUserInited);
+  const { theme } = useTheme();
+  const dispatch = useDispatch();
+  const inited = useSelector(getUserInited);
 
-    useEffect(() => {
-        dispatch(userActions.initAuthData());
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(userActions.initAuthData());
+  }, [dispatch]);
 
-    return (
-        <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <SideBar />
-                    {inited && <AppRouter />}
-                </div>
-            </Suspense>
+  return (
+    <div className={classNames('app', {}, [theme])}>
+      <Suspense fallback="">
+        <Navbar />
+        <div className="content-page">
+          <SideBar />
+          {inited && <AppRouter />}
         </div>
-    );
+      </Suspense>
+    </div>
+  );
 };
 
 export default App;

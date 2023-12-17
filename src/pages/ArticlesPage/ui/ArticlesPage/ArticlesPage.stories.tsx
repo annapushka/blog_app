@@ -6,11 +6,11 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import ArticlesPage from './ArticlesPage';
 
 export default {
-    title: 'pages/ArticlesPage',
-    component: ArticlesPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'pages/ArticlesPage',
+  component: ArticlesPage,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof ArticlesPage>;
 
 const Template: ComponentStory<typeof ArticlesPage> = () => <ArticlesPage />;

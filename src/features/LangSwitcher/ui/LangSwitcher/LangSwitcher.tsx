@@ -8,20 +8,20 @@ interface LangSwitcherProps {
 }
 
 export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
-    const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-    const changeLanguage = () => {
-        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-    };
-    return (
-        <Button
-            theme={ButtonTheme.CLEAR}
-            onClick={changeLanguage}
-            className={className}
-        >
-            {t(short ? 'Сокращение' : 'Язык')}
-        </Button>
-    );
+  const changeLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+  };
+  return (
+    <Button
+      theme={ButtonTheme.CLEAR}
+      onClick={changeLanguage}
+      className={className}
+    >
+      {t(short ? 'Сокращение' : 'Язык')}
+    </Button>
+  );
 });
 
 export default LangSwitcher;

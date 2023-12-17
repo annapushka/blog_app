@@ -12,30 +12,30 @@ interface ArticleTypeTabsProps {
 }
 
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
-    const { className, value, onChangeType } = props;
-    const typeTabs = useMemo<TabItem[]>(
-        () => Object.keys(ArticleType).map((type: string) => ({
-            value: type,
-            content: type,
-        })),
-        [],
-    );
+  const { className, value, onChangeType } = props;
+  const typeTabs = useMemo<TabItem[]>(
+    () => Object.keys(ArticleType).map((type: string) => ({
+      value: type,
+      content: type,
+    })),
+    [],
+  );
 
-    const onTabClick = useCallback(
-        (tab: TabItem) => {
-            onChangeType(tab.value as ArticleType);
-        },
-        [onChangeType],
-    );
+  const onTabClick = useCallback(
+    (tab: TabItem) => {
+      onChangeType(tab.value as ArticleType);
+    },
+    [onChangeType],
+  );
 
-    return (
-        <Tabs
-            tabs={typeTabs}
-            value={value}
-            onTabClick={onTabClick}
-            className={classNames(cls.ArticleTypeTabs, {}, [className])}
-        />
-    );
+  return (
+    <Tabs
+      tabs={typeTabs}
+      value={value}
+      onTabClick={onTabClick}
+      className={classNames(cls.ArticleTypeTabs, {}, [className])}
+    />
+  );
 });
 
 export default ArticleTypeTabs;

@@ -16,43 +16,49 @@ interface SideBarProps {
 }
 
 export const SideBar = memo(({ className }: SideBarProps) => {
-    const [collapsed, setCollapsed] = useState(false);
-    const sidebarItemsList = useSelector(getSidebarItems);
+  const [collapsed, setCollapsed] = useState(false);
+  const sidebarItemsList = useSelector(getSidebarItems);
 
-    const onToggle = () => {
-        setCollapsed((prev) => !prev);
-    };
+  const onToggle = () => {
+    setCollapsed((prev) => !prev);
+  };
 
-    return (
-        <aside
-            data-testid="sidebar"
-            className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}
-        >
-            <Button
-                data-testid="sidebar-toggle"
-                onClick={onToggle}
-                className={cls.collapseBtn}
-                theme={ButtonTheme.BACKGROUND_INVERTED}
-                square
-                size={ButtonSize.L}
-            >
-                {collapsed ? <ArrowRight className={cls.icon} /> : <ArrowLeft className={cls.icon} />}
-            </Button>
-            <VStack role="navigation" gap="8" className={cls.items}>
-                {sidebarItemsList.map((item) => (
-                    <SideBarItem
-                        item={item}
-                        collapsed={collapsed}
-                        key={item.path}
-                    />
-                ))}
-            </VStack>
-            <div className={cls.switchers}>
-                <ThemeSwitcher />
-                <LangSwitcher className={cls.lang} short={collapsed} />
-            </div>
-        </aside>
-    );
+  return (
+    <aside
+      data-testid="sidebar"
+      className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [
+        className,
+      ])}
+    >
+      <Button
+        data-testid="sidebar-toggle"
+        onClick={onToggle}
+        className={cls.collapseBtn}
+        theme={ButtonTheme.BACKGROUND_INVERTED}
+        square
+        size={ButtonSize.L}
+      >
+        {collapsed ? (
+          <ArrowRight className={cls.icon} />
+        ) : (
+          <ArrowLeft className={cls.icon} />
+        )}
+      </Button>
+      <VStack role="navigation" gap="8" className={cls.items}>
+        {sidebarItemsList.map((item) => (
+          <SideBarItem
+            item={item}
+            collapsed={collapsed}
+            key={item.path}
+          />
+        ))}
+      </VStack>
+      <div className={cls.switchers}>
+        <ThemeSwitcher />
+        <LangSwitcher className={cls.lang} short={collapsed} />
+      </div>
+    </aside>
+  );
 });
 
 export default SideBar;

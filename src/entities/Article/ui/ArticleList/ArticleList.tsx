@@ -17,14 +17,19 @@ interface ArticleListProps {
     target?: HTMLAttributeAnchorTarget;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID ? 12 : 3).fill(0).map((item, index) => (
-    // eslint-disable-next-line react/no-array-index-key
-    <ArticleListItemSkeleton view={view} key={index} className={cls.card} />
-));
+const getSkeletons = (view: ArticleView) =>
+    new Array(view === ArticleView.GRID ? 12 : 3).fill(0).map((item, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <ArticleListItemSkeleton view={view} key={index} className={cls.card} />
+    ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
-        className, articles, isLoading, view = ArticleView.GRID, target,
+        className,
+        articles,
+        isLoading,
+        view = ArticleView.GRID,
+        target,
     } = props;
 
     const { t } = useTranslation('article');
@@ -32,7 +37,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
     if (!isLoading && !articles?.length) {
         return (
             <div
-                className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+                className={classNames(cls.ArticleList, {}, [
+                    className,
+                    cls[view],
+                ])}
             >
                 <Text title={t('Статьи не найдены')} />
             </div>
@@ -42,7 +50,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
     return (
         <>
             <div
-                className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+                className={classNames(cls.ArticleList, {}, [
+                    className,
+                    cls[view],
+                ])}
                 data-testid="ArticleList"
             >
                 {articles.map((article) => (
@@ -55,7 +66,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     />
                 ))}
             </div>
-            <div className={classNames(cls.skeletonsWrapper, {}, [className, cls[view]])}>
+            <div
+                className={classNames(cls.skeletonsWrapper, {}, [
+                    className,
+                    cls[view],
+                ])}
+            >
                 {isLoading && getSkeletons(view)}
             </div>
         </>

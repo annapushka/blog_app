@@ -5,11 +5,11 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Loader } from './Loader';
 
 export default {
-    title: 'shared/Loader',
-    component: Loader,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'shared/Loader',
+  component: Loader,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof Loader>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading

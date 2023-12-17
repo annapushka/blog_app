@@ -8,45 +8,52 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import ProfilePage from './ProfilePage';
 
 export default {
-    title: 'pages/ProfilePage',
-    component: ProfilePage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'pages/ProfilePage',
+  component: ProfilePage,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof ProfilePage>;
 
 /*  @ts-ignore */
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
+const Template: ComponentStory<typeof ProfilePage> = (args) => (
+  <ProfilePage {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
+Normal.decorators = [
+  StoreDecorator({
     profile: {
-        form: {
-            first: 'Masha',
-            lastname: 'Yagoda',
-            age: 37,
-            currency: Currency.GBP,
-            country: Country.Azerbaijan,
-            city: 'Saint P',
-            username: 'admin',
-        },
+      form: {
+        first: 'Masha',
+        lastname: 'Yagoda',
+        age: 37,
+        currency: Currency.GBP,
+        country: Country.Azerbaijan,
+        city: 'Saint P',
+        username: 'admin',
+      },
     },
-})];
+  }),
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+Dark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
     profile: {
-        form: {
-            first: 'Masha',
-            lastname: 'Yagoda',
-            age: 37,
-            currency: Currency.GBP,
-            country: Country.Azerbaijan,
-            city: 'Saint P',
-            username: 'admin',
-        },
+      form: {
+        first: 'Masha',
+        lastname: 'Yagoda',
+        age: 37,
+        currency: Currency.GBP,
+        country: Country.Azerbaijan,
+        city: 'Saint P',
+        username: 'admin',
+      },
     },
-})];
+  }),
+];

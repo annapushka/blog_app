@@ -5,15 +5,15 @@ import { componentRender } from '@/shared/config/tests/componentRender/component
 import { SideBar } from './SideBar';
 
 describe('SideBar', () => {
-    test('render SideBar', () => {
-        componentRender(<SideBar />);
-        expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-    });
-    test('toggle', () => {
-        componentRender(<SideBar />);
-        const toggleBtn = screen.getByTestId('sidebar-toggle');
-        expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-        fireEvent.click(toggleBtn);
-        expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
-    });
+  test('render SideBar', () => {
+    componentRender(<SideBar />);
+    expect(screen.getByTestId('sidebar')).toBeInTheDocument();
+  });
+  test('toggle', () => {
+    componentRender(<SideBar />);
+    const toggleBtn = screen.getByTestId('sidebar-toggle');
+    expect(screen.getByTestId('sidebar')).toBeInTheDocument();
+    fireEvent.click(toggleBtn);
+    expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
+  });
 });

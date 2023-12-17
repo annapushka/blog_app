@@ -8,35 +8,35 @@ export const addCommentForArticle = createAsyncThunk<
     Comment,
     string,
     ThunkConfig<string>
->(
-    'articleDetails/addCommentForArticle',
-    async (text, thunkAPI) => {
-        const {
-            dispatch, rejectWithValue, extra: { api }, getState,
-        } = thunkAPI;
-        const userData = getUserAuthData(getState());
-        const article = getArticleDetailsData(getState());
+>('articleDetails/addCommentForArticle', async (text, thunkAPI) => {
+  const {
+    dispatch,
+    rejectWithValue,
+    extra: { api },
+    getState,
+  } = thunkAPI;
+  const userData = getUserAuthData(getState());
+  const article = getArticleDetailsData(getState());
 
-        if (!userData || !text || !article) {
-            return rejectWithValue('no data');
-        }
+  if (!userData || !text || !article) {
+    return rejectWithValue('no data');
+  }
 
-        try {
-            const response = await api.post<Comment>('/comments', {
-                articleId: article.id,
-                userId: userData.id,
-                text,
-            });
+  try {
+    const response = await api.post<Comment>('/comments', {
+      articleId: article.id,
+      userId: userData.id,
+      text,
+    });
 
-            if (!response.data) {
-                throw new Error();
-            }
+    if (!response.data) {
+      throw new Error();
+    }
 
-            dispatch(fetchCommentsByArticleById(article.id));
+    dispatch(fetchCommentsByArticleById(article.id));
 
-            return response.data;
-        } catch (error) {
-            return rejectWithValue('error');
-        }
-    },
-);
+    return response.data;
+  } catch (error) {
+    return rejectWithValue('error');
+  }
+});

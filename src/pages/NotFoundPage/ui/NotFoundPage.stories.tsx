@@ -6,16 +6,18 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import NotFoundPage from './NotFoundPage';
 
 export default {
-    title: 'pages/NotFoundPage',
-    component: NotFoundPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'pages/NotFoundPage',
+  component: NotFoundPage,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof NotFoundPage>;
 
 /*  @ts-ignore */
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage {...args} />;
+const Template: ComponentStory<typeof NotFoundPage> = (args) => (
+  <NotFoundPage {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

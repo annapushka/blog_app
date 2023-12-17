@@ -15,33 +15,47 @@ interface AvatarProps {
 }
 
 export const Avatar = ({
-    className, src, size = 100, alt, fallbackInverted,
+  className,
+  src,
+  size = 100,
+  alt,
+  fallbackInverted,
 }: AvatarProps) => {
-    const style = useMemo<CSSProperties>(() => ({
-        width: size,
-        height: size,
-        overflow: 'hidden',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: '50%',
-    }), [size]);
+  const style = useMemo<CSSProperties>(
+    () => ({
+      width: size,
+      height: size,
+      overflow: 'hidden',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: '50%',
+    }),
+    [size],
+  );
 
-    const errorFallback = <Icon inverted={fallbackInverted} width={size} height={size} Svg={UseIcon} className={cls.img} />;
-    const fallback = <Skeleton width={size} height={size} border="50%" />;
+  const errorFallback = (
+    <Icon
+      inverted={fallbackInverted}
+      width={size}
+      height={size}
+      Svg={UseIcon}
+      className={cls.img}
+    />
+  );
+  const fallback = <Skeleton width={size} height={size} border="50%" />;
 
-    return (
-        <div className={classNames(cls.Avatar, {}, [className])} style={style}>
-            <AppImage
-                fallback={fallback}
-                errorFallback={errorFallback}
-                src={src}
-                alt={alt}
-                className={cls.img}
-            />
-        </div>
-
-    );
+  return (
+    <div className={classNames(cls.Avatar, {}, [className])} style={style}>
+      <AppImage
+        fallback={fallback}
+        errorFallback={errorFallback}
+        src={src}
+        alt={alt}
+        className={cls.img}
+      />
+    </div>
+  );
 };
 
 export default Avatar;

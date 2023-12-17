@@ -6,11 +6,9 @@
     "views": 567,
     "createdAt": "01.04.2023",
     "userId": "1",
-    "type": [
-        "IT",
-        "OTHER"
-    ],
-    "blocks": [{
+    "type": ["IT", "OTHER"],
+    "blocks": [
+        {
             "id": "1",
             "type": "TEXT",
             "paragraphs": [
@@ -29,9 +27,7 @@
         "id": "1",
         "username": "Sasha",
         "password": "test",
-        "roles": [
-            "ADMIN"
-        ],
+        "roles": ["ADMIN"],
         "avatar": "https://thispersondoesnotexist.com/"
     }
 }

@@ -12,21 +12,27 @@ interface ArticleTextBlockComponentProps {
 }
 
 export const ArticleTextBlockComponent = memo(
-    (props: ArticleTextBlockComponentProps) => {
-        const { className, block } = props;
-        const { t } = useTranslation('article');
+  (props: ArticleTextBlockComponentProps) => {
+    const { className, block } = props;
+    const { t } = useTranslation('article');
 
-        const mods: Mods = {};
+    const mods: Mods = {};
 
-        return (
-            <div className={classNames(cls.ProfileCard, mods, [className])}>
-                {block.title && <Text title={t(block.title)} className={cls.title} />}
-                {block.paragraphs.map((paragraph) => (
-                    <Text text={paragraph} key={paragraph} className={cls.paragraph} />
-                ))}
-            </div>
-        );
-    },
+    return (
+      <div className={classNames(cls.ProfileCard, mods, [className])}>
+        {block.title && (
+        <Text title={t(block.title)} className={cls.title} />
+        )}
+        {block.paragraphs.map((paragraph) => (
+          <Text
+            text={paragraph}
+            key={paragraph}
+            className={cls.paragraph}
+          />
+        ))}
+      </div>
+    );
+  },
 );
 
 export default ArticleTextBlockComponent;

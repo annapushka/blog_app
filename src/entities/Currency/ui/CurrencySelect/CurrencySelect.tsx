@@ -11,32 +11,36 @@ interface CurrencySelectProps {
 }
 
 export const CurrencySelect = memo((props: CurrencySelectProps) => {
-    const {
-        className,
-        value,
-        onChange,
-        readonly,
-    } = props;
+  const {
+    className, value, onChange, readonly,
+  } = props;
 
-    const currencyOptions = useMemo(() => Object.entries(Currency).map((val) => (
-        { value: val[0], content: val[1] }
-    )), []);
+  const currencyOptions = useMemo(
+    () => Object.entries(Currency).map((val) => ({
+      value: val[0],
+      content: val[1],
+    })),
+    [],
+  );
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Currency);
-    }, [onChange]);
+  const onChangeHandler = useCallback(
+    (value: string) => {
+      onChange?.(value as Currency);
+    },
+    [onChange],
+  );
 
-    return (
-        <ListBox
-            value={value}
-            items={currencyOptions}
-            defaultValue={Currency.RUB}
-            className={className}
-            onChange={onChangeHandler}
-            readonly={readonly}
-            direction="top left"
-        />
-    );
+  return (
+    <ListBox
+      value={value}
+      items={currencyOptions}
+      defaultValue={Currency.RUB}
+      className={className}
+      onChange={onChangeHandler}
+      readonly={readonly}
+      direction="top left"
+    />
+  );
 });
 
 export default CurrencySelect;

@@ -3,13 +3,11 @@ import { useParams } from 'react-router-dom';
 import { Page } from '@/widgets/Page';
 
 const ArticleEditePage = () => {
-    const { t } = useTranslation('article');
-    const { id } = useParams<{ id: string }>();
-    const isEdit = Boolean(id);
+  const { t } = useTranslation('article');
+  const { id } = useParams<{ id: string }>();
+  const isEdit = Boolean(id);
 
-    return (
-        <Page />
-    );
+  return <Page />;
 };
 
 export default ArticleEditePage;

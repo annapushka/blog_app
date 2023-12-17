@@ -20,6 +20,6 @@ export enum ArticleType {
     IT = 'IT',
     ART = 'ART',
     GAME = 'GAME',
-    DESIGN= 'DESIGN',
+    DESIGN = 'DESIGN',
     OTHER = 'OTHER',
 }

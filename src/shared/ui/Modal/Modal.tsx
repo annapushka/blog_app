@@ -15,41 +15,35 @@ interface ModalProps {
 }
 
 export const Modal = (props: ModalProps) => {
-    const {
-        className,
-        children,
-        isOpen,
-        onClose,
-        lazy,
-    } = props;
+  const {
+    className, children, isOpen, onClose, lazy,
+  } = props;
 
-    const { theme } = useTheme();
+  const { theme } = useTheme();
 
-    const { close, isClosing, isMounted } = useModal({
-        animationDelay: 300,
-        onClose,
-        isOpen,
-    });
+  const { close, isClosing, isMounted } = useModal({
+    animationDelay: 300,
+    onClose,
+    isOpen,
+  });
 
-    const mods: Mods = {
-        [cls.opened]: isOpen,
-        [cls.isClosing]: isClosing,
-    };
+  const mods: Mods = {
+    [cls.opened]: isOpen,
+    [cls.isClosing]: isClosing,
+  };
 
-    if (lazy && !isMounted) {
-        return null;
-    }
+  if (lazy && !isMounted) {
+    return null;
+  }
 
-    return (
-        <Portal>
-            <div className={classNames(cls.Modal, mods, [className, theme])}>
-                <Overlay onClick={close} />
-                <div className={cls.content}>
-                    {children}
-                </div>
-            </div>
-        </Portal>
-    );
+  return (
+    <Portal>
+      <div className={classNames(cls.Modal, mods, [className, theme])}>
+        <Overlay onClick={close} />
+        <div className={cls.content}>{children}</div>
+      </div>
+    </Portal>
+  );
 };
 
 export default Modal;

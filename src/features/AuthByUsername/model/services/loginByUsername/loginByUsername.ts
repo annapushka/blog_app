@@ -13,20 +13,23 @@ export const loginByUsername = createAsyncThunk<
     LoginByUsernamePros,
     ThunkConfig<string>
 >(
-    'users/fetchByIdStatus',
-    async (authData, { dispatch, rejectWithValue, extra: { api } }) => {
-        try {
-            const response = await api.post<User>('/login', authData);
+  'users/fetchByIdStatus',
+  async (authData, { dispatch, rejectWithValue, extra: { api } }) => {
+    try {
+      const response = await api.post<User>('/login', authData);
 
-            if (!response.data) {
-                throw new Error();
-            }
+      if (!response.data) {
+        throw new Error();
+      }
 
-            localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
-            dispatch(userActions.setAuthData(response.data));
-            return response.data;
-        } catch (error) {
-            return rejectWithValue('error');
-        }
-    },
+      localStorage.setItem(
+        USER_LOCALSTORAGE_KEY,
+        JSON.stringify(response.data),
+      );
+      dispatch(userActions.setAuthData(response.data));
+      return response.data;
+    } catch (error) {
+      return rejectWithValue('error');
+    }
+  },
 );

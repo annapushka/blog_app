@@ -4,5 +4,7 @@ import { ReactNode } from 'react';
 import i18nForTests from '../../i18n/i18nForTests';
 
 export function renderWithTranslation(component: ReactNode) {
-    return render(<I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>);
+  return render(
+    <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>,
+  );
 }

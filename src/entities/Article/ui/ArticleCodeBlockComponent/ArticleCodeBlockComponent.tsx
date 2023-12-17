@@ -11,17 +11,21 @@ interface ArticleCodeBlockComponentProps {
 }
 
 export const ArticleCodeBlockComponent = memo(
-    (props: ArticleCodeBlockComponentProps) => {
-        const { className, block } = props;
+  (props: ArticleCodeBlockComponentProps) => {
+    const { className, block } = props;
 
-        const mods: Mods = {};
+    const mods: Mods = {};
 
-        return (
-            <div className={classNames(cls.ArticleCodeBlockComponent, mods, [className])}>
-                <Code text={block.code} />
-            </div>
-        );
-    },
+    return (
+      <div
+        className={classNames(cls.ArticleCodeBlockComponent, mods, [
+          className,
+        ])}
+      >
+        <Code text={block.code} />
+      </div>
+    );
+  },
 );
 
 export default ArticleCodeBlockComponent;
