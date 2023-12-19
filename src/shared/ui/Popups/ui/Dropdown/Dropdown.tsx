@@ -57,7 +57,7 @@ export function Dropdown({
             if (item.href) {
               return (
                 <Menu.Item
-                                    // eslint-disable-next-line react/no-array-index-key
+                  // eslint-disable-next-line react/no-array-index-key
                   key={index}
                   as={AppLink}
                   to={item.href}
@@ -70,8 +70,8 @@ export function Dropdown({
             }
 
             return (
-            // eslint-disable-next-line react/no-array-index-key
               <Menu.Item
+                // eslint-disable-next-line react/no-array-index-key
                 key={index}
                 as={Fragment}
                 disabled={item.disabled}
