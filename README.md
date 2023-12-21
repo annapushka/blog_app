@@ -1,4 +1,4 @@
-## Запуск проекта
+## Project start
 
 ```
 npm install - set dependencies
@@ -7,7 +7,7 @@ npm run start:dev или npm run start:dev:vite - running server + frontend proj
 
 ---
 
-## Скрипты
+## Scripts
 
 - `npm run start` - Start frontend project on webpack dev server
 - `npm run start:vite` - Start frontend project on vite
