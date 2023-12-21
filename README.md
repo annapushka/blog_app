@@ -1,4 +1,4 @@
-## Project start
+## Project Start
 
 ```
 npm install - set dependencies
@@ -44,7 +44,7 @@ Link to documentation -
 
 ---
 
-## Handling translations
+## Handling Translations
 
 The project uses the i18next library to work with translations. Files with translations are stored in
 public/locales.
@@ -71,7 +71,7 @@ _eslint-plugin-fsd-01_, which contains 3 rules:
    cannot be used in features and entitites)
 3. public-api-imports - allows import from other modules only from public api. Has auto fix.
 
-##### Starting linters
+##### Starting Linters
 
 - `npm run lint:ts` - Check ts files by linter
 - `npm run lint:ts:fix` - Fix ts files by linter
@@ -115,7 +115,7 @@ The `scripts` folder contains various scripts for refactoring/simplifying code w
 
 ---
 
-## CI pipeline и pre commit hooks
+## CI Pipeline and Pre Commit Hooks
 
 The github actions configuration is in /.github/workflows. All kinds of tests are run in ci, building
 project and storybook builds, linting.
@@ -124,7 +124,7 @@ In precommit hooks check the project with linters, config in /.husky
 
 ---
 
-### Working with data
+### Working With Data
 
 Data interaction is done with the redux toolkit. If possible, overused
 entities should be normalised using EntityAdapter
