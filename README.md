@@ -40,7 +40,7 @@ npm run start:dev или npm run start:dev:vite - running server + frontend proj
 The project is written according to the Feature Sliced Design methodology
 
 Link to documentation -
-[feature sliced design](https://feature-sliced.design/docs/get-started/tutorial)
+[Feature Sliced Design](https://feature-sliced.design/docs/get-started/tutorial)
 
 ---
 
