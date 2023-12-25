@@ -779,21 +779,33 @@
             "username": "Sasha",
             "password": "test",
             "roles": ["ADMIN"],
-            "avatar": "https://thispersondoesnotexist.com/"
+            "avatar": "https://thispersondoesnotexist.com/",
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": true
+            }
         },
         {
             "id": "2",
             "username": "user",
             "password": "user",
             "roles": ["USER"],
-            "avatar": "https://thispersondoesnotexist.com/"
+            "avatar": "https://thispersondoesnotexist.com/",
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": false
+            }
         },
         {
             "id": "3",
             "username": "manager",
             "password": "manager",
             "roles": ["MANAGER"],
-            "avatar": "https://thispersondoesnotexist.com/"
+            "avatar": "https://thispersondoesnotexist.com/",
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": true
+            }
         }
     ],
     "article-ratings": [
