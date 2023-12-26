@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React, { memo } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Page } from '@/widgets/Page';
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
 import { ArticleDetails } from '@/entities/Article';
@@ -13,6 +15,8 @@ import cls from './ArticleDetailsPage.module.scss';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/ArticleRating';
+import { toogleFeatures } from '@/shared/lib/features';
+import Card from '@/shared/ui/Card/Card';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -24,10 +28,17 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const { id } = useParams<{ id: string }>();
+  const { t } = useTranslation('article');
 
   if (!id) {
     return null;
   }
+
+  const articleRating = toogleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id} />,
+    off: () => <Card>{t('Оценка статей скоро появится')}</Card>,
+  });
 
   return (
     <DynamicModulLoader reducers={reducers}>
@@ -37,7 +48,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <div className={cls.articleWrapper}>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <ArticleRating articleId={id} />
+          {articleRating}
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </div>

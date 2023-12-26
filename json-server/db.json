@@ -803,7 +803,7 @@
             "roles": ["MANAGER"],
             "avatar": "https://thispersondoesnotexist.com/",
             "features": {
-                "isArticleRatingEnabled": false,
+                "isArticleRatingEnabled": true,
                 "isCounterEnabled": true
             }
         }

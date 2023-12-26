@@ -9,29 +9,29 @@ npm run start:dev или npm run start:dev:vite - running server + frontend proj
 
 ## Scripts
 
-- `npm run start` - Start frontend project on webpack dev server
-- `npm run start:vite` - Start frontend project on vite
-- `npm run start:dev` - Start frontend project on webpack dev server + backend
-- `npm run start:dev:vite` - Start frontend project on vite + backend
-- `npm run start:dev:server` - Start backend server
-- `npm run build:prod` - Build in prod mode
-- `npm run build:dev` - Build in dev mode (not minimised)
-- `npm run lint:ts` - Check ts files by linter
-- `npm run lint:ts:fix` - Fix ts files with linter
-- `npm run lint:scss` - Check scss files style by linter
-- `npm run lint:scss:fix` - Fix scss files with linter
-- `npm run test:unit` - Run unit tests with jest
-- `npm run test:e2e` - Run e2e tests with cypress
-- `npm run test:ui` - Run screenshot tests with loki
-- `npm run test:ui:ok` - Confirm new screenshots
-- `npm run test:ui:ci` - Run screenshot tests in CI
-- `npm run test:ui:report` - Generate full report for screenshot tests
-- `npm run test:ui:json` - Generate json report for screenshot tests
-- `npm run test:ui:html` - Generate HTML report for screenshot tests
-- `npm run storybook` - Run Storybook
-- `npm run storybook:build` - Build a storybook build
-- `npm run prepare` - Precommit hooks
-- `npm run generate:slice` - Script for FSD slice generation
+-   `npm run start` - Start frontend project on webpack dev server
+-   `npm run start:vite` - Start frontend project on vite
+-   `npm run start:dev` - Start frontend project on webpack dev server + backend
+-   `npm run start:dev:vite` - Start frontend project on vite + backend
+-   `npm run start:dev:server` - Start backend server
+-   `npm run build:prod` - Build in prod mode
+-   `npm run build:dev` - Build in dev mode (not minimised)
+-   `npm run lint:ts` - Check ts files by linter
+-   `npm run lint:ts:fix` - Fix ts files with linter
+-   `npm run lint:scss` - Check scss files style by linter
+-   `npm run lint:scss:fix` - Fix scss files with linter
+-   `npm run test:unit` - Run unit tests with jest
+-   `npm run test:e2e` - Run e2e tests with cypress
+-   `npm run test:ui` - Run screenshot tests with loki
+-   `npm run test:ui:ok` - Confirm new screenshots
+-   `npm run test:ui:ci` - Run screenshot tests in CI
+-   `npm run test:ui:report` - Generate full report for screenshot tests
+-   `npm run test:ui:json` - Generate json report for screenshot tests
+-   `npm run test:ui:html` - Generate HTML report for screenshot tests
+-   `npm run storybook` - Run Storybook
+-   `npm run storybook:build` - Build a storybook build
+-   `npm run prepare` - Precommit hooks
+-   `npm run generate:slice` - Script for FSD slice generation
 
 ---
 
@@ -73,10 +73,10 @@ _eslint-plugin-fsd-01_, which contains 3 rules:
 
 ##### Starting Linters
 
-- `npm run lint:ts` - Check ts files by linter
-- `npm run lint:ts:fix` - Fix ts files by linter
-- `npm run lint:scss` - Check scss files style by linter
-- `npm run lint:scss:fix` - Fix scss style files by linter
+-   `npm run lint:ts` - Check ts files by linter
+-   `npm run lint:ts:fix` - Fix ts files by linter
+-   `npm run lint:scss` - Check scss files style by linter
+-   `npm run lint:scss:fix` - Fix scss style files by linter
 
 ---
 
@@ -89,7 +89,7 @@ A file with storybooks is created next to the component with the extension .stor
 
 You can run the storybook with the command:
 
-- `npm run storybook`.
+-   `npm run storybook`.
 
 Read more about [Storybook](/docs/storybook.md)
 
@@ -106,10 +106,10 @@ Both builders are adapted to the core features of the application.
 
 The entire configuration is stored in /config
 
-- /config/babel - babel
-- /config/build - webpack configuration
-- /config/jest - test environment configuration
-- /config/storybook - storybook configuration
+-   /config/babel - babel
+-   /config/build - webpack configuration
+-   /config/jest - test environment configuration
+-   /config/storybook - storybook configuration
 
 The `scripts` folder contains various scripts for refactoring/simplifying code writing/report generation.
 
@@ -133,6 +133,25 @@ Requests to the server are sent using [RTK query](/src/shared/api/rtkApi.ts)
 
 For asynchronous connection of redusers (to avoid pulling them into a common bundle) is used
 [DynamicModuleLoader](/src/shared/lib/components/DynamicModulLoader/DynamicModulLoader.tsx)
+
+---
+
+### Working with feature-flags
+
+Feature flags can only be used with the toggleFeatures helper.
+An object with options is passed to it.
+
+{
+name: name of feature-flag,
+on: function that will be triggered when the feature is switched on
+of: function that will run after the feature is switched off
+}
+
+To automatically remove a feature, use the script remove-feature.ts,
+which takes 2 arguments
+
+1. The name of the feature-flags to be removed
+2. State (on\off)
 
 ---
 
