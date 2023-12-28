@@ -20,3 +20,5 @@ const userApi = rtkApi.injectEndpoints({
     }),
   }),
 });
+
+export const setJsonSettingsMutation = userApi.endpoints.setJsonSettings.initiate;

@@ -4,6 +4,8 @@ import DarkIcon from '@/shared/assets/icons/day-and-night.svg';
 import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
 import { Theme } from '@/shared/const/theme';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { saveJsonSettings } from '@/entities/User';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface ThemeSwitcherProps {
     className?: string;
@@ -11,12 +13,13 @@ interface ThemeSwitcherProps {
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
+  const dispatch = useAppDispatch();
 
   const onToggleHandler = useCallback(() => {
     toggleTheme((newTheme) => {
-
+      dispatch(saveJsonSettings({ theme: newTheme }));
     });
-  }, [toggleTheme]);
+  }, [dispatch, toggleTheme]);
 
   return (
     <Button
