@@ -15,7 +15,7 @@ import cls from './ArticleDetailsPage.module.scss';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/ArticleRating';
-import { toogleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import Card from '@/shared/ui/Card/Card';
 
 interface ArticleDetailsPageProps {
@@ -33,13 +33,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   if (!id) {
     return null;
   }
-
-  const articleRating = toogleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id} />,
-    off: () => <Card>{t('Оценка статей скоро появится')}</Card>,
-  });
-
   return (
     <DynamicModulLoader reducers={reducers}>
       <Page
@@ -48,7 +41,11 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <div className={cls.articleWrapper}>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {articleRating}
+          <ToggleFeatures
+            feature="isArticleRatingEnabled"
+            on={<ArticleRating articleId={id} />}
+            off={<Card>{t('Оценка статей скоро появится')}</Card>}
+          />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </div>

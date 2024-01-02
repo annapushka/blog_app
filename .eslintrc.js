@@ -60,6 +60,7 @@ module.exports = {
           'as',
           'border',
           'itemKey',
+          'feature',
         ],
       },
     ],
