@@ -11,6 +11,7 @@ import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPag
 import { articlePageReducer } from '../../model/slices/articlePageSlice';
 import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters';
 import ArticlesInfiniteList from '../ArticlesInfiniteList/ArticlesInfiniteList';
+import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
 
 const reducers: ReducersList = {
   articlesPage: articlePageReducer,
@@ -33,6 +34,7 @@ const ArticlesPage = () => {
       <Page onScrollEnd={onLoadNextPart} data-testid="ArticlesPage">
         <ArticlesPageFilters />
         <ArticlesInfiniteList />
+        <ArticlePageGreeting />
       </Page>
     </DynamicModulLoader>
   );
