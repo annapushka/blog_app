@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Page } from '@/widgets/Page';
 import { BugButton } from '@/widgets/ErrorBoundary';
 import { Counter } from '@/entities/Counter';
-import { toogleFeatures } from '@/shared/lib/features';
+import { toggleFeatures } from '@/shared/lib/features';
 
 const CounterRedesigned = () => (
   <div style={{ color: 'red' }}>
@@ -13,7 +13,7 @@ const CounterRedesigned = () => (
 const MainPage = () => {
   const { t } = useTranslation('main');
 
-  const counter = toogleFeatures({
+  const counter = toggleFeatures({
     name: 'isCounterEnabled',
     on: () => <Counter />,
     off: () => <CounterRedesigned />,
