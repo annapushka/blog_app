@@ -1,18 +1,17 @@
 import { memo, useCallback } from 'react';
-import LightIcon from '@/shared/assets/icons/day-and-night-light.svg';
-import DarkIcon from '@/shared/assets/icons/day-and-night.svg';
+import ThemeIcon from '@/shared/assets/icons/day-and-night-light.svg';
 import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
-import { Theme } from '@/shared/const/theme';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { saveJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import Icon from '@/shared/ui/Icon/Icon';
 
 interface ThemeSwitcherProps {
     className?: string;
 }
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
   const dispatch = useAppDispatch();
 
   const onToggleHandler = useCallback(() => {
@@ -27,7 +26,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
       onClick={onToggleHandler}
       className={className}
     >
-      {theme === Theme.LIGHT ? <DarkIcon /> : <LightIcon />}
+      <Icon Svg={ThemeIcon} inverted />
     </Button>
   );
 });
