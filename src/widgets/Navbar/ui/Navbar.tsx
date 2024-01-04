@@ -7,7 +7,7 @@ import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { getUserAuthData } from '@/entities/User';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import Text, { TextTheme } from '@/shared/ui/deprecated/Text/Text';
-import AppLink, { AppLinkTheme } from '@/shared/ui/deprecated/AppLink/AppLink';
+import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink/AppLink';
 import Icon from '@/shared/ui/deprecated/Icon/Icon';
 import BugIcon from '@/shared/assets/icons/bug.svg';
 import HStack from '@/shared/ui/deprecated/Stack/HStack/HStack';

@@ -4,45 +4,47 @@
     background: var(--inverted-bg-color);
     position: relative;
     transition: width 0.3s;
-}
 
-.switchers {
-    position: absolute;
-    bottom: 20px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    .switchers {
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
 
-    svg {
-        width: 50px;
+        svg {
+            width: 50px;
+        }
+    }
+
+    .items {
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+
+    .icon {
+        fill: var(--inverted-primary-color);
+    }
+
+    .collapseBtn {
+        position: absolute;
+        right: -26px;
+        bottom: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        svg {
+            transform: scale(0.8);
+        }
     }
 }
 
-.items {
-    margin-top: 20px;
-    margin-left: 30px;
-}
 
-.icon {
-    fill: var(--inverted-primary-color);
-}
-
-.collapseBtn {
-    position: absolute;
-    right: -26px;
-    bottom: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-        opacity: 1;
-    }
-
-    svg {
-        transform: scale(0.8);
-    }
-}
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
@@ -58,9 +60,15 @@
     width: 220px;
     height: 100%;
     border-radius: 32px;
+
+    .appLogo {
+        padding-top: 20px;
+        transform: scale(2);
+    }
+
+    .items {
+        margin-top: 20px;
+        margin-left: 30px;
+    }
 }
 
-.appLogo {
-    padding-top: 20px;
-    transform: scale(2);
-}

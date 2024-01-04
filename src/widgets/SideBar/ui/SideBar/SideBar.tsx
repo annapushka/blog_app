@@ -11,7 +11,7 @@ import SideBarItem from '../SideBarItem/SideBarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
+import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 
 interface SideBarProps {
     className?: string;
@@ -36,6 +36,15 @@ export const SideBar = memo(({ className }: SideBarProps) => {
           ])}
         >
           <AppLogo className={cls.appLogo} />
+          <VStack role="navigation" gap="8" className={cls.items}>
+            {sidebarItemsList.map((item) => (
+              <SideBarItem
+                item={item}
+                collapsed={collapsed}
+                key={item.path}
+              />
+            ))}
+          </VStack>
         </aside>
       )}
       off={(
