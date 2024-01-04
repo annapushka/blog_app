@@ -1,10 +1,10 @@
 import { memo, useCallback } from 'react';
 import ThemeIcon from '@/shared/assets/icons/day-and-night-light.svg';
-import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
+import Button, { ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { saveJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import Icon from '@/shared/ui/Icon/Icon';
+import Icon from '@/shared/ui/deprecated/Icon/Icon';
 
 interface ThemeSwitcherProps {
     className?: string;

@@ -2,16 +2,16 @@ import { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import Button, { ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
+import Button, { ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import ArrowLeft from '@/shared/assets/icons/angel-left.svg';
 import ArrowRight from '@/shared/assets/icons/angel-right.svg';
-import VStack from '@/shared/ui/Stack/VStack/VStack';
+import VStack from '@/shared/ui/deprecated/Stack/VStack/VStack';
 import cls from './SideBar.module.scss';
 import SideBarItem from '../SideBarItem/SideBarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLogo } from '@/shared/ui/AppLogo';
+import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
 
 interface SideBarProps {
     className?: string;

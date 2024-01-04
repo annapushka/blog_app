@@ -8,14 +8,14 @@ import {
   ReducersList,
 } from '@/shared/lib/components/DynamicModulLoader/DynamicModulLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import Text, { TextAlign, TextSize } from '@/shared/ui/Text/Text';
-import Skeleton from '@/shared/ui/Skeleton/Skeleton';
-import Avatar from '@/shared/ui/Avatar/Avatar';
+import Text, { TextAlign, TextSize } from '@/shared/ui/deprecated/Text/Text';
+import Skeleton from '@/shared/ui/deprecated/Skeleton/Skeleton';
+import Avatar from '@/shared/ui/deprecated/Avatar/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
-import Icon from '@/shared/ui/Icon/Icon';
-import HStack from '@/shared/ui/Stack/HStack/HStack';
-import VStack from '@/shared/ui/Stack/VStack/VStack';
+import Icon from '@/shared/ui/deprecated/Icon/Icon';
+import HStack from '@/shared/ui/deprecated/Stack/HStack/HStack';
+import VStack from '@/shared/ui/deprecated/Stack/VStack/VStack';
 import { ArticleBlockType } from '../../model/consts/consts';
 import {
   getArticleDetailsData,

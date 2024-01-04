@@ -8,8 +8,8 @@ import {
   userActions,
 } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Dropdown } from '@/shared/ui/Popups';
-import Avatar from '@/shared/ui/Avatar/Avatar';
+import { Dropdown } from '@/shared/ui/deprecated/Popups';
+import Avatar from '@/shared/ui/deprecated/Avatar/Avatar';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 

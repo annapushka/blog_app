@@ -2,20 +2,20 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import Input from '@/shared/ui/Input/Input';
-import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
+import Button, { ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   DynamicModulLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModulLoader/DynamicModulLoader';
-import HStack from '@/shared/ui/Stack/HStack/HStack';
+import HStack from '@/shared/ui/deprecated/Stack/HStack/HStack';
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import {
   addCommentFormActions,
   addCommentFormReducer,
 } from '../../model/slices/addCommentFormSlice';
 import cls from './AddComentForm.module.scss';
+import Input from '@/shared/ui/deprecated/Input/Input';
 
 export interface AddComentFormProps {
     className?: string;

@@ -27,6 +27,6 @@
         "./src/**/*.ts",
         "./src/**/*.tsx",
         "src/shared/ui/Popups/ui/ListBox/.stories.tsx",
-        "src/shared/ui/Popups/ui/Dropdown/.stories.tsx"
+        "src/shared/ui/deprecated/Popups/ui/Dropdown/.stories.tsx"
     ]
 }

@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from '@/entities/Article';
-import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
+import Button, { ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import HStack from '@/shared/ui/Stack/HStack/HStack';
+import HStack from '@/shared/ui/deprecated/Stack/HStack/HStack';
 import { getCanEditArticle } from '../../model/selectors/article';
 import {
   getRouteArticleDetails,

@@ -6,7 +6,7 @@ import { Country } from '@/entities/Country';
 import { ProfileCard } from '@/entities/Profile';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import Text, { TextTheme } from '@/shared/ui/Text/Text';
+import Text, { TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModulLoader,
