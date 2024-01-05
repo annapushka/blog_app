@@ -19,9 +19,20 @@
 }
 
 .collapsed {
-    .link {
+    .link, .linkiRedesign {
         opacity: 0;
         transition: 0.2s opacity;
         width: 0;
     }
+
+    .linkiRedesign {
+        margin-left: 0px;
+    }
+}
+
+.linkiRedesign {
+    margin-left: 10px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
 }

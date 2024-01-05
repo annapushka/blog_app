@@ -1,3 +1,16 @@
 .Icon {
     fill: var(--icon-redesigned);
 }
+
+.button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+}
+
+.button:hover .Icon {
+    fill: var(--accent-redesigned)
+}
