@@ -9,7 +9,7 @@ import { StarsRating } from '@/shared/ui/deprecated/StarsRating/StarsRating';
 import Modal from '@/shared/ui/deprecated/Modal/Modal';
 import Input from '@/shared/ui/deprecated/Input/Input';
 import HStack from '@/shared/ui/deprecated/Stack/HStack/HStack';
-import Button, { ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer';
 
 interface RatingCardProps {

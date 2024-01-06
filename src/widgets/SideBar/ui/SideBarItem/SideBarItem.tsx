@@ -7,7 +7,7 @@ import { SideBarItemType } from '../../model/types/sidebar';
 import cls from './SideBarItem.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLink } from '@/shared/ui/redesigned/AppLink/AppLink';
-import Icon from '@/shared/ui/redesigned/Icon/Icon';
+import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
 import { AppLinkTheme, AppLink as AppLinkDeprecated } from '@/shared/ui/deprecated/AppLink/AppLink';
 
 interface SideBarItemProps {

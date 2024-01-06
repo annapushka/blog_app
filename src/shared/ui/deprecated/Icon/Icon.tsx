@@ -23,5 +23,3 @@ export const Icon = (props: IconProps) => {
     />
   );
 };
-
-export default Icon;
