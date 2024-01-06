@@ -19,14 +19,10 @@
 }
 
 .collapsed {
-    .link, .linkiRedesign {
+    .link {
         opacity: 0;
         transition: 0.2s opacity;
         width: 0;
-    }
-
-    .linkiRedesign {
-        margin-left: 0px;
     }
 }
 
@@ -35,4 +31,12 @@
     opacity: 1;
     display: flex;
     align-items: center;
+}
+
+.collapsedRedesign {
+    .linkiRedesign {
+        opacity: 0;
+        width: 0;
+        margin-left: 0px;
+    }
 }

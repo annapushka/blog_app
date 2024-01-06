@@ -1,17 +1,14 @@
 .Button {
     cursor: pointer;
-    color: var(--inverted-primary-color);
+    color: var(--text-redesigned);
     padding: 6px 15px;
 
     &:hover {
-        opacity: 0.7;
-        fill-opacity: 70%;
-        stroke-opacity: 70%;
+       color: var(--accent-redesigned);
     }
 }
 
-.clear,
-.clearInverted {
+.clear {
     padding: 0;
     margin: 0;
     border: none;
@@ -19,34 +16,11 @@
     outline: none;
 }
 
-.clearInverted {
-    color: var(--inverted-primary-color);
-}
-
 .outline {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 1px solid var(--text-redesigned);
+    color: var(--text-redesigned);
     background: none;
     border-radius: var(--border-radius);
-}
-
-.outlineRed {
-    border: 1px solid var(--red-light);
-    color: var(--red-light);
-    background: none;
-    border-radius: var(--border-radius);
-}
-
-.background {
-    background: var(--bg-color);
-    color: var(--primary-color);
-    border: none;
-}
-
-.backgroundInverted {
-    background: var(--inverted-bg-color);
-    color: var(--inverted-primary-color);
-    border: none;
 }
 
 .square {
@@ -54,34 +28,34 @@
     border-radius: var(--border-radius);
 }
 
-.square.size_m {
-    width: var(--font-line-m);
-    height: var(--font-line-m);
-    font: var(--font-m);
+.square.m {
+    width: var(--font-line-m-redesigned);
+    height: var(--font-line-m-redesigned);
+    font: var(--font-m-redesigned);
 }
 
-.square.size_l {
-    width: var(--font-line-l);
-    height: var(--font-line-l);
-    font: var(--font-l);
+.square.l {
+    width: var(--font-line-l-redesigned);
+    height: var(--font-line-l-redesigned);
+    font: var(--font-l-redesigned);
 }
 
-.square.size_xl {
-    width: var(--font-line-xl);
-    height: var(--font-line-xl);
-    font: var(--font-xl);
+.square.xl {
+    width: var(--font-line-xl-redesigned);
+    height: var(--font-line-xl-redesigned);
+    font: var(--font-xl-redesigned);
 }
 
-.size_m {
-    font: var(--font-m);
+.m {
+    font: var(--font-m-redesigned);
 }
 
-.size_l {
-    font: var(--font-l);
+.l {
+    font: var(--font-l-redesigned);
 }
 
-.size_xl {
-    font: var(--font-xl);
+.xl {
+    font: var(--font-xl-redesigned);
 }
 
 .disabled {

@@ -59,7 +59,8 @@
     background: var(--light-bg-redesigned);
     width: 220px;
     height: 100%;
-    border-radius: 32px;
+    border-radius: 15px;
+    position: relative;
 
     .appLogo {
         padding-top: 20px;
@@ -73,7 +74,7 @@
 
     .collapseBtn {
         position: absolute;
-        right: 42px;
+        right: 12px;
         bottom: 50%;
         display: flex;
         align-items: center;
@@ -90,7 +91,7 @@
     }
 
     .collapsedCollapseBtn {
-        right: 45px;
+        right: 12px;
         transform: rotate(-90deg);
     }
 }
