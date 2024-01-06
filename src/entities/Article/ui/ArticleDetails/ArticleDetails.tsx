@@ -14,8 +14,8 @@ import Avatar from '@/shared/ui/deprecated/Avatar/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
 import { Icon } from '@/shared/ui/deprecated/Icon/Icon';
-import HStack from '@/shared/ui/deprecated/Stack/HStack/HStack';
-import VStack from '@/shared/ui/deprecated/Stack/VStack/VStack';
+import HStack from '@/shared/ui/redesigned/Stack/HStack/HStack';
+import VStack from '@/shared/ui/redesigned/Stack/VStack/VStack';
 import { ArticleBlockType } from '../../model/consts/consts';
 import {
   getArticleDetailsData,

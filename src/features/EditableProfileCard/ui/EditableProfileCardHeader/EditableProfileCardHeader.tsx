@@ -6,7 +6,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import Text from '@/shared/ui/deprecated/Text/Text';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import HStack from '@/shared/ui/deprecated/Stack/HStack/HStack';
+import HStack from '@/shared/ui/redesigned/Stack/HStack/HStack';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { profileActions } from '../../model/slice/profileSlice';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';

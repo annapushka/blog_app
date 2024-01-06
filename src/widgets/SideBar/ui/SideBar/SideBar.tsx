@@ -5,7 +5,6 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import ArrowLeft from '@/shared/assets/icons/angel-left.svg';
 import ArrowRight from '@/shared/assets/icons/angel-right.svg';
-import VStack from '@/shared/ui/deprecated/Stack/VStack/VStack';
 import cls from './SideBar.module.scss';
 import SideBarItem from '../SideBarItem/SideBarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
@@ -14,6 +13,7 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
 import ArrowIcon from '@/shared/assets/icons/arrowDownIcon.svg';
+import VStack from '@/shared/ui/redesigned/Stack/VStack/VStack';
 
 interface SideBarProps {
     className?: string;

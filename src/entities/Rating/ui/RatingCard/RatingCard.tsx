@@ -3,12 +3,12 @@ import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import Card from '@/shared/ui/deprecated/Card/Card';
-import VStack from '@/shared/ui/deprecated/Stack/VStack/VStack';
+import VStack from '@/shared/ui/redesigned/Stack/VStack/VStack';
 import Text from '@/shared/ui/deprecated/Text/Text';
 import { StarsRating } from '@/shared/ui/deprecated/StarsRating/StarsRating';
 import Modal from '@/shared/ui/deprecated/Modal/Modal';
 import Input from '@/shared/ui/deprecated/Input/Input';
-import HStack from '@/shared/ui/deprecated/Stack/HStack/HStack';
+import HStack from '@/shared/ui/redesigned/Stack/HStack/HStack';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer';
 

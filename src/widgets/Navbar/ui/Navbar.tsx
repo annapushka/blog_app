@@ -10,11 +10,11 @@ import Text, { TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink/AppLink';
 import { Icon } from '@/shared/ui/deprecated/Icon/Icon';
 import BugIcon from '@/shared/assets/icons/bug.svg';
-import HStack from '@/shared/ui/deprecated/Stack/HStack/HStack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
+import HStack from '@/shared/ui/redesigned/Stack/HStack/HStack';
 
 interface NavbarProps {
     className?: string;
