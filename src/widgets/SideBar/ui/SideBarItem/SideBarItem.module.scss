@@ -26,17 +26,32 @@
     }
 }
 
-.linkiRedesign {
+.linkRedesign {
     margin-left: 10px;
     opacity: 1;
     display: flex;
     align-items: center;
+    color: var(--text-redesigned);
 }
 
 .collapsedRedesign {
-    .linkiRedesign {
+    .linkRedesign {
         opacity: 0;
         width: 0;
-        margin-left: 0px;
     }
+}
+
+.itemRedesign {
+    margin-top: 10px;
+    padding-left: 12px;
+    display: flex;
+    align-items: center;
+    transition: 0.2s all;
+    width: 100%;
+    height: 40px;
+}
+
+.active {
+    background: linear-gradient(89.97deg, rgba(94, 211, 243, 0.3) 1.15%, rgba(94, 211, 243, 0) 99.97%);
+    border-left: 2px solid var(--accent-redesigned);
 }
