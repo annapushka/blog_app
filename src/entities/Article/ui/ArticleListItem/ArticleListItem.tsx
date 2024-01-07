@@ -5,7 +5,7 @@ import Text from '@/shared/ui/deprecated/Text/Text';
 import { Icon } from '@/shared/ui/deprecated/Icon/Icon';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import Card from '@/shared/ui/deprecated/Card/Card';
-import Avatar from '@/shared/ui/deprecated/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { AppLink } from '@/shared/ui/deprecated/AppLink/AppLink';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';

@@ -6,7 +6,7 @@ import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import Text, { TextAlign, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import Input from '@/shared/ui/deprecated/Input/Input';
 import Loader from '@/shared/ui/deprecated/Loader/Loader';
-import Avatar from '@/shared/ui/deprecated/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar';
 import VStack from '@/shared/ui/redesigned/Stack/VStack/VStack';
 import HStack from '@/shared/ui/redesigned/Stack/HStack/HStack';
 import { Profile } from '../../model/types/profile';
