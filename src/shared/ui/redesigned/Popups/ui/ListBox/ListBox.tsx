@@ -35,7 +35,7 @@ export function ListBox({
   direction = 'bottom right',
   label,
 }: ListBoxProps) {
-  const optionsClasses = [mapDirectionClass[direction]];
+  const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
   return (
     <HStack gap="8">
       {label && <span>{`${label}:`}</span>}

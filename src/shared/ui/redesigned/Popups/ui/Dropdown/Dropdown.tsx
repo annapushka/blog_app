@@ -28,7 +28,7 @@ export function Dropdown({
   trigger,
   direction = 'bottom right',
 }: DropdownProps) {
-  const menuClasses = [mapDirectionClass[direction]];
+  const menuClasses = [mapDirectionClass[direction], popupCls.menu];
   return (
     <Menu
       as="div"

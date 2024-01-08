@@ -2,6 +2,11 @@
     position: relative;
 }
 
+.menu {
+    border-radius: var(--border-radius-redesigned);
+    border: 1px solid var(--accent-redesigned);
+}
+
 .active {
     background: var(--inverted-primary-color);
 }

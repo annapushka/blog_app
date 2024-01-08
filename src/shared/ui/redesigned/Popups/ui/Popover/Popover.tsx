@@ -19,7 +19,7 @@ export function Popover({
   direction = 'bottom right',
   children,
 }: PopoverProps) {
-  const menuClasses = [mapDirectionClass[direction]];
+  const menuClasses = [mapDirectionClass[direction], popupCls.menu];
 
   return (
     <HPopover
