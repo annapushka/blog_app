@@ -1,0 +1,31 @@
+.Card {
+    border-radius: var(--border-radius-redesigned);
+}
+
+.normal {
+    background: var(--dark-bg-redesigned);
+}
+
+.light {
+    background: var(--light-bg-redesigned);
+}
+
+.outlined {
+    border: 1px solid var(--accent-redesigned);
+}
+
+.padding0 {
+    padding: 0px;
+}
+
+.padding8 {
+    padding: 8px;
+}
+
+.padding16 {
+    padding: 16px;
+}
+
+.padding24 {
+    padding: 24px;
+}

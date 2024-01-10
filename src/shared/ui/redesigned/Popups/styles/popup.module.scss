@@ -5,10 +5,11 @@
 .menu {
     border-radius: var(--border-radius-redesigned);
     border: 1px solid var(--accent-redesigned);
+    overflow: hidden;
 }
 
 .active {
-    background: var(--inverted-primary-color);
+    background: var(--light-bg-redesigned);
 }
 
 .disabled {
