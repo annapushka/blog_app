@@ -12,6 +12,7 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import cls from './ArticlesInfiniteList.module.scss';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface ArticlesInfiniteListProps {
     className?: string;
@@ -28,13 +29,20 @@ export const ArticlesInfiniteList = memo((props: ArticlesInfiniteListProps) => {
   useInitialEffect(() => {
     dispatch(initArticlesPage(searchParams));
   });
+
+  const listClass = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => cls.listRedesigned,
+    off: () => cls.list,
+  });
+
   return (
     <div className={classNames('', {}, [className])}>
       <ArticleList
         isLoading={isLoading}
         view={view}
         articles={articles}
-        className={cls.list}
+        className={listClass}
       />
     </div>
   );

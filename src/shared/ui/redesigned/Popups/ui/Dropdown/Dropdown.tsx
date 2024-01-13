@@ -6,7 +6,7 @@ import cls from './Dropdown.module.scss';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 import { AppLink } from '../../../AppLink/AppLink';
-import VStack from '../../../../redesigned/Stack/VStack/VStack';
+import { VStack } from '../../../../redesigned/Stack/VStack/VStack';
 
 export interface DropdownItem {
     content: React.ReactNode;

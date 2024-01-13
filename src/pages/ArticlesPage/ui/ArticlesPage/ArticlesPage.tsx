@@ -12,6 +12,10 @@ import { articlePageReducer } from '../../model/slices/articlePageSlice';
 import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters';
 import ArticlesInfiniteList from '../ArticlesInfiniteList/ArticlesInfiniteList';
 import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 
 const reducers: ReducersList = {
   articlesPage: articlePageReducer,
@@ -29,13 +33,35 @@ const ArticlesPage = () => {
     return <Page>{error}</Page>;
   }
 
+  const content = (
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={(
+        <StickyContentLayout
+          left={<ViewSelectorContainer />}
+          right={<FiltersContainer />}
+          content={(
+            <Page onScrollEnd={onLoadNextPart} data-testid="ArticlesPage">
+              <ArticlesInfiniteList />
+              <ArticlePageGreeting />
+            </Page>
+        )}
+        />
+
+      )}
+      off={(
+        <Page onScrollEnd={onLoadNextPart} data-testid="ArticlesPage">
+          <ArticlesPageFilters />
+          <ArticlesInfiniteList />
+          <ArticlePageGreeting />
+        </Page>
+      )}
+    />
+  );
+
   return (
     <DynamicModulLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page onScrollEnd={onLoadNextPart} data-testid="ArticlesPage">
-        <ArticlesPageFilters />
-        <ArticlesInfiniteList />
-        <ArticlePageGreeting />
-      </Page>
+      {content}
     </DynamicModulLoader>
   );
 };

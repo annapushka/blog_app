@@ -15,7 +15,7 @@ import {
   addCommentFormReducer,
 } from '../../model/slices/addCommentFormSlice';
 import cls from './AddComentForm.module.scss';
-import Input from '@/shared/ui/deprecated/Input/Input';
+import { Input } from '@/shared/ui/deprecated/Input/Input';
 
 export interface AddComentFormProps {
     className?: string;

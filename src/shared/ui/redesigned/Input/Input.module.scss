@@ -1,0 +1,27 @@
+.input {
+    background: transparent;
+    border: solid 0.3px var(--primary-color);
+    border-radius: 4px;
+    padding: 4px 8px;
+    outline: none;
+    width: 100%;
+    color: var(--primary-color);
+
+    &:focus {
+        outline: none;
+    }
+
+    &::placeholder {
+        opacity: 0.3;
+        color: var(--primary-color);
+    }
+}
+
+.readonly {
+    opacity: 0.7;
+    width: 100%;
+}
+
+.editing {
+    width: 100%;
+}

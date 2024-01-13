@@ -13,7 +13,7 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
 import ArrowIcon from '@/shared/assets/icons/arrowDownIcon.svg';
-import VStack from '@/shared/ui/redesigned/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/redesigned/Stack/VStack/VStack';
 
 interface SideBarProps {
     className?: string;

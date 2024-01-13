@@ -1,7 +1,3 @@
-.AppLink {
-
-}
-
 .primary {
     color: var(--text-redesigned);
 
@@ -12,7 +8,7 @@
 
 .secondary {
     color: var(--hint-redesigned);
-    
+
     &:hover {
         color: var(--accent-redesigned);
     }
