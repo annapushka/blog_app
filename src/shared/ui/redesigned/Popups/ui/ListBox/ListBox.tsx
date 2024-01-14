@@ -8,24 +8,24 @@ import { Button } from '../../../Button/Button';
 import { mapDirectionClass } from '../../styles/consts';
 import HStack from '../../../../redesigned/Stack/HStack/HStack';
 
-export interface ListBoxItem {
+export interface ListBoxItem<T extends string> {
     value: string;
     content: ReactNode;
     disabled?: boolean;
 }
 
-interface ListBoxProps {
-    items?: ListBoxItem[];
+interface ListBoxProps<T extends string> {
+    items?: ListBoxItem<T>[];
     className?: string;
-    value?: string;
+    value?: T;
     defaultValue?: string;
-    onChange: (value: string) => void;
+    onChange: (value: T) => void;
     readonly?: boolean;
     direction?: DropdownDirection;
     label?: string;
 }
 
-export function ListBox({
+export function ListBox<T extends string>({
   items,
   className,
   value,
@@ -34,7 +34,7 @@ export function ListBox({
   readonly,
   direction = 'bottom right',
   label,
-}: ListBoxProps) {
+}: ListBoxProps<T>) {
   const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
   return (
     <HStack gap="8">
@@ -50,7 +50,7 @@ export function ListBox({
         onChange={onChange}
       >
         <HListBox.Button className={popupCls.trigger}>
-          <Button disabled={readonly}>{value ?? defaultValue}</Button>
+          <Button variant="filled" disabled={readonly}>{value ?? defaultValue}</Button>
         </HListBox.Button>
         <HListBox.Options
           className={classNames(cls.options, {}, optionsClasses)}

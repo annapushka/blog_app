@@ -29,7 +29,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
   const { t } = useTranslation();
 
   return (
-    <Card className={classNames(cls.ArticlesFilters, {}, [className])}>
+    <Card className={classNames(cls.ArticlesFilters, {}, [className])} padding="24">
       <VStack gap="32">
         <Input
           placeholder={t('Поиск')}
