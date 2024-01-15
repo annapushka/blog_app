@@ -50,7 +50,7 @@ export const SideBar = memo(({ className }: SideBarProps) => {
           <Icon
             data-testid="sidebar-toggle"
             onClick={onToggle}
-            className={classNames(cls.collapseBtn, { [cls.collapsedCollapseBtn]: collapsed }, [])}
+            className={classNames(cls.collapseBtnRedesigned, { [cls.collapsedCollapseBtn]: collapsed }, [])}
             Svg={ArrowIcon}
             clickable
           />
