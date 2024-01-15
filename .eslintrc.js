@@ -62,6 +62,7 @@ module.exports = {
           'itemKey',
           'feature',
           'variant',
+          'size',
         ],
       },
     ],

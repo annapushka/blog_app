@@ -3,8 +3,7 @@
     align-items: center;
     border: solid 2px var(--icon-redesigned);
     border-radius: 48px;
-    padding: 8px 16px;
-    height: 48px;
+    padding: 6px 16px;
 }
 
 .input {
@@ -22,6 +21,18 @@
     &::placeholder {
         color: var(--hint-redesigned);
     }
+}
+
+.s {
+    height: 32px;
+}
+
+.m {
+    height: 38px;
+}
+
+.l {
+    height: 44px;
 }
 
 .readonly {

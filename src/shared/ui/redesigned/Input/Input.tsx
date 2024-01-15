@@ -9,11 +9,15 @@ import React, {
 } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
+import HStack from '../Stack/HStack/HStack';
+import { Text } from '../Text/Text';
 
 type HTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
-    'value' | 'onChange' | 'readOnly'
+    'value' | 'onChange' | 'readOnly' | 'size'
 >;
+
+type InputSize = 's' | 'm' | 'l';
 
 interface InputProps extends HTMLInputProps {
     className?: string;
@@ -25,6 +29,8 @@ interface InputProps extends HTMLInputProps {
     addonLeft?: ReactNode;
     addonRight?: ReactNode;
     autofocus?: boolean;
+    label?: string;
+    size?: InputSize;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -38,6 +44,8 @@ export const Input = memo((props: InputProps) => {
     addonLeft,
     addonRight,
     autofocus,
+    label,
+    size = 'm',
     ...otherProps
   } = props;
 
@@ -64,25 +72,28 @@ export const Input = memo((props: InputProps) => {
   };
 
   return (
-    <div className={classNames(cls.InputWrapper, mods, [className])}>
-      <div className={cls.addonLeft}>
-        {addonLeft}
+    <HStack max gap="8">
+      <Text text={`${label}:`} />
+      <div className={classNames(cls.InputWrapper, mods, [className, cls[size]])}>
+        <div className={cls.addonLeft}>
+          {addonLeft}
+        </div>
+        <input
+          ref={ref}
+          type={type}
+          value={value}
+          onChange={onChangeHandler}
+          className={cls.input}
+          placeholder={placeholder}
+          readOnly={readonly}
+          onBlur={() => setIsFocused(false)}
+          onFocus={() => setIsFocused(true)}
+          {...otherProps}
+        />
+        <div className={cls.addonRight}>
+          {addonRight}
+        </div>
       </div>
-      <input
-        ref={ref}
-        type={type}
-        value={value}
-        onChange={onChangeHandler}
-        className={cls.input}
-        placeholder={placeholder}
-        readOnly={readonly}
-        onBlur={() => setIsFocused(false)}
-        onFocus={() => setIsFocused(true)}
-        {...otherProps}
-      />
-      <div className={cls.addonRight}>
-        {addonRight}
-      </div>
-    </div>
+    </HStack>
   );
 });
