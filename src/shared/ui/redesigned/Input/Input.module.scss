@@ -1,19 +1,26 @@
+.InputWrapper {
+    display: flex;
+    align-items: center;
+    border: solid 2px var(--icon-redesigned);
+    border-radius: 48px;
+    padding: 8px 16px;
+    height: 48px;
+}
+
 .input {
-    background: transparent;
-    border: solid 0.3px var(--primary-color);
-    border-radius: 4px;
-    padding: 4px 8px;
     outline: none;
+    border: none;
+    background: none;
     width: 100%;
-    color: var(--primary-color);
+    color: var(--text-redesigned);
 
     &:focus {
         outline: none;
+        border: none;
     }
 
     &::placeholder {
-        opacity: 0.3;
-        color: var(--primary-color);
+        color: var(--hint-redesigned);
     }
 }
 
@@ -24,4 +31,26 @@
 
 .editing {
     width: 100%;
+}
+
+.withAddonLeft {
+    padding-left: 8px;
+}
+
+.withAddonRight {
+    padding-right: 8px;
+}
+
+.addonLeft,
+.addonRight {
+    display: flex;
+}
+
+.focused {
+    border: solid 2px var(--accent-redesigned);
+
+    .addonLeft svg,
+    .addonRight svg {
+        fill: var(--accent-redesigned);
+    }
 }

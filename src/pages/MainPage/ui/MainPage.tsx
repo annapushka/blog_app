@@ -3,6 +3,7 @@ import { Page } from '@/widgets/Page';
 import { BugButton } from '@/widgets/ErrorBoundary';
 import { Counter } from '@/entities/Counter';
 import { toggleFeatures } from '@/shared/lib/features';
+import { VStack } from '@/shared/ui/redesigned/Stack/VStack/VStack';
 
 const CounterRedesigned = () => (
   <div style={{ color: 'red' }}>
@@ -21,9 +22,10 @@ const MainPage = () => {
 
   return (
     <Page data-testid="MainPage">
-      <BugButton />
-      {counter}
-      {t('Главная')}
+      <VStack gap="16">
+        <BugButton />
+        {counter}
+      </VStack>
     </Page>
   );
 };

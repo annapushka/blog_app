@@ -1,9 +1,11 @@
-import {
+import React, {
   ChangeEvent,
   InputHTMLAttributes,
+  ReactNode,
   memo,
   useEffect,
   useRef,
+  useState,
 } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
@@ -18,9 +20,11 @@ interface InputProps extends HTMLInputProps {
     value?: string | number;
     onChange?: (value: string) => void;
     type?: string;
-    autofocus?: boolean;
     placeholder?: string;
     readonly?: boolean;
+    addonLeft?: ReactNode;
+    addonRight?: ReactNode;
+    autofocus?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -30,30 +34,40 @@ export const Input = memo((props: InputProps) => {
     onChange,
     type = 'text',
     placeholder,
-    autofocus,
     readonly,
+    addonLeft,
+    addonRight,
+    autofocus,
     ...otherProps
   } = props;
 
   const ref = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (autofocus) {
-      ref.current?.focus();
-    }
-  }, [autofocus]);
+  const [isFocused, setIsFocused] = useState(false);
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
   };
 
+  useEffect(() => {
+    if (autofocus) {
+      setIsFocused(true);
+      ref.current?.focus();
+    }
+  }, [autofocus]);
+
   const mods: Mods = {
     [cls.readonly]: readonly,
     [cls.editing]: !readonly,
+    [cls.withAddonLeft]: Boolean(addonLeft),
+    [cls.withAddonRight]: Boolean(addonRight),
+    [cls.focused]: isFocused,
   };
 
   return (
-    <div className={classNames(cls.Input, mods, [className])}>
+    <div className={classNames(cls.InputWrapper, mods, [className])}>
+      <div className={cls.addonLeft}>
+        {addonLeft}
+      </div>
       <input
         ref={ref}
         type={type}
@@ -62,8 +76,13 @@ export const Input = memo((props: InputProps) => {
         className={cls.input}
         placeholder={placeholder}
         readOnly={readonly}
+        onBlur={() => setIsFocused(false)}
+        onFocus={() => setIsFocused(true)}
         {...otherProps}
       />
+      <div className={cls.addonRight}>
+        {addonRight}
+      </div>
     </div>
   );
 });
