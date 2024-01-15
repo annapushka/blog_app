@@ -11,3 +11,16 @@
         text-align: center;
     }
 }
+
+.ArticleTypeTabsRedesigned {
+    display: flex;
+    max-width: 500px;
+    flex-wrap: wrap;
+
+    div {
+        height: fit-content;
+        flex-grow: 1;
+        max-width: 100px;
+        text-align: center;
+    }
+}

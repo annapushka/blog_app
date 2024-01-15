@@ -49,5 +49,3 @@ export const Tabs = memo(
     );
   },
 );
-
-export default Tabs;
