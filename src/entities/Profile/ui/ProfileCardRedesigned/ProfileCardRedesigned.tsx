@@ -9,25 +9,52 @@ import { CountrySelect } from '@/entities/Country';
 import { Card } from '@/shared/ui/redesigned/Card/Card';
 import { Avatar } from '@/shared/ui/redesigned/Avatar/Avatar';
 import { Input } from '@/shared/ui/redesigned/Input/Input';
-import Skeleton from '@/shared/ui/redesigned/Avatar/Skeleton/Skeleton';
+import Skeleton from '@/shared/ui/redesigned/Skeleton/Skeleton';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
+
+export const ProfileCardRedesignedError = () => {
+  const { t } = useTranslation('profile');
+  return (
+    <HStack
+      justify="center"
+      max
+      className={classNames(cls.ProfileCard, {}, [
+        cls.error,
+      ])}
+    >
+      <Text
+        variant="error"
+        title={t('Произошла ошибка при загрузке профиля')}
+        text={t('Попробуйте обновить странницу')}
+        align="center"
+      />
+    </HStack>
+  );
+};
 
 export const ProfileCardRedesignedSkeleton = () => {
   return (
     <Card className={cls.ProfileCardRedesigned} padding="24">
       <VStack gap="32" max>
-        <HStack gap="16">
-          <Skeleton width="100%" height={38} />
-          <Skeleton width="100%" height={38} />
-          <Skeleton width="100%" height={38} />
-          <Skeleton width="100%" height={38} />
+        <HStack justify="center" max className={cls.avatarWrapper}>
+          <Skeleton width={128} height={128} border="50%" />
         </HStack>
-        <HStack gap="16">
-          <Skeleton width="100%" height={38} />
-          <Skeleton width="100%" height={38} />
-          <Skeleton width="100%" height={38} />
-          <Skeleton width="100%" height={38} />
+        <HStack gap="32" max align="center">
+          <VStack gap="16" max align="center">
+            <Skeleton width="100%" height={38} border="16px" />
+            <Skeleton width="100%" height={38} border="16px" />
+            <Skeleton width="100%" height={38} border="16px" />
+            <Skeleton width="100%" height={38} border="16px" />
+          </VStack>
+          <VStack gap="16" max align="center">
+            <Skeleton width="100%" height={38} border="16px" />
+            <Skeleton width="100%" height={38} border="16px" />
+            <Skeleton width="100%" height={38} border="16px" />
+            <Skeleton width="100%" height={38} border="16px" />
+          </VStack>
         </HStack>
       </VStack>
+
     </Card>
   );
 };

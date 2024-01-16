@@ -2,15 +2,18 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text as TextDeprecated, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text/Text';
-import HStack from '@/shared/ui/redesigned/Stack/HStack/HStack';
 import { Profile } from '../../model/types/profile';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { Text } from '@/shared/ui/redesigned/Text/Text';
-import { ProfileCardDeprecated, ProfileCardDeprecatedSkeleton } from '../ProfileCardDeprecated/ProfileCardDeprecated';
-import { ProfileCardRedesigned, ProfileCardRedesignedSkeleton } from '../ProfileCardRedesigned/ProfileCardRedesigned';
-import cls from './ProfileCard.module.scss';
+import {
+  ProfileCardRedesigned,
+  ProfileCardRedesignedError,
+  ProfileCardRedesignedSkeleton,
+} from '../ProfileCardRedesigned/ProfileCardRedesigned';
+import {
+  ProfileCardDeprecated,
+  ProfileCardDeprecatedError,
+  ProfileCardDeprecatedSkeleton,
+} from '../ProfileCardDeprecated/ProfileCardDeprecated';
 
 export interface ProfileCardProps {
     className?: string;
@@ -30,7 +33,6 @@ export interface ProfileCardProps {
 
 export const ProfileCard = memo((props: ProfileCardProps) => {
   const {
-    className,
     isLoading,
     error,
   } = props;
@@ -51,42 +53,9 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     return (
       <ToggleFeatures
         feature="isAppRedesigned"
-        on={(
-          <HStack
-            justify="center"
-            max
-            className={classNames(cls.ProfileCard, {}, [
-              className,
-              cls.error,
-            ])}
-          >
-            <TextDeprecated
-              theme={TextTheme.ERROR}
-              title={t('Произошла ошибка при загрузке профиля')}
-              text={t('Попробуйте обновить странницу')}
-              align={TextAlign.CENTER}
-            />
-          </HStack>
-        )}
-        off={(
-          <HStack
-            justify="center"
-            max
-            className={classNames(cls.ProfileCard, {}, [
-              className,
-              cls.error,
-            ])}
-          >
-            <Text
-              variant="error"
-              title={t('Произошла ошибка при загрузке профиля')}
-              text={t('Попробуйте обновить странницу')}
-              align={TextAlign.CENTER}
-            />
-          </HStack>
-        )}
+        on={(<ProfileCardRedesignedError />)}
+        off={(<ProfileCardDeprecatedError />)}
       />
-
     );
   }
 

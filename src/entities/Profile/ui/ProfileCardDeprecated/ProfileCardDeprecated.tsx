@@ -9,6 +9,27 @@ import cls from './ProfileCardDeprecated.module.scss';
 import { CurrencySelect } from '@/entities/Currency';
 import { CountrySelect } from '@/entities/Country';
 import Loader from '@/shared/ui/deprecated/Loader/Loader';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text/Text';
+
+export const ProfileCardDeprecatedError = () => {
+  const { t } = useTranslation('profile');
+  return (
+    <HStack
+      justify="center"
+      max
+      className={classNames(cls.ProfileCard, {}, [
+        cls.error,
+      ])}
+    >
+      <Text
+        theme={TextTheme.ERROR}
+        title={t('Произошла ошибка при загрузке профиля')}
+        text={t('Попробуйте обновить странницу')}
+        align={TextAlign.CENTER}
+      />
+    </HStack>
+  );
+};
 
 export const ProfileCardDeprecatedSkeleton = () => {
   return (
