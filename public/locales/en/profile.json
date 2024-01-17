@@ -3,11 +3,11 @@
     "Редактировать": "Edit",
     "Отменить": "Cancel",
     "Сохранить": "Save",
-    "Имя": "First name",
-    "Фамилия": "Last name",
+    "Имя": "First Name",
+    "Фамилия": "Last Name",
     "Возраст": "Age",
     "Город": "City",
-    "Имя пользователя": "Username",
+    "Имя пользователя": "User Name",
     "Фото профиля": "Avatar",
     "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
     "Попробуйте обновить странницу": "Try refreshing your page",
@@ -16,5 +16,7 @@
     "Данные не указаны": "No data available",
     "Страна обязательна": "Country required",
     "Серверная ошибка при сохраненеии данных": "Server error on data saving",
-    "Профиль не найден": "Profile not found"
+    "Профиль не найден": "Profile not found",
+    "Валюта": "Currency",
+    "Страна": "Country"
 }

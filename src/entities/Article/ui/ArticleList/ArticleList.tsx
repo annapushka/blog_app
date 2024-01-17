@@ -7,7 +7,7 @@ import { Article } from '../../model/types/article';
 
 import cls from './ArticleList.module.scss';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';
 
 interface ArticleListProps {
     className?: string;

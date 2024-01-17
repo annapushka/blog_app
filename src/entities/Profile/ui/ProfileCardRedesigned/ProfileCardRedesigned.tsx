@@ -9,7 +9,7 @@ import { CountrySelect } from '@/entities/Country';
 import { Card } from '@/shared/ui/redesigned/Card/Card';
 import { Avatar } from '@/shared/ui/redesigned/Avatar/Avatar';
 import { Input } from '@/shared/ui/redesigned/Input/Input';
-import Skeleton from '@/shared/ui/redesigned/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton/Skeleton';
 import { Text } from '@/shared/ui/redesigned/Text/Text';
 
 export const ProfileCardRedesignedError = () => {

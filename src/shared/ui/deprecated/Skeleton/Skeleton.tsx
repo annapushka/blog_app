@@ -31,5 +31,3 @@ export const Skeleton = memo((props: SkeletonProps) => {
     />
   );
 });
-
-export default Skeleton;

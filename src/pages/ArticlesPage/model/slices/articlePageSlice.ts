@@ -30,7 +30,9 @@ const articlePageSlice = createSlice({
     error: undefined,
     ids: [],
     entities: {},
-    view: ArticleView.GRID,
+    view: localStorage.getItem(
+      ARTICLES_VIEW_LOCALSTORAGE_KEY,
+    ) as ArticleView ?? ArticleView.GRID,
     page: 1,
     hasMore: true,
     _inited: false,
