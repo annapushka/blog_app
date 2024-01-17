@@ -826,7 +826,7 @@
       "first": "manager",
       "lastname": "manager",
       "age": 38,
-      "currency": "GBP",
+      "currency": "RUB",
       "country": "Armenia",
       "city": "Saint P",
       "username": "sashaIT",
@@ -885,7 +885,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlePageWasOpened": true
