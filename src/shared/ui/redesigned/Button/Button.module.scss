@@ -50,7 +50,10 @@
     border: 1px solid var(--text-redesigned);
     color: var(--text-redesigned);
     background: none;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-redesigned);
+    &:hover {
+        border: 1px solid var(--accent-redesigned);
+    }
 }
 
 .square {

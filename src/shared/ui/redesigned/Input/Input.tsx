@@ -73,7 +73,7 @@ export const Input = memo((props: InputProps) => {
 
   return (
     <HStack max gap="8">
-      <Text text={`${label}:`} />
+      {label && <Text text={`${label}:`} />}
       <div className={classNames(cls.InputWrapper, mods, [className, cls[size]])}>
         <div className={cls.addonLeft}>
           {addonLeft}
