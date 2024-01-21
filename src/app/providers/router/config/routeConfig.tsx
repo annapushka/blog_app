@@ -1,4 +1,5 @@
 import { AboutPage } from '@/pages/AboutPage';
+import { SettingsPage } from '@/pages/SettingsPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
 import { ArticleEditePage } from '@/pages/ArticleEditePage';
@@ -20,6 +21,7 @@ import {
   getRouteMain,
   getRouteNotFound,
   getRouteProfile,
+  getRouteSettings,
 } from '@/shared/const/router';
 import { AppRouteProps } from '@/shared/types/router';
 
@@ -66,6 +68,10 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.FORBIDDEN]: {
     path: getRouteForbidden(),
     element: <ForbiddenPage />,
+  },
+  [AppRoutes.SETTINGS]: {
+    path: getRouteSettings(),
+    element: <SettingsPage />,
   },
   [AppRoutes.NOT_FOUND]: {
     path: getRouteNotFound(),
