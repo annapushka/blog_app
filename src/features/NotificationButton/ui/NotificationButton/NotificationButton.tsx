@@ -6,7 +6,7 @@ import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon/Icon';
 import BellIconDeprecated from '@/shared/assets/icons/bell.svg';
 import BellIcon from '@/shared/assets/icons/notifyIcon.svg';
-import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/redesigned/Drawer/Drawer';
 import cls from './NotificationButton.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
 import Icon from '@/shared/ui/redesigned/Icon/Icon';
