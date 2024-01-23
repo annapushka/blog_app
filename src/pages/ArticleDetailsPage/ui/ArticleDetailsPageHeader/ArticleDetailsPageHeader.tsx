@@ -8,7 +8,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import HStack from '@/shared/ui/redesigned/Stack/HStack/HStack';
 import { getCanEditArticle } from '../../model/selectors/article';
 import {
-  getRouteArticleDetails,
+  getRouteArticleEdit,
   getRouteArticles,
 } from '@/shared/const/router';
 
@@ -30,7 +30,7 @@ export const ArticleDetailsPageHeader = memo(
     }, [navigate]);
 
     const onEditArticle = useCallback(() => {
-      if (article?.id) navigate(getRouteArticleDetails(article.id));
+      if (article?.id) navigate(getRouteArticleEdit(article.id));
     }, [article?.id, navigate]);
 
     return (

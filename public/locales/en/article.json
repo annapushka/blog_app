@@ -17,5 +17,8 @@
     "Статьи не найдены": "Articles not found",
     "Рекомендуем": "Recommendation",
     "Редактировать": "Edit",
-    "Оценка статей скоро появится": "Article rating coming soon <3"
+    "Оценка статей скоро появится": "Article rating coming soon <3",
+    "{{count}} просмотров_zero": "{{count}} views",
+    "{{count}} просмотров_one": "{{count}} view",
+    "{{count}} просмотров_other": "{{count}} views"
 }
