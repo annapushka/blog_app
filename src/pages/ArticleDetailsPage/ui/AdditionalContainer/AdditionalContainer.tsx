@@ -12,8 +12,6 @@ export const AdditionalContainer = memo(() => {
   const navigate = useNavigate();
 
   const onEditArticle = useCallback(() => {
-    console.log({ article: article?.id });
-
     if (article?.id) navigate(getRouteArticleEdit(article.id));
   }, [article?.id, navigate]);
 
