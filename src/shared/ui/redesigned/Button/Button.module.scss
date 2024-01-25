@@ -47,12 +47,13 @@
 }
 
 .outline {
-    border: 1px solid var(--text-redesigned);
+    border: 2px solid var(--text-redesigned);
+    padding: 4px 16px;
     color: var(--text-redesigned);
     background: none;
     border-radius: var(--border-radius-redesigned);
     &:hover {
-        border: 1px solid var(--accent-redesigned);
+        border: 2px solid var(--accent-redesigned);
     }
 }
 

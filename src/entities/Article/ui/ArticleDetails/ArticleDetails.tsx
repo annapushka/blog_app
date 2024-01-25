@@ -110,18 +110,34 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   if (isLoading) {
     content = (
-      <>
-        <SkeletonDeprecate
-          className={cls.avatar}
-          width={200}
-          height={200}
-          border="50%"
-        />
-        <SkeletonDeprecate className={cls.title} width={300} height={32} />
-        <SkeletonDeprecate className={cls.skeleton} width="100%" height={24} />
-        <SkeletonDeprecate className={cls.skeleton} width="100%" height={300} />
-        <SkeletonDeprecate className={cls.skeleton} width="100%" height={300} />
-      </>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={(
+          <>
+            <Skeleton width={300} height={32} border="24px" />
+            <Skeleton width={300} height={24} border="24px" />
+            <Skeleton className={cls.img} width="100%" height={420} border="16px" />
+            <Skeleton className={cls.skeleton} width="100%" height={42} border="24px" />
+            <Skeleton className={cls.skeleton} width="100%" height={42} border="24px" />
+            <Skeleton className={cls.skeleton} width="100%" height={42} border="24px" />
+          </>
+        )}
+        off={(
+          <>
+            <SkeletonDeprecate
+              className={cls.avatar}
+              width={200}
+              height={200}
+              border="50%"
+            />
+            <SkeletonDeprecate className={cls.title} width={300} height={32} />
+            <SkeletonDeprecate className={cls.skeleton} width="100%" height={24} />
+            <SkeletonDeprecate className={cls.skeleton} width="100%" height={300} />
+            <SkeletonDeprecate className={cls.skeleton} width="100%" height={300} />
+          </>
+)}
+      />
+
     );
   } else if (error) {
     content = (

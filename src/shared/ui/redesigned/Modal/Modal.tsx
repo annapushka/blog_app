@@ -56,5 +56,3 @@ export const Modal = (props: ModalProps) => {
     </Portal>
   );
 };
-
-export default Modal;
