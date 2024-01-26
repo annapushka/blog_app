@@ -45,15 +45,42 @@
 }
 
 .outline {
-    border: 2px solid var(--text-redesigned);
     padding: 4px 16px;
-    color: var(--text-redesigned);
     background: none;
     border-radius: var(--border-radius-redesigned);
 
-    &:hover {
-        border: 2px solid var(--accent-redesigned);
+    &.primary {
+        color: var(--text-redesigned);
+        border: 2px solid var(--text-redesigned);
+
+        &:hover {
+            color: var(--accent-redesigned);
+            border: 2px solid var(--accent-redesigned);
+        }
     }
+
+    &.success {
+        color: var(--save-redesigned);
+        border: 2px solid var(--save-redesigned);
+
+        &:hover {
+            color: var(--save-redesigned);
+            border: 2px solid var(--save-redesigned);
+            filter: brightness(1.5);
+        }
+    }
+
+    &.error {
+        color: var(--cancel-redesigned);
+        border: 2px solid var(--cancel-redesigned);
+
+        &:hover {
+            color: var(--cancel-redesigned);
+            border: 2px solid var(--cancel-redesigned);
+            filter: brightness(1.5);
+        }
+    }
+
 }
 
 .square {
