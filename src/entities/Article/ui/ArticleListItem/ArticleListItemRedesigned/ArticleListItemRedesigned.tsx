@@ -105,7 +105,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
               width={400}
               className={cls.img}
             />
-)}
+          )}
           src={article.img}
           alt={article.title}
           className={cls.img}

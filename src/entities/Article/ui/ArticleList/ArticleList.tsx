@@ -1,6 +1,6 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text } from '@/shared/ui/deprecated/Text/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
@@ -8,6 +8,8 @@ import { Article } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
 
 interface ArticleListProps {
     className?: string;
@@ -35,14 +37,29 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
   if (!isLoading && !articles?.length) {
     return (
-      <div
-        className={classNames(cls.ArticleList, {}, [
-          className,
-          cls[view],
-        ])}
-      >
-        <Text title={t('Статьи не найдены')} />
-      </div>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={(
+          <div
+            className={classNames(cls.ArticleListRedesigned, {}, [
+              className,
+              cls[view],
+            ])}
+          >
+            <Text title={t('Статьи не найдены')} />
+          </div>
+        )}
+        off={(
+          <div
+            className={classNames(cls.ArticleList, {}, [
+              className,
+              cls[view],
+            ])}
+          >
+            <TextDeprecated title={t('Статьи не найдены')} />
+          </div>
+        )}
+      />
     );
   }
 
