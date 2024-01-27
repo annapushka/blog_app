@@ -3,6 +3,7 @@ import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { User } from '../types/user';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { getUserDataByIdQuery } from '../../api/userApi';
+import { LOCAL_STORAGE_LAST_DESIGN_KEY } from '@/shared/const/theme';
 
 export const initAuthData = createAsyncThunk<
     User,
@@ -21,6 +22,11 @@ export const initAuthData = createAsyncThunk<
     const response = await dispatch(
       getUserDataByIdQuery(userId),
     ).unwrap();
+
+    localStorage.setItem(
+      LOCAL_STORAGE_LAST_DESIGN_KEY,
+      response.features?.isAppRedesigned ? 'new' : 'old',
+    );
 
     return response;
   } catch (e) {
