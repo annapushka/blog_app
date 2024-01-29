@@ -1,8 +1,10 @@
+import { addDecorator } from '@storybook/react';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 import { Theme } from '../../src/shared/const/theme';
+import { FeaturesFlagsDecorator } from '../../src/shared/config/storybook/FeaturesFlagsDecorator/FeaturesFlagsDecorator';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -13,14 +15,8 @@ export const parameters = {
     },
   },
   layout: 'fullscreen',
-  decorators: [
-    (Story) => StyleDecorator(Story),
-    (Story) => ThemeDecorator(Theme.LIGHT, Story),
-    (Story) => RouterDecorator(Story),
-    (Story) => SuspenseDecorator(Story),
-  ],
   themes: {
-    default: 'dark',
+    default: 'light',
     list: [
       { name: 'light', class: Theme.LIGHT, color: '#e2f8ff' },
       { name: 'dark', class: Theme.DARK, color: '#2b2828' },
@@ -28,3 +24,9 @@ export const parameters = {
     ],
   },
 };
+
+addDecorator(StyleDecorator);
+addDecorator(ThemeDecorator(Theme.LIGHT));
+addDecorator(RouterDecorator);
+addDecorator(SuspenseDecorator);
+addDecorator(FeaturesFlagsDecorator({}));

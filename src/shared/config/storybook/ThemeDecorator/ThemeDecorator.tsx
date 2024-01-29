@@ -1,12 +1,12 @@
-import { StoryFn } from '@storybook/react';
-import { Theme } from '@/shared/const/theme';
+import { Story } from '@storybook/react';
 // eslint-disable-next-line fsd-01/layer-imports
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 
-export const ThemeDecorator = (theme: Theme, Story?: StoryFn) => () => (
-  <ThemeProvider initialTheme={theme ?? Theme.LIGHT}>
-    <div className={`app ${theme ?? Theme.LIGHT}`}>
-      {Story && <Story />}
+export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => (
+  <ThemeProvider initialTheme={theme}>
+    <div className={`app ${theme}`}>
+      <StoryComponent />
     </div>
   </ThemeProvider>
 );
