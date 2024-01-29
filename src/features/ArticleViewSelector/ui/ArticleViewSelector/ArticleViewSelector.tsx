@@ -65,6 +65,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
               onClick={onClick(viewType.view)}
               width={30}
               height={30}
+              key={viewType.view}
             />
           ))}
         </Card>

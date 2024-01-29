@@ -69,6 +69,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
           <ArticleTextBlockComponent
             block={textBlock}
             className={cls.textBlock}
+            key={textBlock.id}
           />
           )}
           <HStack max gap="8" justify="between">

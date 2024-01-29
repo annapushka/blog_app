@@ -52,14 +52,13 @@ export function ListBox<T extends string>({
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button className={popupCls.trigger}>
-          <Button
-            variant="filled"
-            disabled={readonly}
-            addonRight={<Icon Svg={ArrowIcon} />}
-          >
-            {selectedItem?.content ?? defaultValue}
-          </Button>
+        <HListBox.Button
+          as={Button}
+          className={popupCls.trigger}
+          variant="filled"
+          addonRight={<Icon Svg={ArrowIcon} />}
+        >
+          {selectedItem?.content ?? defaultValue}
         </HListBox.Button>
         <HListBox.Options
           className={classNames(cls.options, {}, optionsClasses)}

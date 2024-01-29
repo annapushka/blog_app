@@ -67,6 +67,7 @@ export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
             <ArticleTextBlockComponent
               block={textBlock}
               className={cls.textBlock}
+              key={textBlock.id}
             />
           )}
           <div className={cls.footer}>
