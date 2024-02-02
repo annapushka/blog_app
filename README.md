@@ -186,3 +186,14 @@ which takes 2 arguments
 -   [ScrollSave](/src/features/ScrollSave)
 -   [ScrollToTopButton](/src/features/ScrollToTopButton)
 -   [UiDesignSwitcher](/src/features/UiDesignSwitcher)
+
+---
+
+## Results
+
+<p>
+   <img src="src/shared/assets/1.png" alt="result" width="100%"/>
+   <img src="src/shared/assets/2.png" alt="result" width="100%"/>
+   <img src="src/shared/assets/3.png" alt="result" width="100%"/>
+   <img src="src/shared/assets/4.png" alt="result" width="100%"/>
+</p>
