@@ -86,7 +86,7 @@ const Redesigned = () => {
         fallback={<Skeleton width="100%" height={420} border="16px" />}
         className={cls.img}
       />
-      {article?.blocks.map((block, i) => renderBlock(block, i))}
+      {article?.blocks.map((block) => renderBlock(block))}
     </>
   );
 };
