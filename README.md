@@ -2,7 +2,7 @@
 
 ```
 npm install - set dependencies
-npm run start:dev или npm run start:dev:vite - running server + frontend project in dev mode
+npm run start:dev or npm run start:dev:vite - running server + frontend project in dev mode
 ```
 
 ---
